@@ -1,5 +1,5 @@
 //Font
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rosario:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 @import 'variables.scss';
 @import 'layout.scss';
@@ -15,31 +15,6 @@
 @import '../scss/woocommerce/cart.scss';
 @import '../scss/woocommerce/checkout.scss';
 @import '../scss/woocommerce/input-radio-button.scss';
-
-
-
-
-// remove after test
-/*
-.site, #page {
-  background-color: $primary-color;
-}
-
-h2 {
-  font-size: $font-size;
-
-  &.entry-title {
-    color: white;
-  }
-}
-
-.nav-menu {
-  font-size: $font-size;
-  background-color: $blue;
-}
-*/
-
-
 
 /* Links */
 a, button {
