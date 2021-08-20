@@ -32,14 +32,15 @@
   transform: scale(1.2);
 }
 
-#masthead {
-  .selling-points {
-  flex: unset;
-    .topbar-selling-point {
-      padding-right: 1em;
-      width: fit-content;
-    }
+.selling-points {
+flex: unset;
+  .topbar-selling-point {
+    padding-right: 1em;
+    width: fit-content;
   }
+}
+
+#masthead {
 
   .header-wrapper {
     flex-wrap: nowrap;
@@ -66,8 +67,5 @@
 
 .topbar, .storefront-breadcrumb {
   padding: 0.5em 1em !important;
-}
-.header-widget-region {
-  display: none;
 }
 /* Header Tablet End */

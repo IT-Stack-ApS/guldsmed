@@ -193,7 +193,7 @@ eval("jQuery(function($){\n\n    var $sidebar = $('.cart-sidebar');\n    \n     
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Sticky header\njQuery(function($){\n\tvar prevScrollpos = window.pageYOffset;\n\twindow.onscroll = function() {\n\tvar currentScrollPos = window.pageYOffset;\n\t  if (prevScrollpos > currentScrollPos) {\n\t\tdocument.getElementById(\"masthead\").style.top = \"0\";\n\t  } else {\n\t\tdocument.getElementById(\"masthead\").style.top = \"-200px\";\n\t  }\n\t  prevScrollpos = currentScrollPos;\n\t}\n\n});\n\n//# sourceURL=webpack:///./js/sticky_header.js?");
+eval("// Sticky header\njQuery(function($){\n\tvar prevScrollpos = window.pageYOffset;\n\twindow.onscroll = function() {\n\tvar currentScrollPos = window.pageYOffset;\n\t  if (prevScrollpos > currentScrollPos) {\n\t\tdocument.getElementById(\"masthead\").style.top = \"0\";\n\t  } else {\n\t\tdocument.getElementById(\"masthead\").style.top = \"-200px\";\n\t  }\n\t  prevScrollpos = currentScrollPos;\n\t}\n\n});\n\n\n//# sourceURL=webpack:///./js/sticky_header.js?");
 
 /***/ }),
 

@@ -1,24 +1,22 @@
 .topbar {
-    min-height: 50px;
     background-color: $gray;
     padding: 10px 0 10px 0;
 
     .topbar-wrapper {
-        display: flex;
+      @include flexbox;
     }
 
     .selling-points {
-        display: flex;
+        @include flexbox;
         flex-direction: row;
         justify-content: flex-start;
-        align-items: center;
         flex: 50%;
 
         .topbar-selling-point {
             @include flexbox;
             font-weight: $font-weight-normal-bold;
             font-size: $font-size-small;
-            padding-right: 40px;
+            padding-right: 2em;
 
             i {
                 padding-right: 10px;
@@ -40,5 +38,12 @@
 
     .top-menu {
         flex: 50%;
+
+        .secondary-navigation {
+          margin: 0;
+          a {
+            padding: 0 0 0 1em;
+          }
+        }
     }
 }

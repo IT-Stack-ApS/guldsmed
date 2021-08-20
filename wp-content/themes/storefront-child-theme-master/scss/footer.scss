@@ -3,6 +3,7 @@
 
 .site-footer {
   padding: 50px 0 0 0;
+  border-top: 1px solid rgba(82, 82, 82, 0.4);
 
   .col-full {
     .footer-widgets {
@@ -47,7 +48,7 @@
           }
         }
 
-        
+
 
           .menu {
             li {
@@ -119,7 +120,6 @@
     width: 100%;
     margin-top: 4em;
     font-size: $font-size-small;
-    border-top: 1px solid $gray;
     padding-top: 2em;
     @include reset_before_after;
 
