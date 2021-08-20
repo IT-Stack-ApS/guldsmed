@@ -63,7 +63,7 @@ hr {
       align-items: center;
       font-weight: 500;
       font-size: 0.75rem;
-      padding-right: 40px; }
+      padding-right: 2em; }
       .topbar .selling-points .topbar-selling-point i {
         padding-right: 10px; }
       .topbar .selling-points .topbar-selling-point p {
@@ -125,7 +125,8 @@ hr {
 
 /* Footer */
 .site-footer {
-  padding: 50px 0 0 0; }
+  padding: 50px 0 0 0;
+  border-top: 1px solid rgba(82, 82, 82, 0.4); }
   .site-footer .col-full .footer-widgets {
     padding: 0;
     border-bottom: 0;
@@ -203,7 +204,6 @@ hr {
     width: 100%;
     margin-top: 4em;
     font-size: 0.75rem;
-    border-top: 1px solid #dbdbdb;
     padding-top: 2em; }
     .site-footer .btm_bar::before, .site-footer .btm_bar::after {
       content: none; }
@@ -268,8 +268,6 @@ hr {
       margin-left: 1.5em; }
   .topbar, .storefront-breadcrumb {
     padding: 0.5em 1em !important; }
-  .header-widget-region {
-    display: none; }
   /* Header Tablet End */
   /* Archive Page */
   .col-full .woocommerce-products-header {
@@ -1064,7 +1062,7 @@ body.mm-ocd-opened {
     border-color: #788B9B; }
 
 /* Product archive */
-.elementor-page .header-widget-region {
+.header-widget-region {
   display: none; }
 
 .woocommerce-products-header {
@@ -1662,6 +1660,26 @@ form.checkout, form.woocommerce-cart-form {
 
 .woocommerce-checkout #shipping_method input[type="radio"]:checked + label, .woocommerce-checkout #shipping_method [type="radio"]:not(:checked) + label {
   display: flex; }
+
+.elementor-products-grid ul.products {
+  grid-template-columns: 1fr 1fr 1fr 1fr; }
+  .elementor-products-grid ul.products li.product a.woocommerce-loop-product__link {
+    display: flex;
+    align-items: center; }
+
+/* Responsive - Mobile */
+@media only screen and (max-width: 767px) {
+  section .elementor-row .elementor-element.elementor-wc-products ul.products {
+    grid-template-columns: 1fr; } }
+
+/* Responsive - Tablet */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  section .elementor-row .elementor-element.elementor-wc-products ul.products {
+    grid-template-columns: 1fr 1fr 1fr; }
+    section .elementor-row .elementor-element.elementor-wc-products ul.products li:last-of-type {
+      display: none; }
+  .elementor-element ul.products li.product .badge-wrapper {
+    width: 100%; } }
 
 /* Links */
 a, button {

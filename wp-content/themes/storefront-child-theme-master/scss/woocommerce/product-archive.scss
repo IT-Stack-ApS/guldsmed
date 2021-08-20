@@ -1,9 +1,9 @@
 /* Product archive */
 
-.elementor-page .header-widget-region {
+//archive header
+.header-widget-region {
   display: none;
 }
-//archive header
 .woocommerce-products-header {
   padding: 5em;
   @include flexbox;
