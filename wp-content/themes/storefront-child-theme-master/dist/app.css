@@ -249,9 +249,9 @@ hr {
     transition: all 0.3s ease; }
   .header-mobile i:active {
     transform: scale(1.2); }
-  #masthead .selling-points {
+  .selling-points {
     flex: unset; }
-    #masthead .selling-points .topbar-selling-point {
+    .selling-points .topbar-selling-point {
       padding-right: 1em;
       width: fit-content; }
   #masthead .header-wrapper {
@@ -393,7 +393,7 @@ hr {
 
 /* Responsive - Mobile */
 @media only screen and (max-width: 767px) and (max-width: 767px) {
-  #masthead .topbar {
+  .topbar {
     display: none; }
   #masthead .header-wrapper .image-logo {
     width: 30%; }
