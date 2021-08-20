@@ -47,16 +47,16 @@ hr {
   margin: 0; }
 
 .topbar {
-  min-height: 50px;
   background-color: #dbdbdb;
   padding: 10px 0 10px 0; }
   .topbar .topbar-wrapper {
-    display: flex; }
+    display: flex;
+    align-items: center; }
   .topbar .selling-points {
     display: flex;
+    align-items: center;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: center;
     flex: 50%; }
     .topbar .selling-points .topbar-selling-point {
       display: flex;
@@ -73,6 +73,10 @@ hr {
         font-size: 0.75rem; }
   .topbar .top-menu {
     flex: 50%; }
+    .topbar .top-menu .secondary-navigation {
+      margin: 0; }
+      .topbar .top-menu .secondary-navigation a {
+        padding: 0 0 0 1em; }
 
 /* Header */
 #masthead {
@@ -106,7 +110,7 @@ hr {
         background: #2f2d3200;
         color: #000000;
         font-size: 11px;
-        line-height: 14px;
+        line-height: 10px;
         min-width: 13px;
         text-align: center;
         border-radius: 50%;
