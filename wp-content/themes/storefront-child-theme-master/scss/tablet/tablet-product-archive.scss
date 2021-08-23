@@ -58,6 +58,16 @@
             }
           }
         }
+        .current-cat {
+          &::before {
+            display: none;
+          }
+          a {
+            background-color: $blue;
+            color: $white;
+            border-color: $blue;
+          }
+        }
       }
     }
   }
