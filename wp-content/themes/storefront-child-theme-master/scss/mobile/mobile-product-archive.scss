@@ -61,6 +61,7 @@
     #archive-top-filters.filter-wrapper {
       display: none;
       flex-wrap: wrap;
+      justify-content: space-between;
 
       .widget {
         width: 49%;
@@ -99,7 +100,7 @@
   }
 }
 
-.show_filter {
+button.show_filter {
   margin: 1.4em 0;
   display: block;
   width: 100%;
