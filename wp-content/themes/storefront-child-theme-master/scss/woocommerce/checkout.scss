@@ -90,6 +90,11 @@
   }
 
   .form-row {
+
+    &.woocommerce-validated input {
+      box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.125);
+    }
+
     input, textarea, select {
      border-radius: 10px;
       &:focus {
@@ -97,8 +102,12 @@
       }
     }
     input {
-       background-color: transparent;
+       background-color: $white;
        box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.125);
+
+       &:focus {
+         background-color: $white;
+       }
     }
 
     //Checkout CVR button
@@ -228,8 +237,15 @@
       }
     }
   }
-  .coupons #coupon_code {
-    width: 48%;
+  .coupons{
+    #coupon_code {
+      width: 48%;
+      opacity: 1;
+      color: $green-dark;
+    }
+    button {
+      text-transform: capitalize;
+    }
   }
 }
 /* Checkout - DAWA suggestions */

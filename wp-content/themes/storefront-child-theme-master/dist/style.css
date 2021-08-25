@@ -548,7 +548,7 @@ hr {
     .woocommerce-cart .woocommerce-cart-form .col-cart-one .cart-shop-table, .woocommerce-cart .woocommerce-cart-form .col-cart-two .cart-shop-table, .woocommerce-cart .woocommerce-cart-form .col2-set .cart-shop-table, .woocommerce-cart .woocommerce-cart-form .order-review-wrapper .cart-shop-table, .woocommerce-cart .woocommerce-checkout .col-cart-one .cart-shop-table, .woocommerce-cart .woocommerce-checkout .col-cart-two .cart-shop-table, .woocommerce-cart .woocommerce-checkout .col2-set .cart-shop-table, .woocommerce-cart .woocommerce-checkout .order-review-wrapper .cart-shop-table, .woocommerce-checkout .woocommerce-cart-form .col-cart-one .cart-shop-table, .woocommerce-checkout .woocommerce-cart-form .col-cart-two .cart-shop-table, .woocommerce-checkout .woocommerce-cart-form .col2-set .cart-shop-table, .woocommerce-checkout .woocommerce-cart-form .order-review-wrapper .cart-shop-table, .woocommerce-checkout .woocommerce-checkout .col-cart-one .cart-shop-table, .woocommerce-checkout .woocommerce-checkout .col-cart-two .cart-shop-table, .woocommerce-checkout .woocommerce-checkout .col2-set .cart-shop-table, .woocommerce-checkout .woocommerce-checkout .order-review-wrapper .cart-shop-table {
       padding: 1em 0; }
       .woocommerce-cart .woocommerce-cart-form .col-cart-one .cart-shop-table .product-info-wrapper, .woocommerce-cart .woocommerce-cart-form .col-cart-two .cart-shop-table .product-info-wrapper, .woocommerce-cart .woocommerce-cart-form .col2-set .cart-shop-table .product-info-wrapper, .woocommerce-cart .woocommerce-cart-form .order-review-wrapper .cart-shop-table .product-info-wrapper, .woocommerce-cart .woocommerce-checkout .col-cart-one .cart-shop-table .product-info-wrapper, .woocommerce-cart .woocommerce-checkout .col-cart-two .cart-shop-table .product-info-wrapper, .woocommerce-cart .woocommerce-checkout .col2-set .cart-shop-table .product-info-wrapper, .woocommerce-cart .woocommerce-checkout .order-review-wrapper .cart-shop-table .product-info-wrapper, .woocommerce-checkout .woocommerce-cart-form .col-cart-one .cart-shop-table .product-info-wrapper, .woocommerce-checkout .woocommerce-cart-form .col-cart-two .cart-shop-table .product-info-wrapper, .woocommerce-checkout .woocommerce-cart-form .col2-set .cart-shop-table .product-info-wrapper, .woocommerce-checkout .woocommerce-cart-form .order-review-wrapper .cart-shop-table .product-info-wrapper, .woocommerce-checkout .woocommerce-checkout .col-cart-one .cart-shop-table .product-info-wrapper, .woocommerce-checkout .woocommerce-checkout .col-cart-two .cart-shop-table .product-info-wrapper, .woocommerce-checkout .woocommerce-checkout .col2-set .cart-shop-table .product-info-wrapper, .woocommerce-checkout .woocommerce-checkout .order-review-wrapper .cart-shop-table .product-info-wrapper {
-        flex-direction: column; }
+        flex-direction: column-reverse; }
         .woocommerce-cart .woocommerce-cart-form .col-cart-one .cart-shop-table .product-info-wrapper .product-info .product-name a, .woocommerce-cart .woocommerce-cart-form .col-cart-two .cart-shop-table .product-info-wrapper .product-info .product-name a, .woocommerce-cart .woocommerce-cart-form .col2-set .cart-shop-table .product-info-wrapper .product-info .product-name a, .woocommerce-cart .woocommerce-cart-form .order-review-wrapper .cart-shop-table .product-info-wrapper .product-info .product-name a, .woocommerce-cart .woocommerce-checkout .col-cart-one .cart-shop-table .product-info-wrapper .product-info .product-name a, .woocommerce-cart .woocommerce-checkout .col-cart-two .cart-shop-table .product-info-wrapper .product-info .product-name a, .woocommerce-cart .woocommerce-checkout .col2-set .cart-shop-table .product-info-wrapper .product-info .product-name a, .woocommerce-cart .woocommerce-checkout .order-review-wrapper .cart-shop-table .product-info-wrapper .product-info .product-name a, .woocommerce-checkout .woocommerce-cart-form .col-cart-one .cart-shop-table .product-info-wrapper .product-info .product-name a, .woocommerce-checkout .woocommerce-cart-form .col-cart-two .cart-shop-table .product-info-wrapper .product-info .product-name a, .woocommerce-checkout .woocommerce-cart-form .col2-set .cart-shop-table .product-info-wrapper .product-info .product-name a, .woocommerce-checkout .woocommerce-cart-form .order-review-wrapper .cart-shop-table .product-info-wrapper .product-info .product-name a, .woocommerce-checkout .woocommerce-checkout .col-cart-one .cart-shop-table .product-info-wrapper .product-info .product-name a, .woocommerce-checkout .woocommerce-checkout .col-cart-two .cart-shop-table .product-info-wrapper .product-info .product-name a, .woocommerce-checkout .woocommerce-checkout .col2-set .cart-shop-table .product-info-wrapper .product-info .product-name a, .woocommerce-checkout .woocommerce-checkout .order-review-wrapper .cart-shop-table .product-info-wrapper .product-info .product-name a {
           font-weight: 400; }
         .woocommerce-cart .woocommerce-cart-form .col-cart-one .cart-shop-table .product-info-wrapper .product-info .product-price, .woocommerce-cart .woocommerce-cart-form .col-cart-two .cart-shop-table .product-info-wrapper .product-info .product-price, .woocommerce-cart .woocommerce-cart-form .col2-set .cart-shop-table .product-info-wrapper .product-info .product-price, .woocommerce-cart .woocommerce-cart-form .order-review-wrapper .cart-shop-table .product-info-wrapper .product-info .product-price, .woocommerce-cart .woocommerce-checkout .col-cart-one .cart-shop-table .product-info-wrapper .product-info .product-price, .woocommerce-cart .woocommerce-checkout .col-cart-two .cart-shop-table .product-info-wrapper .product-info .product-price, .woocommerce-cart .woocommerce-checkout .col2-set .cart-shop-table .product-info-wrapper .product-info .product-price, .woocommerce-cart .woocommerce-checkout .order-review-wrapper .cart-shop-table .product-info-wrapper .product-info .product-price, .woocommerce-checkout .woocommerce-cart-form .col-cart-one .cart-shop-table .product-info-wrapper .product-info .product-price, .woocommerce-checkout .woocommerce-cart-form .col-cart-two .cart-shop-table .product-info-wrapper .product-info .product-price, .woocommerce-checkout .woocommerce-cart-form .col2-set .cart-shop-table .product-info-wrapper .product-info .product-price, .woocommerce-checkout .woocommerce-cart-form .order-review-wrapper .cart-shop-table .product-info-wrapper .product-info .product-price, .woocommerce-checkout .woocommerce-checkout .col-cart-one .cart-shop-table .product-info-wrapper .product-info .product-price, .woocommerce-checkout .woocommerce-checkout .col-cart-two .cart-shop-table .product-info-wrapper .product-info .product-price, .woocommerce-checkout .woocommerce-checkout .col2-set .cart-shop-table .product-info-wrapper .product-info .product-price, .woocommerce-checkout .woocommerce-checkout .order-review-wrapper .cart-shop-table .product-info-wrapper .product-info .product-price {
@@ -1312,9 +1312,8 @@ span.select2.select2-container.select2-container--default * {
         margin: 0; }
       .woocommerce-cart .col-cart-one .cart-shop-table .product-info-wrapper {
         display: flex;
-        flex-grow: 1;
         margin-left: 1em;
-        justify-content: space-between; }
+        justify-content: flex-start; }
         .woocommerce-cart .col-cart-one .cart-shop-table .product-info-wrapper .product-info .product-name a {
           font-size: 1rem;
           text-decoration: none;
@@ -1325,10 +1324,13 @@ span.select2.select2-container.select2-container--default * {
         .woocommerce-cart .col-cart-one .cart-shop-table .product-info-wrapper .product-info .product-price {
           color: #404040; }
         .woocommerce-cart .col-cart-one .cart-shop-table .product-info-wrapper .product-quantity-selection {
-          margin-right: 1em; }
+          margin-right: 1em;
+          display: flex;
+          align-items: center; }
       .woocommerce-cart .col-cart-one .cart-shop-table .product-quantity {
         display: flex;
-        margin-right: 1em; }
+        margin-right: 1em;
+        margin-left: auto; }
         .woocommerce-cart .col-cart-one .cart-shop-table .product-quantity div:last-of-type {
           margin-left: 0.5em;
           font-weight: 500; }
@@ -1434,12 +1436,13 @@ a.remove::before {
 .coupons input {
   background-color: #EBEBEB !important;
   box-shadow: none !important;
-  opacity: 0.6;
   font-weight: 500;
-  padding: 10px; }
+  padding: 10px;
+  color: #525252; }
 
 .coupons button {
-  padding: 8px 15px; }
+  padding: 8px 15px;
+  text-transform: capitalize; }
 
 form.checkout, form.woocommerce-cart-form {
   display: flex;
@@ -1532,14 +1535,19 @@ form.checkout, form.woocommerce-cart-form {
       color: #8F8F8F;
       font-size: 0.75rem; }
 
+.woocommerce-checkout .form-row.woocommerce-validated input {
+  box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.125); }
+
 .woocommerce-checkout .form-row input, .woocommerce-checkout .form-row textarea, .woocommerce-checkout .form-row select {
   border-radius: 10px; }
   .woocommerce-checkout .form-row input:focus, .woocommerce-checkout .form-row textarea:focus, .woocommerce-checkout .form-row select:focus {
     outline: none; }
 
 .woocommerce-checkout .form-row input {
-  background-color: transparent;
+  background-color: #ffffff;
   box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.125); }
+  .woocommerce-checkout .form-row input:focus {
+    background-color: #ffffff; }
 
 .woocommerce-checkout .form-row button#vatButton {
   padding: 0.4180469716em 0.71575em;
@@ -1625,7 +1633,12 @@ form.checkout, form.woocommerce-cart-form {
       font-size: 0.75rem; }
 
 .woocommerce-checkout .coupons #coupon_code {
-  width: 48%; }
+  width: 48%;
+  opacity: 1;
+  color: #525252; }
+
+.woocommerce-checkout .coupons button {
+  text-transform: capitalize; }
 
 /* Checkout - DAWA suggestions */
 .dawa-autocomplete-suggestion {
@@ -1698,6 +1711,9 @@ form.checkout, form.woocommerce-cart-form {
       display: none; }
   .elementor-element ul.products li.product .badge-wrapper {
     width: 100%; } }
+
+.elementor-page .storefront-breadcrumb {
+  display: none; }
 
 /* Links */
 a, button {
