@@ -1315,7 +1315,7 @@ span.select2.select2-container.select2-container--default * {
         margin-left: 1em;
         justify-content: flex-start; }
         .woocommerce-cart .col-cart-one .cart-shop-table .product-info-wrapper .product-info .product-name a {
-          font-size: 1rem;
+          font-size: 0.75rem;
           text-decoration: none;
           font-weight: 500;
           text-transform: uppercase; }
