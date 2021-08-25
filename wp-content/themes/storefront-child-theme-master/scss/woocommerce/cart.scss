@@ -62,6 +62,7 @@
             }
           }
           .product-price {
+            font-size: $font-size-small;
             color: $light-black;
           }
         }
@@ -140,10 +141,18 @@
       font-weight: $font-weight-normal;
     }
 
-    #shipping_method {
+    #shipping_method.woocommerce-shipping-methods {
 
       li {
         margin-bottom: 1rem;
+      }
+
+      input[type="radio"]:checked + label, input[type="radio"]:not(:checked) + label {
+        display: block;
+      }
+
+      .woocommerce-Price-amount {
+        float: right;
       }
 
       i.fas.fa-store-alt, i.fas.fa-truck {

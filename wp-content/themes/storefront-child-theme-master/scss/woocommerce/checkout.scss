@@ -90,9 +90,11 @@
   }
 
   .form-row {
-
     &.woocommerce-validated input {
       box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.125);
+      &::after {
+        content: 'hej'
+      }
     }
 
     input, textarea, select {
@@ -101,6 +103,7 @@
         outline: none;
       }
     }
+
     input {
        background-color: $white;
        box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.125);

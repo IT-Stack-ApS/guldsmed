@@ -96,6 +96,9 @@
         li.product {
           height: auto;
           .woocommerce-loop-product__link {
+            .woocommerce-loop-product__title{
+              font-size: $font-size-base;
+            }
             padding: 0.5em;
             img {
               max-height: 100px;
