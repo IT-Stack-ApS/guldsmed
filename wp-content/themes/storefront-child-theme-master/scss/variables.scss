@@ -13,6 +13,7 @@ $green: rgba(66,162,27,0.73);
 $red: rgba(228,55,51,0.8);
 
 //Custom
+$beige-dark: #e2d8c5;
 $beige:#F3EFE7;      //Elementers baggrund
 $blue:#788B9B;       //CTA
 $green-dark:#525252; //Tekst, ikoner
@@ -104,7 +105,7 @@ $global-radius: 3px;
 //Elements
 @mixin box-style {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  border-radius: 6px;
+  border-radius: 3px;
 }
 
 @mixin reset_before_after {

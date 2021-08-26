@@ -9,7 +9,7 @@
     width: 60%;
     margin-right: 0;
     padding: 6em;
-    background-color: $light-gray;
+    background-color: $beige;
 
     .col-1 {
       h3 {
@@ -98,7 +98,8 @@
     }
 
     input, textarea, select {
-     border-radius: 10px;
+     border-radius: $global-radius;
+     box-shadow: none;
       &:focus {
         outline: none;
       }
@@ -106,7 +107,7 @@
 
     input {
        background-color: $white;
-       box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.125);
+       box-shadow: none;
 
        &:focus {
          background-color: $white;
@@ -119,16 +120,16 @@
       font-size: $font-size-small;
       color: $white;
       margin-top: 10px;
-      border-radius: 10px;
+      border-radius: $global-radius;
 
       &.default {
-        background-color: $green;
+        background-color: $blue;
       }
       &.failure {
         background-color: $red;
       }
       &.success {
-        background-color: $darker-gray;
+        background-color: $green;
       }
     } //Checkout CVR button END
 
