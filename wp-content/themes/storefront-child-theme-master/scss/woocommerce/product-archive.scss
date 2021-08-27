@@ -10,18 +10,15 @@
   justify-content: space-between;
   background-color: $beige;
   margin-bottom: 2%;
+  max-height: 20em;
 
   .term-description {
     width: 40%;
   }
+}
 
-  .storefront-breadcrumb {
-    margin: 0;
-
-    .col-full {
-      padding: 0;
-    }
-  }
+.storefront-breadcrumb {
+  margin: 0;
 }
 
 //product
@@ -209,6 +206,9 @@ span.select2.select2-container.select2-container--default * {
   &:first-of-type {
     display: none;
   }
+}
+body .select2-container--default .select2-results__option--highlighted[aria-selected], body .select2-container--default .select2-results__option--highlighted[data-selected] {
+     background-color: $blue;
 }
 //archive top widgets end
 

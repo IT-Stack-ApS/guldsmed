@@ -1,4 +1,11 @@
 /* Header Tablet */
+#menu {
+  background-color: $white;
+  .mm-spn--navbar::after {
+    opacity: 1;
+    color: $blue;
+  }
+}
 .woocommerce-page {
   #content {
     margin: 0 3%;
@@ -48,7 +55,7 @@ flex: unset;
     padding: 1em;
 
     .image-logo {
-      width: 15%;
+      width: 25%;
     }
 
     .navigation-header-content {

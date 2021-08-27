@@ -53,6 +53,11 @@
           }
         }
       }
+      a.reset_variations {
+        display: block;
+        margin: 1em 0 0 0;
+        color: $blue;
+      }
 
       .out-of-stock {
         color: $red;
@@ -99,11 +104,12 @@
 
       .product_meta {
         border-top: 0;
+        opacity: 0.8;
 
         *{
-          color: $dark-gray;
+          color: $light-black;
           font-size: $font-size-small;
-          font-weight: $font-weight-light;
+          font-weight: $font-weight-normal-bold;
           text-decoration: none;
         }
       }
