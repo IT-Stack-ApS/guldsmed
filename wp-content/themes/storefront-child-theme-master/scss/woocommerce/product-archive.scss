@@ -10,18 +10,15 @@
   justify-content: space-between;
   background-color: $beige;
   margin-bottom: 2%;
+  max-height: 20em;
 
   .term-description {
     width: 40%;
   }
+}
 
-  .storefront-breadcrumb {
-    margin: 0;
-
-    .col-full {
-      padding: 0;
-    }
-  }
+.storefront-breadcrumb {
+  margin: 0;
 }
 
 //product
@@ -62,6 +59,7 @@ ul.products {
     flex-direction: column;
     width: auto !important;
     margin: 0 !important;
+    @include box-style;
 
     .woocommerce-loop-product__link {
       height: 100%;
@@ -71,7 +69,6 @@ ul.products {
       justify-content: flex-start;
       align-items: center;
       position: relative;
-      @include box-style;
 
       .price {
         @include flexbox;
@@ -132,6 +129,7 @@ ul.products {
       justify-content: space-between;
       width: 80%;
       margin-top: auto;
+      color: $green-dark;
 
       .badge {
         font-weight: $font-weight-normal-bold;
@@ -208,6 +206,9 @@ span.select2.select2-container.select2-container--default * {
   &:first-of-type {
     display: none;
   }
+}
+body .select2-container--default .select2-results__option--highlighted[aria-selected], body .select2-container--default .select2-results__option--highlighted[data-selected] {
+     background-color: $blue;
 }
 //archive top widgets end
 
