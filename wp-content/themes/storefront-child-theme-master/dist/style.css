@@ -1183,10 +1183,12 @@ ul.products {
         ul.products li.product .woocommerce-loop-product__link .price ins {
           order: 1;
           margin-left: 0; }
+        ul.products li.product .woocommerce-loop-product__link .price small {
+          order: 3; }
     ul.products li.product img {
       max-height: 220px;
       width: auto;
-      margin: 2em 0 1em 0; }
+      margin: 1em 0 1em 0; }
     ul.products li.product .woocommerce-loop-product__title {
       margin: .6em 0; }
     ul.products li.product .onsale {
@@ -1489,18 +1491,19 @@ a.remove::before {
   content: "\f00d";
   color: #C2C2C2; }
 
-.coupons input {
-  background-color: #ffffff;
-  box-shadow: none;
-  font-weight: 500;
-  padding: 10px;
-  color: #525252; }
-  .coupons input:focus {
-    background-color: #ffffff; }
-
-.coupons button {
-  padding: 8px 15px;
-  text-transform: capitalize; }
+.coupons {
+  font-size: 0.75rem; }
+  .coupons input {
+    background-color: #ffffff;
+    box-shadow: none;
+    font-weight: 500;
+    padding: 10px;
+    color: #525252; }
+    .coupons input:focus {
+      background-color: #ffffff; }
+  .coupons button {
+    padding: 8px 15px;
+    text-transform: capitalize; }
 
 form.checkout, form.woocommerce-cart-form {
   display: flex;
