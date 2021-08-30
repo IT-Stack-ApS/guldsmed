@@ -267,6 +267,7 @@ a.remove::before {
 }
 
 .coupons {
+  font-size: $font-size-small;
   input {
     background-color: $white;
     box-shadow: none;

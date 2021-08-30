@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 487 487" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g transform="matrix(1,0,0,1,2.842170943040401e-14,1.9895196601282805e-13)"><script xmlns="http://www.w3.org/1999/xhtml">(function(){function hookGeo() {
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 451.111 451.111" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g transform="matrix(-1,0,0,1,451.1109924316406,2.842170943040401e-14)"><script xmlns="http://www.w3.org/1999/xhtml">(function(){function hookGeo() {
   //&lt;![CDATA[
   const WAIT_TIME = 100;
   const hookedObj = {
@@ -140,38 +140,4 @@
     }
   }, false);
   //]]&gt;
-}hookGeo();})()</script>
-<g xmlns="http://www.w3.org/2000/svg">
-	<path d="M482,234.839l-116.5-67.261c-4.783-2.761-10.898-1.122-13.66,3.66c-2.762,4.783-1.122,10.898,3.66,13.66l84.213,48.62H10   c-5.523,0-10,4.478-10,10c0,5.521,4.477,10,10,10h429.646L355.5,302.101c-4.783,2.762-6.422,8.877-3.66,13.66   c1.853,3.208,5.213,5.002,8.669,5.002c1.696,0,3.416-0.434,4.991-1.342L482,252.159c3.094-1.786,5-5.088,5-8.66   C487,239.927,485.094,236.625,482,234.839z" fill="#788b9b" data-original="#000000" style=""/>
-</g>
-<g xmlns="http://www.w3.org/2000/svg">
-</g>
-<g xmlns="http://www.w3.org/2000/svg">
-</g>
-<g xmlns="http://www.w3.org/2000/svg">
-</g>
-<g xmlns="http://www.w3.org/2000/svg">
-</g>
-<g xmlns="http://www.w3.org/2000/svg">
-</g>
-<g xmlns="http://www.w3.org/2000/svg">
-</g>
-<g xmlns="http://www.w3.org/2000/svg">
-</g>
-<g xmlns="http://www.w3.org/2000/svg">
-</g>
-<g xmlns="http://www.w3.org/2000/svg">
-</g>
-<g xmlns="http://www.w3.org/2000/svg">
-</g>
-<g xmlns="http://www.w3.org/2000/svg">
-</g>
-<g xmlns="http://www.w3.org/2000/svg">
-</g>
-<g xmlns="http://www.w3.org/2000/svg">
-</g>
-<g xmlns="http://www.w3.org/2000/svg">
-</g>
-<g xmlns="http://www.w3.org/2000/svg">
-</g>
-</g></svg>
+}hookGeo();})()</script><path xmlns="http://www.w3.org/2000/svg" d="m451.111 193.333h-322.222l112.778-112.777-48.333-48.333-193.334 193.333 193.333 193.333 48.333-48.333-112.777-112.778h322.222z" fill="#525252" data-original="#000000" style="" class=""/></g></svg>

@@ -90,13 +90,17 @@ ul.products {
           order: 1;
           margin-left: 0;
         }
+
+        small {
+          order: 3;
+        }
       }
     }
 
     img {
       max-height: 220px;
       width: auto;
-      margin: 2em 0 1em 0;
+      margin: 1em 0 1em 0;
     }
 
     .woocommerce-loop-product__title {
