@@ -14,8 +14,9 @@
       figure {
         height: 100%;
 
-        .woocommerce-product-gallery__image {
-          @include flexbox;
+        div.woocommerce-product-gallery__image {
+          display: flex !important;
+          align-items: center;
           justify-content: center;
           height: inherit;
         }

@@ -104,3 +104,9 @@ function display_custom_fields() {
 
     }
 }
+
+//Remove gallery zoom
+function remove_zoom_lightbox_gallery_support() {
+   remove_theme_support( 'wc-product-gallery-zoom' );
+}
+add_action( 'wp', 'remove_zoom_lightbox_gallery_support', 99 );
