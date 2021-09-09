@@ -1016,8 +1016,8 @@ body.mm-ocd-opened {
     height: 600px; }
     #main .product .woocommerce-product-gallery figure {
       height: 100%; }
-      #main .product .woocommerce-product-gallery figure .woocommerce-product-gallery__image {
-        display: flex;
+      #main .product .woocommerce-product-gallery figure div.woocommerce-product-gallery__image {
+        display: flex !important;
         align-items: center;
         justify-content: center;
         height: inherit; }

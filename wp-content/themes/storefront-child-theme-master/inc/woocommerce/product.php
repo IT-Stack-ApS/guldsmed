@@ -104,3 +104,9 @@ function display_custom_fields() {
 
     }
 }
+
+add_action( 'wp', 'ts_remove_zoom_lightbox_gallery_support', 99 );
+
+function ts_remove_zoom_lightbox_gallery_support() {
+   remove_theme_support( 'wc-product-gallery-zoom' );
+}
