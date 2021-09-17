@@ -110,3 +110,28 @@ function remove_zoom_lightbox_gallery_support() {
    remove_theme_support( 'wc-product-gallery-zoom' );
 }
 add_action( 'wp', 'remove_zoom_lightbox_gallery_support', 99 );
+
+
+// Add size guide link to product page
+
+function size_guide() {
+    
+    global $post;
+
+    $icon = "<i class='fas fa-ruler size-guide-icon'></i>";
+    $link = "https://guldsmed.itstack.dev/";
+    $link_text = "Find din størrelse";
+    $terms = get_the_terms( $post->ID, 'product_cat' );
+
+    foreach ($terms as $term) {
+       $product_cat_id = $term->term_id;
+
+       if ( $product_cat_id == 54 ) {
+        echo "<p class='size-guide'>" . $icon . "<a href='$link' target='_blank'>" . $link_text . "</a>" . "</p>";
+        }
+    
+    }
+
+}
+
+add_action( 'woocommerce_before_add_to_cart_form', 'size_guide', 30 );

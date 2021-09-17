@@ -1053,6 +1053,18 @@ body.mm-ocd-opened {
       color: rgba(66, 162, 27, 0.73); }
       #main .product .summary .in-stock::before {
         content: "\f00c"; }
+    #main .product .summary .size-guide-icon {
+      background-color: #F3EFE7;
+      width: 30px;
+      height: 30px;
+      padding-left: 5px;
+      line-height: 2;
+      border-radius: 50%;
+      margin-right: 5px; }
+    #main .product .summary .size-guide a {
+      text-decoration: underline; }
+      #main .product .summary .size-guide a:hover {
+        text-decoration: none; }
     #main .product .summary .qty_button {
       display: none; }
     #main .product .summary input[type='number'] {
