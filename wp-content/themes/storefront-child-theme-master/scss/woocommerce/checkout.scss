@@ -83,7 +83,7 @@
           width: 100%;
           margin: 0.5em 0 0 1.6em;
           color: $dark-gray;
-          font-size: $font-size-small;
+          font-size: $font-size-medium-small;
         }
       }
     }
@@ -169,7 +169,7 @@
       }
 
       .order_review_subtitle {
-        font-size: $font-size-small;
+        font-size: $font-size-medium-small;
         color: $dark-gray;
       }
 
@@ -233,7 +233,7 @@
 
       .woocommerce-terms-and-conditions-wrapper {
         p {
-          font-size: $font-size-small;
+          font-size: $font-size-medium-small;
         }
 
         input {
@@ -244,6 +244,10 @@
       }
       #coupon_code {
         background-color: $light-gray;
+      }
+
+      #payment .place-order .button {
+        border-radius: $global-radius;
       }
     }
   }

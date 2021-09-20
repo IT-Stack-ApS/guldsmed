@@ -58,6 +58,9 @@
                 text-decoration: none;
                 font-size: $font-size-base;
                 font-weight: $font-weight-normal-bold;
+                &:hover {
+                  color: #939393;
+                }
               }
             }
           }

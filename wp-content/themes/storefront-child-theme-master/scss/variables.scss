@@ -30,6 +30,7 @@ $green-hover:rgba(66,162,27,0.9);
 
 // Font
 $font-size-base: 1rem; // Assumes the browser default, typically `16px`
+$font-size-medium-small: $font-size-base * 0.85;
 $font-size-small: $font-size-base * 0.75;
 $font-size-xtra-small: $font-size-base * 0.65;
 

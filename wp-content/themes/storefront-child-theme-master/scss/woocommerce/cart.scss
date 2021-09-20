@@ -62,7 +62,7 @@
             }
           }
           .product-price {
-            font-size: $font-size-small;
+            font-size: $font-size-base;
             color: $light-black;
           }
         }
@@ -127,7 +127,7 @@
     }
 
     p {
-      font-size: $font-size-small;
+      font-size: $font-size-medium-small;
       color: $dark-gray;
     }
 
@@ -183,6 +183,7 @@
       .checkout-button {
         background-color: $green;
         font-size: $h5-font-size;
+        border-radius: $global-radius;
 
         &:hover {
           background-color: $green-hover;
@@ -241,10 +242,18 @@
     flex-direction: column;
     align-items: flex-end;
 
+    .woocommerce-Price-amount {
+      font-size: $h5-font-size;
+    }
+
     .includes_tax {
-      font-size: $font-size-xtra-small;
+      font-size: $font-size-small;
       text-transform: $capitalize;
       font-weight: $font-weight-normal;
+
+      .woocommerce-Price-amount {
+        font-size: $font-size-small;
+      }
     }
   }
 
@@ -281,6 +290,7 @@ a.remove::before {
   button {
     padding: 8px 15px;
     text-transform: capitalize;
+    border-radius: $global-radius;
   }
 }
 
