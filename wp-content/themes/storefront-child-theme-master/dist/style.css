@@ -170,6 +170,8 @@ hr {
             text-decoration: none;
             font-size: 1rem;
             font-weight: 500; }
+            .site-footer .col-full .footer-widgets .block .widget .menu li a:hover {
+              color: #939393; }
         .site-footer .col-full .footer-widgets .block .widget::before, .site-footer .col-full .footer-widgets .block .widget::after {
           content: none; }
   .site-footer .footer-widgets-wrapper {
