@@ -183,6 +183,7 @@
       .checkout-button {
         background-color: $green;
         font-size: $h5-font-size;
+        border-radius: $global-radius;
 
         &:hover {
           background-color: $green-hover;
@@ -289,6 +290,7 @@ a.remove::before {
   button {
     padding: 8px 15px;
     text-transform: capitalize;
+    border-radius: $global-radius;
   }
 }
 

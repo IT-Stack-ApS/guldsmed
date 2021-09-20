@@ -245,6 +245,10 @@
       #coupon_code {
         background-color: $light-gray;
       }
+
+      #payment .place-order .button {
+        border-radius: $global-radius;
+      }
     }
   }
   .coupons{

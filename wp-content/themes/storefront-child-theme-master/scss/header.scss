@@ -34,19 +34,19 @@
 
         .header-cart {
           position: relative;
+          color: $blue;
 
           .cart-product-amount {
             position: absolute;
             padding: 1px;
             width: 17px;
             background: #2f2d3200;
-            color: $black;
             font-size: 11px;
             line-height: 10px;
             min-width: 13px;
             text-align: center;
             border-radius: 50%;
-            border: 1px solid #2f2d32;
+            border: 1px solid $blue;
             top: -13px;
             right: -14px;
             height: 17px;

@@ -25,3 +25,11 @@ input {
 hr {
   margin: 0;
 }
+
+//elementor custom button style
+.has-arrow span.elementor-button-icon {
+  transition: all 0.5s ease;
+}
+.has-arrow .elementor-button-link:hover span.elementor-button-icon {
+  transform: translateX(10px);
+}

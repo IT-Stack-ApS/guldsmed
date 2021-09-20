@@ -47,6 +47,12 @@ input {
 hr {
   margin: 0; }
 
+.has-arrow span.elementor-button-icon {
+  transition: all 0.5s ease; }
+
+.has-arrow .elementor-button-link:hover span.elementor-button-icon {
+  transform: translateX(10px); }
+
 .topbar {
   background-color: #F3EFE7;
   padding: 10px 0 10px 0; }
@@ -103,19 +109,19 @@ hr {
       display: flex;
       align-items: center; }
     #masthead .header-wrapper .header-cart {
-      position: relative; }
+      position: relative;
+      color: #788B9B; }
       #masthead .header-wrapper .header-cart .cart-product-amount {
         position: absolute;
         padding: 1px;
         width: 17px;
         background: #2f2d3200;
-        color: #000000;
         font-size: 11px;
         line-height: 10px;
         min-width: 13px;
         text-align: center;
         border-radius: 50%;
-        border: 1px solid #2f2d32;
+        border: 1px solid #788B9B;
         top: -13px;
         right: -14px;
         height: 17px;
@@ -1063,7 +1069,8 @@ body.mm-ocd-opened {
         -webkit-appearance: none;
         margin: 0; }
     #main .product .summary .single_add_to_cart_button {
-      padding: 18px 25px; }
+      padding: 18px 25px;
+      border-radius: 5px; }
     #main .product .summary .shipping-info-wrapper {
       float: right;
       padding: 5px 0; }
@@ -1303,7 +1310,8 @@ body .select2-container--default .select2-results__option--highlighted[aria-sele
   letter-spacing: 1px;
   margin-left: auto;
   margin-top: 2%;
-  display: block; }
+  display: block;
+  border-radius: 5px; }
 
 #progress-bar {
   display: block;
@@ -1444,7 +1452,8 @@ body .select2-container--default .select2-results__option--highlighted[aria-sele
       margin-top: 1.5em; }
       .woocommerce-cart .col-cart-two .cart-proceed-to-checkout .checkout-button {
         background-color: rgba(66, 162, 27, 0.73);
-        font-size: 1.25rem; }
+        font-size: 1.25rem;
+        border-radius: 5px; }
         .woocommerce-cart .col-cart-two .cart-proceed-to-checkout .checkout-button:hover {
           background-color: rgba(66, 162, 27, 0.9); }
     .woocommerce-cart .col-cart-two .cart-selling-point {
@@ -1507,7 +1516,8 @@ a.remove::before {
       background-color: #ffffff; }
   .coupons button {
     padding: 8px 15px;
-    text-transform: capitalize; }
+    text-transform: capitalize;
+    border-radius: 5px; }
 
 form.checkout, form.woocommerce-cart-form {
   display: flex;
@@ -1703,6 +1713,8 @@ form.checkout, form.woocommerce-cart-form {
       display: inline-block; }
     .woocommerce-checkout .order-review-wrapper #order_review #coupon_code {
       background-color: #f9f9f9; }
+    .woocommerce-checkout .order-review-wrapper #order_review #payment .place-order .button {
+      border-radius: 5px; }
 
 .woocommerce-checkout .coupons #coupon_code {
   width: 48%;
