@@ -168,3 +168,17 @@
 .dgwt-wcas-om-bar button.dgwt-wcas-om-return {
   background-color: $blue;
 }
+
+//Cookie bar
+a.cookie_btn {
+  background-color: $blue;
+  color: $white;
+  padding: 7px 14px;
+  border-radius: $global-radius;
+  &:hover {
+    background-color: $blue-hover;
+  }
+}
+.cn-text-container {
+  margin: 0;
+}
