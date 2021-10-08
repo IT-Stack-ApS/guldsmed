@@ -1,0 +1,668 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: gift-wrapper-for-woocommerce\n"
+"POT-Creation-Date: 2021-09-08 13:45+0530\n"
+"PO-Revision-Date: 2018-04-27 12:20+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: zh_TW\n"
+"X-Poedit-KeywordsList: __;_e;_x;esc_html_e;esc_attr_e;esc_html__;esc_attr__;esc_html_x;esc_attr_x\n"
+"X-Poedit-SearchPath-0: gift-wrapper-for-woocommerce.php\n"
+"X-Poedit-SearchPath-1: inc\n"
+"X-Poedit-SearchPath-2: templates\n"
+
+#: inc/abstracts/class-gtw-settings-page.php:207
+msgid "Your settings have been saved"
+msgstr ""
+
+#: inc/abstracts/class-gtw-settings-page.php:228
+msgid "Your settings have been reset"
+msgstr ""
+
+#: inc/admin/class-gtw-admin-ajax.php:66
+msgid "No Products found"
+msgstr ""
+
+#: inc/admin/class-gtw-admin-ajax.php:117
+msgid "No Customer found"
+msgstr ""
+
+#: inc/admin/class-gtw-admin-ajax.php:158
+#: inc/admin/class-gtw-admin-ajax.php:283
+#: inc/admin/class-gtw-admin-ajax.php:324
+#: inc/admin/class-gtw-admin-ajax.php:482
+#: inc/admin/class-gtw-admin-ajax.php:507
+#: inc/admin/class-gtw-admin-ajax.php:515
+#: inc/admin/class-gtw-admin-ajax.php:592
+msgid "Invalid Request"
+msgstr ""
+
+#: inc/admin/class-gtw-admin-ajax.php:163
+#: inc/admin/class-gtw-admin-ajax.php:193
+#: inc/admin/class-gtw-admin-ajax.php:225
+#: inc/admin/class-gtw-admin-ajax.php:256
+#: inc/admin/class-gtw-admin-ajax.php:288
+#: inc/admin/class-gtw-admin-ajax.php:329
+msgid "You don't have permission to do this action"
+msgstr ""
+
+#: inc/admin/class-gtw-admin-ajax.php:220
+msgid "Invalid Key"
+msgstr ""
+
+#: inc/admin/class-gtw-admin-ajax.php:251
+#: inc/admin/class-gtw-admin-ajax.php:261
+#: inc/admin/class-gtw-admin-ajax.php:365
+#: inc/admin/class-gtw-admin-ajax.php:370
+#: inc/admin/class-gtw-admin-ajax.php:406
+#: inc/admin/class-gtw-admin-ajax.php:415
+#: inc/admin/class-gtw-admin-ajax.php:443
+#: inc/admin/class-gtw-admin-ajax.php:448
+#: inc/admin/class-gtw-admin-ajax.php:550
+#: inc/admin/class-gtw-admin-ajax.php:555
+#: inc/admin/class-gtw-admin-ajax.php:633
+#: inc/admin/class-gtw-admin-ajax.php:638
+msgid "Invalid Rule ID"
+msgstr ""
+
+#: inc/admin/class-gtw-admin-ajax.php:375
+#: inc/admin/class-gtw-admin-ajax.php:410
+#: inc/admin/class-gtw-admin-ajax.php:560
+msgid "Invalid Product ID"
+msgstr ""
+
+#: inc/admin/class-gtw-admin-ajax.php:453
+#: inc/admin/class-gtw-admin-ajax.php:649
+#: inc/admin/class-gtw-admin-ajax.php:692
+msgid "Product not configured for order gift wrapper"
+msgstr ""
+
+#: inc/admin/class-gtw-admin-assets.php:94
+msgid "Please create a new product or select an existing product to show Entire Order Gift Wrapper option in cart/checkout page"
+msgstr ""
+
+#: inc/admin/class-gtw-admin-assets.php:95
+msgid "Please enter product name"
+msgstr ""
+
+#: inc/admin/class-gtw-admin-assets.php:96
+msgid "Are you sure you want to create a product?"
+msgstr ""
+
+#: inc/admin/class-gtw-admin-assets.php:97
+msgid "Are you sure you want to delete?"
+msgstr ""
+
+#: inc/admin/class-gtw-admin-assets.php:110
+msgid "No matches found"
+msgstr ""
+
+#: inc/admin/class-gtw-admin-assets.php:111
+msgid "Please enter 1 or more characters"
+msgstr ""
+
+#: inc/admin/class-gtw-admin-assets.php:112
+msgid "Please enter %qty% or more characters"
+msgstr ""
+
+#: inc/admin/class-gtw-admin-assets.php:113
+msgid "Please delete 1 character"
+msgstr ""
+
+#: inc/admin/class-gtw-admin-assets.php:114
+msgid "Please delete %qty% characters"
+msgstr ""
+
+#: inc/admin/class-gtw-admin-assets.php:115
+msgid "You can only select 1 item"
+msgstr ""
+
+#: inc/admin/class-gtw-admin-assets.php:116
+msgid "You can only select %qty% items"
+msgstr ""
+
+#: inc/admin/class-gtw-admin-assets.php:117
+msgid "Loading more results&hellip;"
+msgstr ""
+
+#: inc/admin/class-gtw-admin-assets.php:118
+msgid "Searching&hellip;"
+msgstr ""
+
+#: inc/admin/class-gtw-product-settings.php:41
+#: inc/admin/menu/class-gtw-menu-management.php:68
+msgid "Gift Wrapper"
+msgstr ""
+
+#: inc/admin/menu/tabs/custom-fields.php:24
+#: inc/admin/menu/tabs/custom-fields.php:95
+#: inc/class-gtw-register-post-types.php:97
+msgid "Custom Fields"
+msgstr ""
+
+#: inc/admin/menu/tabs/custom-fields.php:100
+#, php-format
+msgid "Search results for &#8220;%s&#8221;"
+msgstr ""
+
+#: inc/admin/menu/tabs/custom-fields.php:116
+msgid "New Field has been created successfuly"
+msgstr ""
+
+#: inc/admin/menu/tabs/custom-fields.php:144
+msgid "Field Name is mandatory"
+msgstr ""
+
+#: inc/admin/menu/tabs/custom-fields.php:161
+msgid "Field has been updated successfully"
+msgstr ""
+
+#: inc/admin/menu/tabs/designs.php:25
+msgid "Designs"
+msgstr ""
+
+#: inc/admin/menu/tabs/designs.php:118
+msgid "No Gift Wrapper Designs are available. You have to create at least one Design to show Gift Wrapper option in Frontend. You can create designs in \"WooCommerce > Gift Wrapper > Designs\" or else you can create designs for each product in the edit product page."
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:24 inc/class-gtw-install.php:47
+msgid "Settings"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:34
+msgid "General"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:35
+msgid "Localization"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:51
+msgid "General Settings"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:55
+msgid "Gift Wrapper Mode"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:60
+msgid "With Designs"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:61
+msgid "Without Designs"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:65
+msgid "Gift Wrapper Price"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:72
+msgid "Display Gift Wrapper option on Single Product Page"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:79
+msgid "Display Gift Wrapper option for the Entire Order in Cart Page"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:86
+msgid "Position to Display Entire Order Gift Wrapper in Cart Page"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:92
+msgid "Before Cart Table"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:93
+msgid "After Cart Table"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:97
+msgid "Disable the Total Payable"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:104
+msgid "Display Gift Wrapper option for the Entire Order in Checkout Page"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:111
+msgid "Position to Display Entire Order Gift Wrapper in Checkout Page"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:117
+msgid "Before Checkout Form"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:118
+msgid "Before Order Review Heading"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:122
+msgid "Product Type for the Entire Order Gift Wrapper Product"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:128
+msgid "New Product"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:129
+msgid "Existing Product"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:132
+msgid "Whole order gift wrapper requires a product through which the wrapper will be added to cart. If \"New Product\" is selected, a new product will be created. If \"Existing Product\" is selected, an existing product has to be selected."
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:135
+msgid "Product Selection"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:143 inc/admin/menu/tabs/settings.php:197
+#: inc/admin/menu/tabs/settings.php:208
+msgid "Select a Product"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:148
+#: templates/popup/exclude-products-layout.php:14
+#: templates/popup/exclude-products.php:18
+msgid "Product Name"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:155
+msgid "Create Product"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:162
+msgid "Multiply Price Based on Quantity for Entire Order Gift Wrapper"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:168
+msgid "No"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:169
+msgid "Yes"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:173
+msgid "Product(s) to Display the Gift Wrapper option"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:178
+msgid "All Product(s)"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:179
+msgid "Only for Selected Product(s)"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:180
+msgid "Excluding Selected Product(s)"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:181
+msgid "All Categories"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:182
+msgid "Only for Products under Selected Categories"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:183
+msgid "Excluding Products under Selected Categories"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:186
+msgid "Gift wrapping option for whole order in cart/checkout page will not be displayed if any of the non-applicable products are in cart."
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:189 inc/admin/menu/tabs/settings.php:200
+msgid "Select Product(s)"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:211 inc/admin/menu/tabs/settings.php:219
+msgid "Select Categories"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:227
+msgid "Behavior for Entire Order Gift Wrapping when Non-Applicable Product(s) for Gift Wrapping are in Cart"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:233
+msgid "Hide Gift Wrapper option"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:234
+msgid "Hide Gift Wrapper option and show a Notice"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:235
+msgid "Show Gift Wrapper option and show a Notice"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:239
+msgid "Show/Hide Gift Wrapping Enabled for Cart Notice"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:245
+msgid "Show"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:246
+msgid "Hide"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:250
+msgid "Page to Display Gift Wrapping Enabled for Cart Notice"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:256
+msgid "All Pages"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:257
+msgid "Cart & Checkout Page"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:268
+msgid "Troubleshoot"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:272
+msgid "Frontend Scripts Enqueued on"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:277
+msgid "Header"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:278
+msgid "Footer"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:281
+msgid "Choose whether the frontend scripts has to be loaded on Header/Footer"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:291 inc/admin/menu/tabs/settings.php:295
+msgid "Custom CSS"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:319
+msgid "Label Customization"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:323
+msgid "Gift Wrapping Option in Single Product Page Label"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:329
+msgid "Gift Wrapping Option in Cart and Checkout Page Label"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:335
+msgid "Gift Wrap Design Label"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:341
+msgid "See More Label"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:347
+msgid "Select Design Button Label"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:353
+msgid "Total Payable Label"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:359
+msgid "Description to be Displayed in Popup"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:372
+msgid "Notice Customization"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:376
+msgid "Remove Order Gift Wrapper Notice"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:382
+msgid "Label to Append in {remove_link} Shortcode"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:388
+msgid "Order Gift Wrapper Added Notice"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:394
+msgid "Order Gift Wrapper Removed Notice"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:400
+msgid "Order Gift Wrapper Removed Notice when No Valid Products are in the Cart"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:406
+msgid "Order Gift Wrapper Notice when Non-Applicable Product(s) for Gift Wrapping are in the Cart"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:412
+msgid "Label to Append in {non_applicable_products} Shortcode"
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:441
+msgid "Please create a new product or select an existing product to show Entire Order Gift Wrapper option in cart/checkout page."
+msgstr ""
+
+#: inc/admin/menu/tabs/settings.php:446
+msgid "Entire Order Gift Wrapper Product which you have selected is not available for purchase and hence Entire Order Gift Wrapper option will not be displayed for the user. Some of the reasons are Product price is set as empty, the Product is in Trash, the Product is not Published, etc."
+msgstr ""
+
+#: inc/admin/menu/views/edit-custom-field.php:11
+msgid "Edit Custom Field"
+msgstr ""
+
+#: inc/admin/menu/views/edit-custom-field.php:18
+msgid "Field Type"
+msgstr ""
+
+#: inc/admin/menu/views/edit-custom-field.php:27
+msgid "Field Status"
+msgstr ""
+
+#: inc/admin/menu/views/edit-custom-field.php:31
+#: inc/admin/menu/wp-list-table/class-gtw-custom-fields-list-table.php:196
+#: inc/class-gtw-register-post-status.php:64
+msgid "Enabled"
+msgstr ""
+
+#: inc/admin/menu/views/edit-custom-field.php:32
+#: inc/admin/menu/wp-list-table/class-gtw-custom-fields-list-table.php:197
+#: inc/class-gtw-register-post-status.php:85
+msgid "Disabled"
+msgstr ""
+
+#: inc/admin/menu/views/edit-custom-field.php:39
+#: inc/admin/menu/wp-list-table/class-gtw-custom-fields-list-table.php:139
+msgid "Field Name"
+msgstr ""
+
+#: inc/admin/menu/views/edit-custom-field.php:48
+msgid "Description"
+msgstr ""
+
+#: inc/admin/menu/views/edit-custom-field.php:58
+msgid "Character Count"
+msgstr ""
+
+#: inc/admin/menu/views/edit-custom-field.php:70
+msgid "Update Custom Field"
+msgstr ""
+
+#: inc/admin/menu/views/html-gift-wrapping-designs.php:11
+#: inc/admin/menu/views/html-gift-wrapping-designs.php:27
+#: inc/admin/menu/views/html-new-rule.php:12
+#: inc/admin/menu/views/product/html-product-data-gift-wrapper-design.php:12
+#: inc/admin/menu/views/product/html-product-data-gift-wrapper-designs.php:12
+#: inc/admin/menu/views/product/html-product-data-gift-wrapper-designs.php:27
+#: inc/admin/menu/wp-list-table/class-gtw-custom-fields-list-table.php:146
+#: inc/admin/menu/wp-list-table/class-gtw-custom-fields-list-table.php:336
+msgid "Sort"
+msgstr ""
+
+#: inc/admin/menu/views/html-gift-wrapping-designs.php:12
+#: inc/admin/menu/views/product/html-product-data-gift-wrapper-designs.php:13
+msgid "Name"
+msgstr ""
+
+#: inc/admin/menu/views/html-gift-wrapping-designs.php:13
+#: inc/admin/menu/views/product/html-product-data-gift-wrapper-designs.php:14
+msgid "Image"
+msgstr ""
+
+#: inc/admin/menu/views/html-gift-wrapping-designs.php:14
+#: inc/admin/menu/views/product/html-product-data-gift-wrapper-designs.php:15
+msgid "Price"
+msgstr ""
+
+#: inc/admin/menu/views/html-gift-wrapping-designs.php:15
+#: inc/admin/menu/views/product/html-product-data-gift-wrapper-designs.php:16
+msgid "Remove"
+msgstr ""
+
+#: inc/admin/menu/views/html-gift-wrapping-designs.php:39
+#: inc/admin/menu/views/html-new-rule.php:24
+#: inc/admin/menu/views/product/html-product-data-gift-wrapper-design.php:24
+#: inc/admin/menu/views/product/html-product-data-gift-wrapper-designs.php:39
+msgid "Choose Image"
+msgstr ""
+
+#: inc/admin/menu/views/html-gift-wrapping-designs.php:45
+#: inc/admin/menu/views/html-new-rule.php:32
+#: inc/admin/menu/views/product/html-product-data-gift-wrapper-design.php:30
+#: inc/admin/menu/views/product/html-product-data-gift-wrapper-designs.php:45
+msgid "Remove Design"
+msgstr ""
+
+#: inc/admin/menu/views/html-gift-wrapping-designs.php:53
+#: inc/admin/menu/views/product/html-product-data-gift-wrapper-designs.php:54
+msgid "Add Design"
+msgstr ""
+
+#: inc/admin/menu/views/html-settings-buttons.php:10
+msgid "Save changes"
+msgstr ""
+
+#: inc/admin/menu/views/html-settings-buttons.php:20
+msgid "Reset"
+msgstr ""
+
+#: inc/admin/menu/views/product/html-product-data-gift-wrapper.php:15
+msgid "Gift Wrapper Design"
+msgstr ""
+
+#: inc/admin/menu/views/product/html-product-data-gift-wrapper.php:17
+msgid "Use Globally Created Designs"
+msgstr ""
+
+#: inc/admin/menu/views/product/html-product-data-gift-wrapper.php:18
+msgid "Use Product Level Designs"
+msgstr ""
+
+#: inc/admin/menu/views/product/html-product-data-gift-wrapper.php:27
+msgid "List of Designs"
+msgstr ""
+
+#: inc/admin/menu/wp-list-table/class-gtw-custom-fields-list-table.php:140
+msgid "Type"
+msgstr ""
+
+#: inc/admin/menu/wp-list-table/class-gtw-custom-fields-list-table.php:141
+msgid "Status"
+msgstr ""
+
+#: inc/admin/menu/wp-list-table/class-gtw-custom-fields-list-table.php:142
+msgid "Actions"
+msgstr ""
+
+#: inc/admin/menu/wp-list-table/class-gtw-custom-fields-list-table.php:195
+msgid "All"
+msgstr ""
+
+#: inc/admin/menu/wp-list-table/class-gtw-custom-fields-list-table.php:264
+msgid "Sorry, you are not allowed to edit this item."
+msgstr ""
+
+#: inc/class-gtw-register-post-types.php:78
+msgid "Rules"
+msgstr ""
+
+#: inc/frontend/class-gtw-frontend-assets.php:63
+msgid "Are you sure you want to remove order gift wrapper?"
+msgstr ""
+
+#: inc/gtw-common-functions.php:35
+msgid "WooCommerce"
+msgstr ""
+
+#: inc/gtw-layout-functions.php:194
+msgid "Edit"
+msgstr ""
+
+#: inc/gtw-layout-functions.php:197
+msgid "Enable"
+msgstr ""
+
+#: inc/gtw-layout-functions.php:200
+msgid "Disable"
+msgstr ""
+
+#: inc/gtw-layout-functions.php:203
+msgid "Delete Permanently"
+msgstr ""
+
+#: inc/gtw-layout-functions.php:274
+msgid "Text"
+msgstr ""
+
+#: inc/gtw-layout-functions.php:275
+msgid "Textarea"
+msgstr ""
+
+#: inc/privacy/class-gtw-privacy.php:41
+msgid "Gift Wrapper for WooCommerce"
+msgstr ""
+
+#: inc/privacy/class-gtw-privacy.php:59
+msgid "This includes the basics of what personal data your store may be collecting, storing and sharing. Depending on what settings are enabled and which additional plugins are used, the specific information shared by your store will vary."
+msgstr ""
+
+#: inc/privacy/class-gtw-privacy.php:60
+msgid "WHAT DOES THE PLUGIN DO?"
+msgstr ""
+
+#: inc/privacy/class-gtw-privacy.php:61
+msgid "Using this plugin, you can allow your users to gift wrap individual products from the product page or allow your users to gift wrap their entire order. You can also charge a fee for gift wrapping."
+msgstr ""
+
+#: inc/privacy/class-gtw-privacy.php:62
+msgid "WHAT WE COLLECT AND STORE?"
+msgstr ""
+
+#: inc/privacy/class-gtw-privacy.php:63
+msgid "This plugin does not collect or store any personal information about the users."
+msgstr ""
+
+#: templates/popup/exclude-products-layout.php:15
+#: templates/popup/exclude-products.php:19
+msgid "Product Image"
+msgstr ""
