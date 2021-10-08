@@ -1,0 +1,93 @@
+*** Gift Wrapper for WooCommerce ***
+
+2021-09-08 - version 3.2
+ * New   - Product Level Gift Wrapper Designs creation.
+ * New   - Option to Show/Hide Total Payable Price in single product page.
+ * Tweak - Tested with WordPress 5.8.
+ * Tweak - Tested with WooCommerce 5.6.
+ * Tweak - Compatible with PHP V8.x.
+
+2021-07-06 - version 3.1
+ * New   - WPML Multicurrency Compatibility.
+ * Tweak - Code Improvements.
+ * Fix   - Error in Console.
+
+2021-01-30 - version 3.0
+ * Fix - Fatal Error issue.
+ * Fix - Textarea content display issue.
+ * Fix - Plugin conflict with SG Optimizer plugin.
+ * Fix - Plugin conflict with Smart Coupons plugin.
+
+2021-01-01 - version 2.9
+ * Tweak - WPML Compatibility for custom fields.
+
+2020-12-12 - version 2.8
+ * Tweak - Improvement to display Gift Wrapper labels in Mobile View.
+ * Fix   - Gift Wrapper Images not displaying properly in popup in some themes.
+
+2020-12-10 - version 2.7
+ * New   - Gift Wrapper Mode to show Gift Wrapper option Without Designs/With Designs.
+ * New   - Option to show Order Gift Wrapper added notice in All Pages/Cart & Checkout Page
+ * Tweak - Improvements to display Gift Wrapper in Mobile View.
+ * Tweak - Improvements to overcome Gift Wrapper for Variable Product conflicts with some themes.
+
+2020-12-02 - version 2.6
+ * New   - Troubleshoot option to Enqueue the frontend scripts from Header/Footer.
+ * Tweak - Admin notice if no Designs are created.
+ * Fix   - Gift Wrapper not working properly when Ajax Add to Cart is used.
+
+2020-11-03 - version 2.5
+ * New - Filters added to customize Gift Wrapper option in Cart and Checkout Page.
+
+2020-08-10 - version 2.4
+ * New - Added Positions to display Entire Order Gift Wrapper button in Cart and Checkout Page.
+
+2020-07-25 - version 2.3
+ * New    - Option to Multiply Price based on Quantity for Entire Order Gift Wrapper.
+ * New    - Option to Show/Hide Gift Wrapping Enabled for Cart Notice.
+ * Tweak  - Tested up to WooCommerce v4.3.1.
+
+2020-07-04 - version 2.2
+ * Tweak - Product Search conflict with WooCommerce Product Search Plugin.
+
+2020-06-20 - version 2.1
+ * Tweak - Admin notice if invalid product is selected as Entire Order Gift Wrapper Product.
+ * Fix   - Fatal Error when Gift Wrapper is selected for Variable Products  in some cases.
+
+2020-05-09 - version 2.0
+ * New - Controls added for Entire Order Gift Wrapping when non-applicable products are in cart.
+ * New - Description can be given in popup.
+ * Fix - Translation issue.
+
+2020-05-05 - version 1.8
+ * Tweak - First Gift Wrap Design will be selected by default.
+ * Fix   - Undefined Index error in Cart Page.
+
+2020-05-02 - version 1.7
+ * New - Custom Fields added to get First Name, Last Name.
+ * Fix - Pagination Issue.
+
+2020-04-29 - version 1.6
+ * Fix - Gift Wrapper Price added incorrectly when Tax is applied.
+ * Fix - Pagination Issue.
+
+2020-04-15 - version 1.5
+ * Fix - Message display is not working.
+ * Fix - Price Configuration issue.
+
+2020-04-06 - version 1.4
+ * New - Compatibility for WooCommerce Product Bundles plugin.
+
+2020-04-01 - version 1.3
+ * Fix - Wrong Gift Wrapper Price adding in some cases.
+
+2020-03-26 - version 1.2
+ * Tweak - Translation POT File Updated.
+
+2020-03-26 - version 1.1
+ * Tweak - Entire Order Gift Wrapper Product validation added.
+
+2020-03-06 - version 1.0
+ * Initial Release
+
+

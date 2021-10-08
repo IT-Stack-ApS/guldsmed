@@ -72,11 +72,12 @@ ul.products {
 
       .price {
         @include flexbox;
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
 
         bdi {
-          font-size: $h4-font-size
+          font-size: $h6-font-size
         }
 
         del {
@@ -89,6 +90,10 @@ ul.products {
         ins {
           order: 1;
           margin-left: 0;
+        }
+
+        .woocommerce-price-suffix {
+          width: 100%;
         }
 
         small {

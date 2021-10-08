@@ -245,6 +245,17 @@ hr {
 .dgwt-wcas-om-bar button.dgwt-wcas-om-return {
   background-color: #788B9B; }
 
+a.cookie_btn {
+  background-color: #788B9B;
+  color: #ffffff;
+  padding: 7px 14px;
+  border-radius: 5px; }
+  a.cookie_btn:hover {
+    background-color: #6C7D8B; }
+
+.cn-text-container {
+  margin: 0; }
+
 /* Responsive - Tablet */
 @media only screen and (max-width: 1024px) {
   /* Header Tablet */
@@ -1134,6 +1145,19 @@ body.mm-ocd-opened {
     color: #ffffff;
     border-color: #788B9B; }
 
+.product-template-default .woocommerce-message {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse; }
+  .product-template-default .woocommerce-message::before {
+    top: auto; }
+  .product-template-default .woocommerce-message a.button.wc-forward {
+    background-color: rgba(66, 162, 27, 0.73);
+    padding: 8px 16px;
+    border-radius: 5px; }
+    .product-template-default .woocommerce-message a.button.wc-forward:hover {
+      background-color: rgba(66, 162, 27, 0.9); }
+
 /* Product archive */
 .header-widget-region {
   display: none; }
@@ -1193,10 +1217,11 @@ ul.products {
       ul.products li.product .woocommerce-loop-product__link .price {
         display: flex;
         align-items: center;
-        flex-direction: column;
-        justify-content: center; }
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap; }
         ul.products li.product .woocommerce-loop-product__link .price bdi {
-          font-size: 1.5rem; }
+          font-size: 1.125rem; }
         ul.products li.product .woocommerce-loop-product__link .price del {
           order: 2; }
           ul.products li.product .woocommerce-loop-product__link .price del bdi {
@@ -1204,6 +1229,8 @@ ul.products {
         ul.products li.product .woocommerce-loop-product__link .price ins {
           order: 1;
           margin-left: 0; }
+        ul.products li.product .woocommerce-loop-product__link .price .woocommerce-price-suffix {
+          width: 100%; }
         ul.products li.product .woocommerce-loop-product__link .price small {
           order: 3; }
     ul.products li.product img {

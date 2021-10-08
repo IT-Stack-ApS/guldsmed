@@ -1,0 +1,32 @@
+<wpml-config>
+    <admin-texts>
+        <!-- Localization -->
+        
+        <!-- Label Customization -->
+        
+        <key name="gtw_settings_product_gift_wrapper_localization"/>
+        <key name="gtw_settings_order_gift_wrapper_localization"/>
+        <key name="gtw_settings_gift_wrapper_design_localization"/>
+        <key name="gtw_settings_gift_wrapper_see_more_localization"/>
+        <key name="gtw_settings_select_design_button_localization"/>
+        <key name="gtw_settings_gift_wrapper_total_payable_localization"/>
+        <key name="gtw_settings_gift_wrapper_popup_description"/>
+        
+        <!-- Label Customization -->
+        
+        <!-- Notice Customization -->
+        
+        <key name="gtw_settings_order_gift_wrapper_remove_notice_localization"/>
+        <key name="gtw_settings_order_gift_wrapper_remove_link_localization"/>
+        <key name="gtw_settings_order_gift_wrapper_add_notice_localization"/>
+        <key name="gtw_settings_order_gift_wrapper_removed_notice_localization"/>
+        <key name="gtw_settings_order_gift_wrapper_not_eligible_notice_localization"/>
+        <key name="gtw_settings_exclude_order_gift_wrapper_message"/>
+        <key name="gtw_settings_exclude_order_gift_wrapper_click_here_label"/>
+        
+        <!-- Notice Customization -->
+        
+        <!-- Localization -->
+        
+    </admin-texts>
+</wpml-config>
