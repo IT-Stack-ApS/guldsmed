@@ -1041,7 +1041,8 @@ body.mm-ocd-opened {
         justify-content: center;
         height: inherit; }
   #main .product .summary {
-    width: 43%; }
+    width: 43%;
+    /* Gift wrapper */ }
     #main .product .summary .price bdi {
       font-size: 1.5rem;
       color: #000000; }
@@ -1084,6 +1085,9 @@ body.mm-ocd-opened {
       text-decoration: underline; }
       #main .product .summary .size-guide a:hover {
         text-decoration: none; }
+    #main .product .summary .gtw-product-gift-wrapper-enable-field input[type='checkbox'] {
+      width: 20px;
+      height: 20px; }
     #main .product .summary .qty_button {
       display: none; }
     #main .product .summary input[type='number'] {
