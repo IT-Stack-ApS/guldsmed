@@ -32,30 +32,33 @@
         @include flexbox;
       }
 
-        .header-cart {
-          position: relative;
-          color: $blue;
+      .header-cart-wrapper {
+        
+          .header-cart {
+            position: relative;
+            color: $blue;
 
-          .cart-product-amount {
-            position: absolute;
-            padding: 1px;
-            width: 17px;
-            background: #2f2d3200;
-            font-size: 11px;
-            line-height: 10px;
-            min-width: 13px;
-            text-align: center;
-            border-radius: 50%;
-            border: 1px solid $blue;
-            top: -13px;
-            right: -14px;
-            height: 17px;
-            font-weight: $font-weight-normal;
-            z-index: 20;
-          }
+            .cart-product-amount {
+              position: absolute;
+              padding: 1px;
+              width: 17px;
+              background: #2f2d3200;
+              font-size: 11px;
+              line-height: 10px;
+              min-width: 13px;
+              text-align: center;
+              border-radius: 50%;
+              border: 1px solid $blue;
+              top: -13px;
+              right: -14px;
+              height: 17px;
+              font-weight: $font-weight-normal;
+              z-index: 20;
+            }
 
-          i {
-            font-size: $h4-font-size;
+            i {
+              font-size: $h4-font-size;
+            }
           }
         }
       }
