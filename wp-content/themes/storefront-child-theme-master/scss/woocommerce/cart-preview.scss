@@ -95,10 +95,10 @@
     padding: 0.5em;
     display: block;
     text-align: center;
-    background-color: $blue;
+    background-color: $primary;
     color: $white;
     border-radius: $global-radius;
     &:hover {
-      background-color: $blue-dark-hover;
+      background-color: $primary-dark-hover;
     }
 }

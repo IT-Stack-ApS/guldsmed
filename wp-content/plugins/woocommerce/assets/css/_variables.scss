@@ -5,8 +5,8 @@
 $woocommerce:   	#a46497 !default;
 $green:         	#7ad03a !default;
 $red:           	#a00 !default;
-$orange:        	#ffba00 !default;
-$blue:          	#2ea2cc !default;
+$yellow:        	#ffba00 !default;
+$primary:          	#2ea2cc !default;
 
 $primary:           #a46497 !default;                                  // Primary color for buttons (alt)
 $primarytext:       desaturate(lighten($primary, 50%), 18%) !default;    // Text on primary color bg
@@ -25,8 +25,8 @@ $subtext:           #767676 !default;                                  // small,
 	--woocommerce: #{$woocommerce};
 	--wc-green: #{$green};
 	--wc-red: #{$red};
-	--wc-orange: #{$orange};
-	--wc-blue: #{$blue};
+	--wc-orange: #{$yellow};
+	--wc-blue: #{$primary};
 	--wc-primary: #{$primary};
 	--wc-primary-text: #{$primarytext};
 	--wc-secondary: #{$secondary};
