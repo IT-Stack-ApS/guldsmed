@@ -53,7 +53,7 @@
             width: 60%;
             margin-left: 1.5em;
             input.button {
-              background-color: $blue;
+              background-color: $primary;
             }
             .shipmondo-clearfix {
               width: fit-content;
@@ -120,7 +120,7 @@
       border-radius: $global-radius;
 
       &.default {
-        background-color: $blue;
+        background-color: $primary;
       }
       &.failure {
         background-color: $red;
@@ -255,7 +255,7 @@
     #coupon_code {
       width: 48%;
       opacity: 1;
-      color: $green-dark;
+      color: $text;
     }
     button {
       text-transform: capitalize;

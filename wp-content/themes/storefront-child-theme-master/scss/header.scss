@@ -36,7 +36,7 @@
         
           .header-cart {
             position: relative;
-            color: $blue;
+            color: $primary;
 
             .cart-product-amount {
               position: absolute;
@@ -48,7 +48,7 @@
               min-width: 13px;
               text-align: center;
               border-radius: 50%;
-              border: 1px solid $blue;
+              border: 1px solid $primary;
               top: -13px;
               right: -14px;
               height: 17px;

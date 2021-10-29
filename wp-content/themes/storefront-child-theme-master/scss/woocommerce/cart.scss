@@ -282,7 +282,7 @@ a.remove::before {
     box-shadow: none;
     font-weight: $font-weight-normal-bold;
     padding: 10px;
-    color: $green-dark;
+    color: $text;
     &:focus {
       background-color: $white;
     }

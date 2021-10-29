@@ -8,7 +8,7 @@
   padding: 5em;
   @include flexbox;
   justify-content: space-between;
-  background-color: $beige;
+  background-color: $secondary;
   margin-bottom: 2%;
   max-height: 20em;
 
@@ -138,7 +138,7 @@ ul.products {
       justify-content: space-between;
       width: 80%;
       margin-top: auto;
-      color: $green-dark;
+      color: $text;
 
       .badge {
         font-weight: $font-weight-normal-bold;
@@ -217,7 +217,7 @@ span.select2.select2-container.select2-container--default * {
   }
 }
 body .select2-container--default .select2-results__option--highlighted[aria-selected], body .select2-container--default .select2-results__option--highlighted[data-selected] {
-     background-color: $blue;
+     background-color: $primary;
 }
 //archive top widgets end
 
@@ -233,7 +233,7 @@ body .select2-container--default .select2-results__option--highlighted[aria-sele
     color: $gray;
   }
   .chosen:before {
-    color: $blue;
+    color: $primary;
     opacity: 1;
   }
 }
@@ -254,7 +254,7 @@ body .select2-container--default .select2-results__option--highlighted[aria-sele
   &.cat-item.current-cat::before {
     content: "\f054";
     font-family: Font Awesome\ 5 Free;
-    color: $blue;
+    color: $primary;
     opacity: 1;
   }
   &.cat-item::before {
@@ -293,14 +293,14 @@ body .select2-container--default .select2-results__option--highlighted[aria-sele
     border-radius: 20px;
 
     &::-moz-progress-bar {
-      background: $blue;
+      background: $primary;
       border-radius: 20px;
     }
     &::-webkit-progress-bar {
       background: transparent;
     }
     &::-webkit-progress-value {
-      background: $blue;
+      background: $primary;
       border-radius: 20px;
     }
   }
