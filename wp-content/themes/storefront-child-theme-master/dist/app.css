@@ -108,6 +108,8 @@ hr {
       margin-right: 1em;
       display: flex;
       align-items: center; }
+      #masthead .header-wrapper .navigation-header-content ul {
+        transition: none; }
     #masthead .header-wrapper .header-cart-wrapper .header-cart {
       position: relative;
       color: #788B9B; }
