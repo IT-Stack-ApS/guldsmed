@@ -1377,7 +1377,9 @@ body .select2-container--default .select2-results__option--highlighted[aria-sele
     border-radius: 20px; }
 
 .woocommerce-result-count {
-  margin-top: 1em; }
+  margin-top: 1em;
+  float: none;
+  position: absolute; }
 
 /* Cart */
 .woocommerce-cart {
