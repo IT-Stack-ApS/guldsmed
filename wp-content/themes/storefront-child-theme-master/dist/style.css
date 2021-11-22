@@ -1290,6 +1290,13 @@ ul.products {
 .select2-container--open .select2-dropdown--below .select2-search--dropdown.select2-search--hide {
   display: block; }
 
+.select2-container, .select2-dropdown, .select2-search, .select2-results {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important; }
+
 span.select2.select2-container.select2-container--default * {
   height: 40px;
   line-height: 40px; }
