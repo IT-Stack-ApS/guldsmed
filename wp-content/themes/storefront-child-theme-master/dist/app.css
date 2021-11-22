@@ -1924,9 +1924,11 @@ a.preview-cart-btn {
 
 .elementor-products-grid ul.products {
   grid-template-columns: 1fr 1fr 1fr 1fr; }
-  .elementor-products-grid ul.products li.product a.woocommerce-loop-product__link {
-    display: flex;
-    align-items: center; }
+  .elementor-products-grid ul.products li.product {
+    height: auto; }
+    .elementor-products-grid ul.products li.product a.woocommerce-loop-product__link {
+      display: flex;
+      align-items: center; }
 
 /* Responsive - Mobile */
 @media only screen and (max-width: 767px) {
