@@ -3,6 +3,8 @@
   ul.products {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     li.product {
+      height: auto;
+
       a.woocommerce-loop-product__link {
         @include flexbox;
       }
