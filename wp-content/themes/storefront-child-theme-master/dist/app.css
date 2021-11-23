@@ -105,10 +105,11 @@ hr {
     #masthead .header-wrapper .header-search .woocommerce-product-search {
       margin: 0; }
     #masthead .header-wrapper .navigation-header-content {
-      margin-left: auto;
-      margin-right: 1em;
+      margin: 0 1em;
       display: flex;
-      align-items: center; }
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%; }
       #masthead .header-wrapper .navigation-header-content ul {
         transition: none; }
     #masthead .header-wrapper .header-cart-wrapper .header-cart {
