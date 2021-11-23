@@ -111,7 +111,7 @@ hr {
       justify-content: flex-end;
       width: 100%; }
       #masthead .header-wrapper .navigation-header-content .storefront-primary-navigation {
-        widows: inherit; }
+        width: inherit; }
       #masthead .header-wrapper .navigation-header-content ul {
         transition: none; }
     #masthead .header-wrapper .header-cart-wrapper .header-cart {
