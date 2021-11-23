@@ -33,6 +33,10 @@
         justify-content: flex-end;
         width: 100%;
 
+        .storefront-primary-navigation {
+          widows: inherit;
+        }
+
         ul {
           transition: none;
         }
