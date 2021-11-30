@@ -1944,6 +1944,9 @@ a.preview-cart-btn {
     .elementor-products-grid ul.products li.product a.woocommerce-loop-product__link {
       display: flex;
       align-items: center; }
+    .elementor-products-grid ul.products li.product img {
+      margin: auto;
+      margin-bottom: 1em; }
 
 /* Responsive - Mobile */
 @media only screen and (max-width: 767px) {

@@ -8,6 +8,11 @@
       a.woocommerce-loop-product__link {
         @include flexbox;
       }
+
+      img {
+        margin: auto;
+        margin-bottom: 1em;
+      }
     }
   }
 }
