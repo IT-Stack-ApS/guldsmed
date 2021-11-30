@@ -7,6 +7,15 @@
 
       a.woocommerce-loop-product__link {
         @include flexbox;
+
+        .woocommerce-loop-product__title {
+          max-width: 200px;
+        }
+      }
+
+      img {
+        margin: auto;
+        margin-bottom: 1em;
       }
     }
   }
@@ -16,6 +25,10 @@
 @media only screen and (max-width: 767px) {
   section .elementor-row .elementor-element.elementor-wc-products ul.products {
     grid-template-columns: 1fr;
+
+    .woocommerce-loop-product__title {
+      max-width: 170px;
+    }
   }
 }
 
