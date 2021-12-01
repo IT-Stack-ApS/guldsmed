@@ -53,6 +53,11 @@ hr {
 .has-arrow .elementor-button-link:hover span.elementor-button-icon {
   transform: translateX(10px); }
 
+.cookie_btn {
+  color: #788B9B; }
+  .cookie_btn:hover {
+    color: #6C7D8B; }
+
 .topbar {
   background-color: #F3EFE7;
   padding: 10px 0 10px 0; }
@@ -100,7 +105,7 @@ hr {
     #masthead .header-wrapper .image-logo {
       margin-right: 5em; }
       #masthead .header-wrapper .image-logo img {
-        max-height: 50px;
+        max-height: 75px;
         width: auto; }
     #masthead .header-wrapper .header-search {
       padding: 0 1em; }
