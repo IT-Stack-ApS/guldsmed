@@ -33,3 +33,11 @@ hr {
 .has-arrow .elementor-button-link:hover span.elementor-button-icon {
   transform: translateX(10px);
 }
+
+//Cookie button style
+.cookie_btn {
+  color: $primary;
+  &:hover{
+    color: $primary-hover;
+  }
+}

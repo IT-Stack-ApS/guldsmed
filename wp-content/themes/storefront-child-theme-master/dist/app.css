@@ -53,6 +53,11 @@ hr {
 .has-arrow .elementor-button-link:hover span.elementor-button-icon {
   transform: translateX(10px); }
 
+.cookie_btn {
+  color: #788B9B; }
+  .cookie_btn:hover {
+    color: #6C7D8B; }
+
 .topbar {
   background-color: #F3EFE7;
   padding: 10px 0 10px 0; }
@@ -100,7 +105,7 @@ hr {
     #masthead .header-wrapper .image-logo {
       margin-right: 5em; }
       #masthead .header-wrapper .image-logo img {
-        max-height: 50px;
+        max-height: 75px;
         width: auto; }
     #masthead .header-wrapper .header-search {
       padding: 0 1em; }
@@ -603,6 +608,8 @@ a.cookie_btn {
           width: auto;
           max-height: 125px;
           margin: 0.5em 0; }
+  .product-template-default .woocommerce-message {
+    font-size: 0.75rem; }
   .woocommerce-cart .woocommerce-cart-form .col-cart-one, .woocommerce-cart .woocommerce-cart-form .col-cart-two, .woocommerce-cart .woocommerce-cart-form .col2-set, .woocommerce-cart .woocommerce-cart-form .order-review-wrapper, .woocommerce-cart .woocommerce-checkout .col-cart-one, .woocommerce-cart .woocommerce-checkout .col-cart-two, .woocommerce-cart .woocommerce-checkout .col2-set, .woocommerce-cart .woocommerce-checkout .order-review-wrapper, .woocommerce-checkout .woocommerce-cart-form .col-cart-one, .woocommerce-checkout .woocommerce-cart-form .col-cart-two, .woocommerce-checkout .woocommerce-cart-form .col2-set, .woocommerce-checkout .woocommerce-cart-form .order-review-wrapper, .woocommerce-checkout .woocommerce-checkout .col-cart-one, .woocommerce-checkout .woocommerce-checkout .col-cart-two, .woocommerce-checkout .woocommerce-checkout .col2-set, .woocommerce-checkout .woocommerce-checkout .order-review-wrapper {
     width: 100%;
     padding: 1.5em; }
@@ -1042,7 +1049,7 @@ body.mm-ocd-opened {
   overflow: visible; }
   #main .product .woocommerce-product-gallery {
     width: 50%;
-    height: 600px; }
+    height: auto; }
     #main .product .woocommerce-product-gallery figure {
       height: 100%; }
       #main .product .woocommerce-product-gallery figure div.woocommerce-product-gallery__image {
@@ -1168,7 +1175,8 @@ body.mm-ocd-opened {
   .product-template-default .woocommerce-message a.button.wc-forward {
     background-color: rgba(66, 162, 27, 0.73);
     padding: 8px 16px;
-    border-radius: 5px; }
+    border-radius: 5px;
+    margin-right: 1em; }
     .product-template-default .woocommerce-message a.button.wc-forward:hover {
       background-color: rgba(66, 162, 27, 0.9); }
 
@@ -1367,7 +1375,9 @@ body .select2-container--default .select2-results__option--highlighted[aria-sele
 .widget_product_categories ul li a {
   text-decoration: none !important;
   font-weight: 500;
-  text-transform: uppercase; }
+  text-transform: capitalize; }
+  .widget_product_categories ul li a:hover {
+    font-weight: 700; }
 
 .loadmore_button {
   text-transform: uppercase;
@@ -1607,6 +1617,8 @@ form.checkout, form.woocommerce-cart-form {
 .woocommerce-message, .woocommerce-info {
   color: rgba(66, 162, 27, 0.73); }
   .woocommerce-message::before, .woocommerce-info::before {
+    color: rgba(66, 162, 27, 0.73); }
+  .woocommerce-message a.restore-item, .woocommerce-info a.restore-item {
     color: rgba(66, 162, 27, 0.73); }
 
 .woocommerce-error {
