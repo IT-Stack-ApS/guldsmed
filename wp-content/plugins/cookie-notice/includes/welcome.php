@@ -179,58 +179,12 @@ class Cookie_Notice_Welcome {
 								<p>' . __( 'It is the first solution to offer <b>intentional consent</b>, a new consent framework that incorporates the latest guidelines from over 100+ countries, and emerging standards from leading international organizations like the IEEE.', 'cookie-notice' ) . '</p>
 								<p>' . __( 'Cookie Notice includes <b>seamless integration</b> with Cookie Compliance to help your site comply with the latest updates to existing consent laws and provide a beautiful, multi-level experience to engage visitors in data privacy decisions.', 'cookie-notice' ) . '</p>
 							</div>';
-							/*
-							<div class="cn-lead">
-								<p>' . __( 'Rules and regulations around cookie consent are <b>becoming more strict</b>, and enforcement of violations is rapidly increasing. So far in 2021, companies have paid fines totaling over €18M.', 'cookie-notice' ) . '</p>
-								<p>' . __( 'If your website collects visitor data and does not (1) <b>Autoblock</b> cookies, (2) enable visitors to consent by <b>Cookie Category</b>, and/or (3) store <b>Proof-of-Consent</b>, your business is at risk.', 'cookie-notice' ) . '</p>
-								<p>' . sprintf( __( 'Cookie Notice %s includes integration with <b>Cookie Compliance&trade;</b> web application that will help your site meet minimum viable compliance based on updates to existing laws (GDPR, CCPA) and introduction of new laws (ePrivacy, PECR).', 'cookie-notice' ),  Cookie_Notice()->defaults['version'] ) . '</p>	
-							</div>
-							*/
 				$html .= '
 							<div class="cn-buttons">
-								<button type="button" class="cn-btn cn-btn-lg cn-screen-button" data-screen="3"><span class="cn-spinner"></span>' . __( 'Sign up to Cookie Compliance', 'cookie-notice' ) . '</button><br />
+								<button type="button" class="cn-btn cn-btn-lg cn-screen-button" data-screen="2"><span class="cn-spinner"></span>' . __( 'Sign up to Cookie Compliance', 'cookie-notice' ) . '</button><br />
 								<button type="button" class="cn-btn cn-btn-lg cn-btn-transparent cn-skip-button">' . __( 'Skip for now', 'cookie-notice' ) . '</button>
 							</div>
 							';
-				/*
-				$html .= '
-							<div class="cn-hero-image">
-								<div class="cn-flex-item">
-									<div class="cn-logo-container">
-										<img src="' . plugins_url( '../img/cookie-notice-logo-dark.png', __FILE__ ) . '">
-										<span class="cn-badge">' . __( 'WP Plugin', 'cookie-notice' ) . '</span>
-									</div>
-									<img src="' . plugins_url( '../img/screen-notice.png', __FILE__ ) . '" alt="Cookie Notice dashboard" />
-									<ul>
-										<li><span>' . __( 'Customizable notice message', 'cookie-notice' ) . '</span></li>
-										<li><span>' . __( 'Consent on click, scroll or close', 'cookie-notice' ) . '</span></li>
-										<li><span>' . __( 'Multiple cookie expiry options', 'cookie-notice' ) . '</span></li>
-										<li><span>' . __( 'Link to Privacy Policy page', 'cookie-notice' ) . '</span></li>
-									</ul>
-								</div>
-								<div class="cn-flex-item">
-									<img src="//cno0-53eb.kxcdn.com/screen-plus.png" alt="Cookie Notice + Compliance" />
-								</div>
-								<div class="cn-flex-item">
-									<div class="cn-logo-container">
-										<img src="' . plugins_url( '../img/cookie-compliance-logo-dark.png', __FILE__ ) . '">
-										<span class="cn-badge">' . __( 'Web App', 'cookie-notice' ) . '</span>
-									</div>
-									<img src="' . plugins_url( '../img/screen-compliance.png', __FILE__ ) . '"alt="Cookie Compliance dashboard" />
-									<ul>
-										<li><span>' . __( 'Customizable <b>GDPR & CCPA</b> notice templates', 'cookie-notice' ) . '</span></li>
-										<li><span>' . __( '<b>Consent Analytics</b> Dashboard', 'cookie-notice' ) . '</span></li>
-										<li><span>' . __( 'Cookie <b>Autoblocking</b> (complies with GDPR Art.7)', 'cookie-notice' ) . '</span></li>
-										<li><span>' . __( '<b>Cookie Categories</b> (complies with GDPR Art.32)', 'cookie-notice' ) . '</span></li>
-										<li><span>' . __( '<b>Proof-of-Consent</b> Storage (complies with GDPR Art.30)', 'cookie-notice' ) . '</span></li>
-										<li><span>' . __( "Link to <b>'Do Not Sell'</b> page (supports CCPA Sec.1798)", 'cookie-notice' ) . '</span></li>
-										<li><span>' . __( 'Enhanced design controls and options', 'cookie-notice' ) . '</span></li>
-										<li><span>' . __( 'Multiple new banner positions', 'cookie-notice' ) . '</span></li>
-										<li><span>' . __( 'Custom language localization', 'cookie-notice' ) . '</span></li>
-									</ul>
-								</div>
-							</div>
-				*/
 			
 				$html .= '
 						</div>
@@ -313,7 +267,7 @@ class Cookie_Notice_Welcome {
 										<div class="cn-pricing-body">
 											<p class="cn-included"><span class="cn-icon"></span>' . __( 'GDPR, CCPA, ePrivacy, PECR compliance', 'cookie-notice' ) . '</p>
 											<p class="cn-included"><span class="cn-icon"></span>' . __( 'Consent Analytics Dashboard', 'cookie-notice' ) . '</p>
-											<p class="cn-excluded"><span class="cn-icon"></span>' . __( '<b>10,000</b> visits', 'cookie-notice' ) . '</p>
+											<p class="cn-excluded"><span class="cn-icon"></span>' . __( '<b>1,000</b> visits / month', 'cookie-notice' ) . '</p>
 											<p class="cn-excluded"><span class="cn-icon"></span>' . __( '<b>30 days</b> consent storage', 'cookie-notice' ) . '</p>	
 											<p class="cn-excluded"><span class="cn-icon"></span>' . __( '<b>1 additional</b> language', 'cookie-notice' ) . '</p>
 											<p class="cn-excluded"><span class="cn-icon"></span>' . __( '<b>Basic</b> Support', 'cookie-notice' ) . '</p>
@@ -474,27 +428,22 @@ class Cookie_Notice_Welcome {
 													<label for="cn_laws_ccpa"><input id="cn_laws_ccpa" type="checkbox" name="cn_laws" value="ccpa" title="' . __( 'CCPA', 'cookie-notice' ) . '"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAwCAYAAACScGMWAAACPElEQVRYheXYvXHbMBTAcY7AEbSA79Smskp30QiqkyLaQPQE8Qb2BtEG4QZil3Ry5ZZaAO/vAqANIwSJD1LmXXD3ToVE8sf3hEcQRVEUBXADfE+Mu2LOAVSkj/q/xj0sGVcvEgeUGTAvDlgBP4CD+Vyl4HaZuNa9WRH5JSK4oZT6CZQxuN+ZOBzYqQ9mxSkYmAuzcUqpyoE0InIUkWcng1UoLresWFlrOwCwczLa2EAispczWzvcxs5YzzXWDm4bistpwk1RfCypr2yppc3BVUvDXYAtsO7OsSRcbY5bAbfArYicrYu36Ob7Fj297wx8Ncf7JwewScGJSD3S00LjOJa9p0/E1SHlDQWm4rqmHI+LAKbgGsx/y23IMbiQVUos7g2G04yjcOYEObga2InIxQNrc3FjK2MvDtP7DOQYAIvGlcBzYub+WRKNwOJw5oRDvW8Ih4icImDxOHNiX3nHcF0GDwGwZJyvvCG4aZuwB9i31lsMbu/DAXsD9IZS6kEpVQ0FoQvPHlxfaU/jR15peGbuGf3mlhqHKYF95c0dj1MCY5ZV1wUy/uT4dOB2BtykwDmyNw0QOM6EyweS9547L/AKOID7VNwcLcUdf1Jxa3T27MjaDOoZL0m4AXRJ3uZ3Pg69p9fy/pxssVYW6GdxbrvJwjXoUnZh40oTFXrT53q4EXiNtYltkCkTaDoc71v734B9z/ex7WdSXHfxzcBvYsbfKXHlECwAd0H/JZ7MjX6ZDBcy0DPYBmyHbugVe8KbbhsHbZ0AAAAASUVORK5CYII=" width="24" height="24"><span>' . __( 'CCPA', 'cookie-notice' ) . '</span></label>
 												</div>
 											</div>
-											<div id="cn_purposes" class="cn-field cn-field-checkbox">
-												<label>' . __( 'Select the type of of services your website is using', 'cookie-notice' ) . ':</label>
-												<div class="cn-checkbox-wrapper">
-													<label for="cn_purposes_functional"><input id="cn_purposes_functional" type="checkbox" name="cn_purposes" value="1" checked><span>' . __( 'I use personalization services on my site​', 'cookie-notice' ) . '</span></label>
-													<label for="cn_purposes_analytics"><input id="cn_purposes_analytics" type="checkbox" name="cn_purposes" value="2"><span>' . __( 'I collect and analyse information about my website’s traffic', 'cookie-notice' ) . '</span></label>
-													<label for="cn_purposes_marketing"><input id="cn_purposes_marketing" type="checkbox" name="cn_purposes" value="3"><span>' . __( 'I run targeted ads on my site using, for example, Google Adsense​', 'cookie-notice' ) . '</span></label>
+											<div id="cn_naming" class="cn-field cn-field-radio">
+												<label class="cn-asterix">' . __( 'Select a naming style for the consent choices', 'cookie-notice' ) . ':</label>
+												<div class="cn-radio-wrapper">
+													<label for="cn_naming_1"><input id="cn_naming_1" type="radio" name="cn_naming" value="1" checked><span>' . __( 'Silver, Gold, Platinum (Default)​', 'cookie-notice' ) . '</span></label>
+													<label for="cn_naming_2"><input id="cn_naming_2" type="radio" name="cn_naming" value="2"><span>' . __( 'Private, Balanced, Personalized', 'cookie-notice' ) . '</span></label>
+													<label for="cn_naming_3"><input id="cn_naming_3" type="radio" name="cn_naming" value="3"><span>' . __( 'Reject All, Accept Some, Accept All​', 'cookie-notice' ) . '</span></label>
 												</div>
 											</div>
 											<div class="cn-field cn-field-checkbox">
-												<label class="cn-asterix">' . __( 'Enable Cookie Categories (complies with GDPR Art.32)', 'cookie-notice' ) . '</label>
+												<label>' . __( 'Select additional information to include in the banner:', 'cookie-notice' ) . '</label>
 												<div class="cn-checkbox-wrapper">
-													<label for="cn_customize_consent"><input id="cn_customize_consent" type="checkbox" name="cn_customize_consent" value="1" checked><span>' . __( 'Give your visitors the ability to customize their consent based on cookie purpose categories.', 'cookie-notice' ) . '</span></label>
+													<label for="cn_privacy_paper"><input id="cn_privacy_paper" type="checkbox" name="cn_privacy_paper" value="1"><span>' . __( 'Display <b>Privacy Paper</b> to provide helpful data privacy and consent information to visitors.', 'cookie-notice' ) . '</span></label>
+													<label for="cn_privacy_contact"><input id="cn_privacy_contact" type="checkbox" name="cn_privacy_contact" value="1"><span>' . __( 'Display <b>Privacy Contact</b> to provide Data Controller contact information and links to external data privacy resources.', 'cookie-notice' ) . '</span></label>
 												</div>
 											</div>
-											<div class="cn-field cn-field-checkbox">
-												<label class="cn-asterix">' . __( 'Enable Autoblocking (complies with GDPR Art.7)', 'cookie-notice' ) . '</label>
-												<div class="cn-checkbox-wrapper">
-													<label for="cn_autoblocking"><input id="cn_customize_consent" type="checkbox" name="cn_autoblocking" value="1" checked><span>' . __( 'Automatically block 3rd party scripts before user consent.', 'cookie-notice' ) . '</span></label>
-												</div>
-											</div>
-											<div class="cn-small">* ' . __( 'available in Cookie Compliance&trade; only', 'cookie-notice' ) . '</div>
+											<div class="cn-small">* ' . __( 'available for Cookie Compliance&trade; Pro plans only', 'cookie-notice' ) . '</div>
 										</div>
 									</div>
 									<div class="cn-accordion-item cn-form-container cn-collapsed" tabindex="-1">
@@ -506,23 +455,23 @@ class Cookie_Notice_Welcome {
 												<div class="cn-radio-image-wrapper">
 													<label for="cn_position_bottom"><input id="cn_position_bottom" type="radio" name="cn_position" value="bottom" title="' . __( 'Bottom', 'cookie-notice' ) . '" checked><img src="' . plugins_url( '../img/layout-bottom.png', __FILE__ ) . '" width="24" height="24"></label>
 													<label for="cn_position_top"><input id="cn_position_top" type="radio" name="cn_position" value="top" title="' . __( 'Top', 'cookie-notice' ) . '"><img src="' . plugins_url( '../img/layout-top.png', __FILE__ ) . '" width="24" height="24"></label>
-													<label for="cn_position_left" class="cn-asterix"><input id="cn_position_left" type="radio" name="cn_position" value="left" title="' . __( 'Left', 'cookie-notice' ) . '"><img src="' . plugins_url( '../img/layout-left.png', __FILE__ ) . '" width="24" height="24"></label>
-													<label for="cn_position_right" class="cn-asterix"><input id="cn_position_right" type="radio" name="cn_position" value="right" title="' . __( 'Right', 'cookie-notice' ) . '"><img src="' . plugins_url( '../img/layout-right.png', __FILE__ ) . '" width="24" height="24"></label>
-													<label for="cn_position_center" class="cn-asterix"><input id="cn_position_center" type="radio" name="cn_position" value="center" title="' . __( 'Center', 'cookie-notice' ) . '"><img src="' . plugins_url( '../img/layout-center.png', __FILE__ ) . '" width="24" height="24"></label>
+													<label for="cn_position_left"><input id="cn_position_left" type="radio" name="cn_position" value="left" title="' . __( 'Left', 'cookie-notice' ) . '"><img src="' . plugins_url( '../img/layout-left.png', __FILE__ ) . '" width="24" height="24"></label>
+													<label for="cn_position_right"><input id="cn_position_right" type="radio" name="cn_position" value="right" title="' . __( 'Right', 'cookie-notice' ) . '"><img src="' . plugins_url( '../img/layout-right.png', __FILE__ ) . '" width="24" height="24"></label>
+													<label for="cn_position_center"><input id="cn_position_center" type="radio" name="cn_position" value="center" title="' . __( 'Center', 'cookie-notice' ) . '"><img src="' . plugins_url( '../img/layout-center.png', __FILE__ ) . '" width="24" height="24"></label>
 												</div>
 											</div>
 											<div class="cn-field cn-fieldset">
 												<label>' . __( 'Adjust the banner color scheme', 'cookie-notice' ) . '​:</label>
 												<div class="cn-checkbox-wrapper cn-color-picker-wrapper">
 													<label for="cn_color_primary"><input id="cn_color_primary" class="cn-color-picker" type="checkbox" name="cn_color_primary" value="#20c19e"><span>' . __( 'Color of the buttons and interactive elements.', 'cookie-notice' ) . '</span></label>
-													<label for="cn_color_background"><input id="cn_color_background" class="cn-color-picker" type="checkbox" name="cn_color_background" value="#32323a"><span>' . __( 'Color of the banner background.', 'cookie-notice' ) . '</span></label>
-													<label for="cn_color_border"><input id="cn_color_border" class="cn-color-picker" type="checkbox" name="cn_color_border" value="#86858b"><span class="cn-asterix">' . __( 'Color of the borders and inactive elements.', 'cookie-notice' ) . '</span></label>
-													<label for="cn_color_text"><input id="cn_color_text" class="cn-color-picker" type="checkbox" name="cn_color_text" value="#ffffff"><span class="cn-asterix">' . __( 'Color of the body text.', 'cookie-notice' ) . '</span></label>
-													<label for="cn_color_heading"><input id="cn_color_heading" class="cn-color-picker" type="checkbox" name="cn_color_heading" value="#86858b"><span class="cn-asterix">' . __( 'Color of the heading text.', 'cookie-notice' ) . '</span></label>
+													<label for="cn_color_background"><input id="cn_color_background" class="cn-color-picker" type="checkbox" name="cn_color_background" value="#ffffff"><span>' . __( 'Color of the banner background.', 'cookie-notice' ) . '</span></label>
+													<label for="cn_color_text"><input id="cn_color_text" class="cn-color-picker" type="checkbox" name="cn_color_text" value="#434f58"><span>' . __( 'Color of the body text.', 'cookie-notice' ) . '</span></label>
+													<label for="cn_color_border"><input id="cn_color_border" class="cn-color-picker" type="checkbox" name="cn_color_border" value="#5e6a74"><span class="cn-asterix">' . __( 'Color of the borders and inactive elements.', 'cookie-notice' ) . '</span></label>
+													<label for="cn_color_heading"><input id="cn_color_heading" class="cn-color-picker" type="checkbox" name="cn_color_heading" value="#434f58"><span class="cn-asterix">' . __( 'Color of the heading text.', 'cookie-notice' ) . '</span></label>
 													<label for="cn_color_button_text"><input id="cn_color_button_text" class="cn-color-picker" type="checkbox" name="cn_color_button_text" value="#ffffff"><span class="cn-asterix">' . __( 'Color of the button text.', 'cookie-notice' ) . '</span></label>
 												</div>
 											</div>
-											<div class="cn-small">* ' . __( 'available in Cookie Compliance&trade; only', 'cookie-notice' ) . '</div>
+											<div class="cn-small">* ' . __( 'available for Cookie Compliance&trade; Pro plans only', 'cookie-notice' ) . '</div>
 										</div>
 									</div>
 								</div>

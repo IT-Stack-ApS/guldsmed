@@ -92,7 +92,7 @@ class Icons_Manager {
 	 * @since 2.4.0
 	 */
 	private static function init_tabs() {
-		self::$tabs = apply_filters( 'elementor/icons_manager/native', [
+		$initial_tabs = [
 			'fa-regular' => [
 				'name' => 'fa-regular',
 				'label' => esc_html__( 'Font Awesome - Regular', 'elementor' ),
@@ -129,7 +129,18 @@ class Icons_Manager {
 				'fetchJson' => self::get_fa_asset_url( 'brands', 'js', false ),
 				'native' => true,
 			],
-		] );
+		];
+
+		/**
+		 * Initial icon manager tabs.
+		 *
+		 * Filters the list of initial icon manager tabs.
+		 *
+		 * @param array $icon_manager_tabs Initial icon manager tabs.
+		 */
+		$initial_tabs = apply_filters( 'elementor/icons_manager/native', $initial_tabs );
+
+		self::$tabs = $initial_tabs;
 	}
 
 	/**
@@ -143,7 +154,16 @@ class Icons_Manager {
 			self::init_tabs();
 		}
 
-		$additional_tabs = apply_filters( 'elementor/icons_manager/additional_tabs', [] );
+		$additional_tabs = [];
+
+		/**
+		 * Additional icon manager tabs.
+		 *
+		 * Filters additional icon manager tabs.
+		 *
+		 * @param array $additional_tabs Additional icon manager tabs. Default is an empty array.
+		 */
+		$additional_tabs = apply_filters( 'elementor/icons_manager/additional_tabs', $additional_tabs );
 
 		return array_merge( self::$tabs, $additional_tabs );
 	}
@@ -429,7 +449,11 @@ class Icons_Manager {
 			$migration_allowed = null === self::get_needs_upgrade_option();
 
 			/**
-			 * allowed to filter migration allowed
+			 * Is icon migration allowed.
+			 *
+			 * Filters whther the icons migration allowed.
+			 *
+			 * @param bool $migration_allowed Is icon migration is allowed.
 			 */
 			$migration_allowed = apply_filters( 'elementor/icons_manager/migration_allowed', $migration_allowed );
 		}
@@ -451,7 +475,7 @@ class Icons_Manager {
 				'label' => esc_html__( 'Load Font Awesome 4 Support', 'elementor' ),
 				'field_args' => [
 					'type' => 'select',
-					'std' => 'yes',
+					'std' => '',
 					'options' => [
 						'' => esc_html__( 'No', 'elementor' ),
 						'yes' => esc_html__( 'Yes', 'elementor' ),
@@ -469,15 +493,15 @@ class Icons_Manager {
 			'callback' => function() {
 				echo '<h2>' . esc_html__( 'Font Awesome Upgrade', 'elementor' ) . '</h2>';
 				echo '<p>' . // PHPCS - Plain Text
-				__( 'Access 1,500+ amazing Font Awesome 5 icons and enjoy faster performance and design flexibility.', 'elementor' ) . '<br>' . // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				__( 'By upgrading, whenever you edit a page containing a Font Awesome 4 icon, Elementor will convert it to the new Font Awesome 5 icon.', 'elementor' ) . // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				esc_html__( 'Access 1,500+ amazing Font Awesome 5 icons and enjoy faster performance and design flexibility.', 'elementor' ) . '<br>' . // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				esc_html__( 'By upgrading, whenever you edit a page containing a Font Awesome 4 icon, Elementor will convert it to the new Font Awesome 5 icon.', 'elementor' ) . // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				'</p><p><strong>' .
-				__( 'Please note that the upgrade process may cause some of the previously used Font Awesome 4 icons to look a bit different due to minor design changes made by Font Awesome.', 'elementor' ) . // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				esc_html__( 'Please note that the upgrade process may cause some of the previously used Font Awesome 4 icons to look a bit different due to minor design changes made by Font Awesome.', 'elementor' ) . // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				'</strong></p><p>' .
-				__( 'The upgrade process includes a database update', 'elementor' ) . ' - ' . // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				__( 'We highly recommend backing up your database before performing this upgrade.', 'elementor' ) . // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				esc_html__( 'The upgrade process includes a database update', 'elementor' ) . ' - ' . // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				esc_html__( 'We highly recommend backing up your database before performing this upgrade.', 'elementor' ) . // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				'</p>' .
-				__( 'This action is not reversible and cannot be undone by rolling back to previous versions.', 'elementor' ) . // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				esc_html__( 'This action is not reversible and cannot be undone by rolling back to previous versions.', 'elementor' ) . // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				'</p>';
 			},
 			'fields' => [
@@ -488,7 +512,7 @@ class Icons_Manager {
 						'html' => sprintf( '<span data-action="%s" data-_nonce="%s" class="button" id="elementor_upgrade_fa_button">%s</span>',
 							self::NEEDS_UPDATE_OPTION . '_upgrade',
 							wp_create_nonce( self::NEEDS_UPDATE_OPTION ),
-							__( 'Upgrade To Font Awesome 5', 'elementor' )
+							esc_html__( 'Upgrade To Font Awesome 5', 'elementor' )
 						),
 					],
 				],

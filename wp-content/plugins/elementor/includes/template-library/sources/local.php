@@ -280,7 +280,18 @@ class Source_Local extends Source_Base {
 		 */
 		$args = apply_filters( 'elementor/template_library/sources/local/register_taxonomy_args', $args );
 
-		$cpts_to_associate = apply_filters( 'elementor/template_library/sources/local/register_taxonomy_cpts', [ self::CPT ] );
+		$cpts_to_associate = [ self::CPT ];
+
+		/**
+		 * Custom post types to associate.
+		 *
+		 * Filters the list of custom post types when registering elementor template library taxonomy.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param array $cpts_to_associate Custom post types. Default is `elementor_library` post type.
+		 */
+		$cpts_to_associate = apply_filters( 'elementor/template_library/sources/local/register_taxonomy_cpts', $cpts_to_associate );
 
 		register_taxonomy( self::TAXONOMY_TYPE_SLUG, $cpts_to_associate, $args );
 
@@ -1295,7 +1306,7 @@ class Source_Local extends Source_Base {
 					printf( esc_html__( 'Create Your First %s', 'elementor' ), esc_html( $current_type_label ) );
 					?>
 				</h2>
-				<p><?php echo esc_html( $description ); ?></p>
+				<p><?php echo wp_kses_post( $description ); ?></p>
 				<a id="elementor-template-library-add-new" class="elementor-button elementor-button-success" href="<?php echo esc_url( $href ); ?>">
 					<?php
 					/* translators: %s: Template type label. */

@@ -50,6 +50,7 @@
 				// Then disable either all or non-required fields
 				WCQP_MPCheckout.performActionOnFields(WCQP_MPCheckout.disableField);
 				$body.trigger('wcqp_mobilepay_fields_disabled');
+				WCQP_MPCheckout.tickTerms();
 			} else {
 				WCQP_MPCheckout.removeHiddenCountryField();
 				WCQP_MPCheckout.performActionOnFields(WCQP_MPCheckout.enableField);
@@ -148,6 +149,9 @@
 				callback($('#' + fieldSelector));
 			} )
 		},
+		tickTerms: function() {
+			$('[name="terms"]').prop('checked', true).change();
+		},
 		/**
 		 * Sets the billing country to DK
 		 */
@@ -163,7 +167,9 @@
 		forceCheckout(e) {
 			e.preventDefault();
 			var $form = $('form.checkout');
-			$form.find('[name="payment_method"][value="mobilepay_checkout"]').prop('checked', true).change();
+			$form.find('[name="payment_method"][value="mobilepay_checkout"]').prop('checked', true);
+			$form.find('[name="payment_method"]').change();
+			WCQP_MPCheckout.tickTerms();
 			$form.submit();
 		},
 		/**

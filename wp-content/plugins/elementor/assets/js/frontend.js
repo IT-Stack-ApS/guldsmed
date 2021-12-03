@@ -1,4 +1,4 @@
-/*! elementor - v3.4.2 - 19-08-2021 */
+/*! elementor - v3.4.8 - 16-11-2021 */
 (self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["frontend"],{
 
 /***/ "../assets/dev/js/frontend/documents-manager.js":
@@ -273,6 +273,8 @@ var _youtubeLoader = _interopRequireDefault(__webpack_require__(/*! ./utils/vide
 
 var _vimeoLoader = _interopRequireDefault(__webpack_require__(/*! ./utils/video-api/vimeo-loader */ "../assets/dev/js/frontend/utils/video-api/vimeo-loader.js"));
 
+var _baseLoader = _interopRequireDefault(__webpack_require__(/*! ./utils/video-api/base-loader */ "../assets/dev/js/frontend/utils/video-api/base-loader.js"));
+
 var _urlActions = _interopRequireDefault(__webpack_require__(/*! ./utils/url-actions */ "../assets/dev/js/frontend/utils/url-actions.js"));
 
 var _swiperBc = _interopRequireDefault(__webpack_require__(/*! ./utils/swiper-bc */ "../assets/dev/js/frontend/utils/swiper-bc.js"));
@@ -451,6 +453,7 @@ class Frontend extends elementorModules.ViewModule {
     this.utils = {
       youtube: new _youtubeLoader.default(),
       vimeo: new _vimeoLoader.default(),
+      baseVideoLoader: new _baseLoader.default(),
       anchors: new AnchorsModule(),
 
       get lightbox() {
@@ -882,7 +885,15 @@ class GlobalHandler extends elementorModules.frontend.handlers.Base {
     super.onInit(...args);
 
     if (this.getAnimation()) {
-      elementorFrontend.waypoint(this.$element, () => this.animate());
+      const observer = elementorModules.utils.Scroll.scrollObserver({
+        callback: event => {
+          if (event.isInViewport) {
+            this.animate();
+            observer.unobserve(this.$element[0]);
+          }
+        }
+      });
+      observer.observe(this.$element[0]);
     }
   }
 
@@ -1007,12 +1018,11 @@ class BackgroundVideo extends elementorModules.frontend.handlers.Base {
     }
   }
 
-  prepareVimeoVideo(Vimeo, videoId) {
+  prepareVimeoVideo(Vimeo, videoLink) {
     const elementSettings = this.getElementSettings(),
-          startTime = elementSettings.background_video_start ? elementSettings.background_video_start : 0,
           videoSize = this.elements.$backgroundVideoContainer.outerWidth(),
           vimeoOptions = {
-      id: videoId,
+      url: videoLink,
       width: videoSize.width,
       autoplay: true,
       loop: !elementSettings.background_play_once,
@@ -1133,7 +1143,7 @@ class BackgroundVideo extends elementorModules.frontend.handlers.Base {
         }
 
         if ('vimeo' === this.videoType) {
-          this.prepareVimeoVideo(apiObject, videoID);
+          this.prepareVimeoVideo(apiObject, videoLink);
         }
       });
     } else {
@@ -1242,15 +1252,21 @@ class HandlesPosition extends elementorModules.frontend.handlers.Base {
       return;
     }
 
+    const insideHandleClass = 'elementor-section--handles-inside',
+          $handlesElement = this.$element.find('> .elementor-element-overlay > .elementor-editor-section-settings');
+
+    if (elementor.settings.page.model.attributes.scroll_snap) {
+      this.$element.addClass(insideHandleClass);
+      return;
+    }
+
     const isOverflowHidden = this.isOverflowHidden();
 
     if (!isOverflowHidden && !this.isFirstSection()) {
       return;
     }
 
-    const offset = isOverflowHidden ? 0 : this.getOffset(),
-          $handlesElement = this.$element.find('> .elementor-element-overlay > .elementor-editor-section-settings'),
-          insideHandleClass = 'elementor-section--handles-inside';
+    const offset = isOverflowHidden ? 0 : this.getOffset();
 
     if (offset < 25) {
       this.$element.addClass(insideHandleClass);
@@ -1929,6 +1945,10 @@ class _default extends elementorModules.ViewModule {
         if (settings.id) {
           lightbox.openSlideshow(settings.id, settings.url);
         } else {
+          if (settings.html) {
+            delete settings.html;
+          }
+
           lightbox.showModal(settings);
         }
       }
@@ -2078,6 +2098,10 @@ class BaseLoader extends elementorModules.ViewModule {
     }
   }
 
+  getAutoplayURL(videoURL) {
+    return videoURL.replace('&autoplay=0', '') + '&autoplay=1';
+  }
+
 }
 
 exports.default = BaseLoader;
@@ -2117,6 +2141,13 @@ class VimeoLoader extends _baseLoader.default {
 
   getApiObject() {
     return Vimeo;
+  }
+
+  getAutoplayURL(videoURL) {
+    videoURL = super.getAutoplayURL(videoURL); // Vimeo requires the '#t=' param to be last in the URL.
+
+    const timeMatch = videoURL.match(/#t=[^&]*/);
+    return videoURL.replace(timeMatch[0], '') + timeMatch;
   }
 
 }

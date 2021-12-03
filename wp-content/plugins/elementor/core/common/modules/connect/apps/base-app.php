@@ -76,6 +76,7 @@ abstract class Base_App {
 
 		if ( $this->is_connected() ) {
 			$remote_user = $this->get( 'user' );
+			/* translators: %s: Remote user. */
 			$title = sprintf( esc_html__( 'Connected as %s', 'elementor' ), '<strong>' . esc_html( $remote_user->email ) . '</strong>' );
 			$label = esc_html__( 'Disconnect', 'elementor' );
 			$url = $this->get_admin_url( 'disconnect' );
@@ -376,24 +377,34 @@ abstract class Base_App {
 	}
 
 	/**
-	 * Get all the connect info
+	 * Get all the connect information
 	 *
 	 * @return array
 	 */
 	protected function get_connect_info() {
-		$additional_info = apply_filters( 'elementor/connect/additional-connect-info', [], $this );
+		$connect_info = [
+			'app' => $this->get_slug(),
+			'access_token' => $this->get( 'access_token' ),
+			'client_id' => $this->get( 'client_id' ),
+			'local_id' => get_current_user_id(),
+			'site_key' => $this->get_site_key(),
+			'home_url' => trailingslashit( home_url() ),
+		];
 
-		return array_merge(
-			[
-				'app' => $this->get_slug(),
-				'access_token' => $this->get( 'access_token' ),
-				'client_id' => $this->get( 'client_id' ),
-				'local_id' => get_current_user_id(),
-				'site_key' => $this->get_site_key(),
-				'home_url' => trailingslashit( home_url() ),
-			],
-			$additional_info
-		);
+		$additional_info = [];
+
+		/**
+		 * Additional connect info.
+		 *
+		 * Filters the connection information when connecting to Elementor servers.
+		 * This hook can be used to add more information or add more data.
+		 *
+		 * @param array    $additional_info Additional connecting information array.
+		 * @param Base_App $this            The base app instance.
+		 */
+		$additional_info = apply_filters( 'elementor/connect/additional-connect-info', $additional_info, $this );
+
+		return array_merge( $connect_info, $additional_info );
 	}
 
 	/**
@@ -744,7 +755,7 @@ abstract class Base_App {
 
 		if ( $is_rest || $is_ajax ) {
 			// Set default to 'xhr' if rest or ajax request.
-			$this->auth_mode = 'xhr';
+			$this->set_auth_mode( 'xhr' );
 		}
 
 		if ( isset( $_REQUEST['mode'] ) ) { // phpcs:ignore -- nonce validation is not require here.
@@ -759,9 +770,13 @@ abstract class Base_App {
 			$mode = $_REQUEST['mode']; // phpcs:ignore -- nonce validation is not require here.
 
 			if ( in_array( $mode, $allowed_auth_modes, true ) ) {
-				$this->auth_mode = $mode;
+				$this->set_auth_mode( $mode );
 			}
 		}
+	}
+
+	public function set_auth_mode( $mode ) {
+		$this->auth_mode = $mode;
 	}
 
 	/**
