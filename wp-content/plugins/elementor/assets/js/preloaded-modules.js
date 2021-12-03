@@ -1,4 +1,4 @@
-/*! elementor - v3.4.2 - 19-08-2021 */
+/*! elementor - v3.4.8 - 16-11-2021 */
 (self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["preloaded-modules"],{
 
 /***/ "../assets/dev/js/frontend/handlers/accordion.js":
@@ -334,16 +334,22 @@ class Counter extends elementorModules.frontend.handlers.Base {
 
   onInit() {
     super.onInit();
-    elementorFrontend.waypoint(this.elements.$counterNumber, () => {
-      const data = this.elements.$counterNumber.data(),
-            decimalDigits = data.toValue.toString().match(/\.(.*)/);
+    this.intersectionObserver = elementorModules.utils.Scroll.scrollObserver({
+      callback: event => {
+        if (event.isInViewport) {
+          this.intersectionObserver.unobserve(this.elements.$counterNumber[0]);
+          const data = this.elements.$counterNumber.data(),
+                decimalDigits = data.toValue.toString().match(/\.(.*)/);
 
-      if (decimalDigits) {
-        data.rounding = decimalDigits[1].length;
+          if (decimalDigits) {
+            data.rounding = decimalDigits[1].length;
+          }
+
+          this.elements.$counterNumber.numerator(data);
+        }
       }
-
-      this.elements.$counterNumber.numerator(data);
     });
+    this.intersectionObserver.observe(this.elements.$counterNumber[0]);
   }
 
 }
@@ -814,15 +820,7 @@ class Video extends elementorModules.frontend.handlers.Base {
       $videoIframe.attr('src', lazyLoad);
     }
 
-    const newSourceUrl = $videoIframe[0].src.replace('&autoplay=0', '');
-    $videoIframe[0].src = newSourceUrl + '&autoplay=1';
-
-    if ($videoIframe[0].src.includes('vimeo.com')) {
-      const videoSrc = $videoIframe[0].src,
-            timeMatch = /#t=[^&]*/.exec(videoSrc); // Param '#t=' must be last in the URL
-
-      $videoIframe[0].src = videoSrc.slice(0, timeMatch.index) + videoSrc.slice(timeMatch.index + timeMatch[0].length) + timeMatch[0];
-    }
+    $videoIframe[0].src = this.apiProvider.getAutoplayURL($videoIframe[0].src);
   }
 
   async animateVideo() {
@@ -887,12 +885,17 @@ class Video extends elementorModules.frontend.handlers.Base {
     super.onInit();
     const elementSettings = this.getElementSettings();
 
+    if (elementorFrontend.utils[elementSettings.video_type]) {
+      this.apiProvider = elementorFrontend.utils[elementSettings.video_type];
+    } else {
+      this.apiProvider = elementorFrontend.utils.baseVideoLoader;
+    }
+
     if ('youtube' !== elementSettings.video_type) {
       // Currently the only API integration in the Video widget is for the YT API
       return;
     }
 
-    this.apiProvider = elementorFrontend.utils.youtube;
     this.videoID = this.apiProvider.getVideoIDFromURL(elementSettings.youtube_url); // If there is an image overlay, the YouTube video prep method will be triggered on click
 
     if (!this.videoID) {
@@ -1231,9 +1234,16 @@ module.exports = elementorModules.ViewModule.extend({
       }, options.videoParams);
       $videoElement = $('<video>', videoParams);
     } else {
-      const videoURL = options.url.replace('&autoplay=0', '') + '&autoplay=1';
+      let apiProvider = elementorFrontend.utils.baseVideoLoader;
+
+      if (-1 !== options.url.indexOf('vimeo.com')) {
+        apiProvider = elementorFrontend.utils.vimeo;
+      } else if (options.url.match(/^(?:https?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com)/)) {
+        apiProvider = elementorFrontend.utils.youtube;
+      }
+
       $videoElement = $('<iframe>', {
-        src: videoURL,
+        src: apiProvider.getAutoplayURL(options.url),
         allowfullscreen: 1
       });
     }
@@ -1750,7 +1760,7 @@ module.exports = elementorModules.ViewModule.extend({
       if ('youtube' === videoType) {
         this.prepareYTVideo(apiObject, videoID, $videoContainer, $videoWrapper, $playIcon);
       } else if ('vimeo' === videoType) {
-        this.prepareVimeoVideo(apiObject, videoID, $videoContainer, $videoWrapper, $playIcon);
+        this.prepareVimeoVideo(apiObject, videoURL, $videoContainer, $videoWrapper, $playIcon);
       }
     });
     $playIcon.addClass(classes.playing).removeClass(classes.hidden);
@@ -1786,10 +1796,10 @@ module.exports = elementorModules.ViewModule.extend({
       }
     });
   },
-  prepareVimeoVideo: function (Vimeo, videoId, $videoContainer, $videoWrapper, $playIcon) {
+  prepareVimeoVideo: function (Vimeo, videoURL, $videoContainer, $videoWrapper, $playIcon) {
     const classes = this.getSettings('classes'),
           vimeoOptions = {
-      id: videoId,
+      url: videoURL,
       autoplay: true,
       transparent: false,
       playsinline: false

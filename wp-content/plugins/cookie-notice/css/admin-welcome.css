@@ -918,6 +918,11 @@
 	transition: none;
 }
 
+.cn-welcome-wrap form input[type="checkbox"] b,
+.cn-welcome-wrap form input[type="radio"] b {
+	font-weight: 700;
+}
+
 .cn-welcome-wrap form input[type="text"],
 .cn-welcome-wrap form input[type="password"],
 .cn-welcome-wrap form select {
@@ -1817,7 +1822,7 @@
 }
 
 .cn-modal .modaal-inner-wrapper {
-	padding: 0 20px;
+	padding: 30px 30px 0;
 }
 
 .modaal-overlay {

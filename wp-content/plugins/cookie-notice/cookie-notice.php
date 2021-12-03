@@ -2,7 +2,7 @@
 /*
 Plugin Name: Cookie Notice & Compliance for GDPR / CCPA
 Description: Cookie Notice allows you to you elegantly inform users that your site uses cookies and helps you comply with GDPR, CCPA and other data privacy laws.
-Version: 2.1.3
+Version: 2.2.0
 Author: Hu-manity.co
 Author URI: https://hu-manity.co/
 Plugin URI: https://hu-manity.co/
@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) )
  * Cookie Notice class.
  *
  * @class Cookie_Notice
- * @version	2.1.3
+ * @version	2.2.0
  */
 class Cookie_Notice {
 
@@ -43,9 +43,9 @@ class Cookie_Notice {
 			'app_id'				=> '',
 			'app_key'				=> '',
 			'app_blocking'			=> true,
+			'hide_banner'			=> false,
 			'position'				=> 'bottom',
 			'message_text'			=> '',
-			'css_style'				=> 'bootstrap',
 			'css_class'				=> '',
 			'accept_text'			=> '',
 			'refuse_text'			=> '',
@@ -68,6 +68,7 @@ class Cookie_Notice {
 			'on_click'				=> false,
 			'colors' => array(
 				'text'			=> '#fff',
+				'button'		=> '#00a99d',
 				'bar'			=> '#32323a',
 				'bar_opacity'	=> 100
 			),
@@ -81,12 +82,13 @@ class Cookie_Notice {
 			'script_placement'			=> 'header',
 			'translate'					=> true,
 			'deactivation_delete'		=> false,
-			'update_version'			=> 4,
+			'update_version'			=> 5,
 			'update_notice'				=> true,
 			'update_delay_date'			=> 0
 		),
-		'version'	=> '2.1.3'
+		'version'	=> '2.2.0'
 	);
+	private $deactivaion_url = '';
 	
 	private static $_instance;
 
@@ -151,6 +153,9 @@ class Cookie_Notice {
 		add_action( 'init', array( $this, 'wpsc_add_cookie' ) );
 		add_action( 'admin_init', array( $this, 'update_notice' ) );
 		add_action( 'wp_ajax_cn_dismiss_notice', array( $this, 'ajax_dismiss_admin_notice' ) );
+		add_action( 'admin_footer', array( $this, 'deactivate_plugin_template' ) );
+		add_action( 'wp_ajax_cn-deactivate-plugin', array( $this, 'deactivate_plugin' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 
 		// filters
 		add_filter( 'plugin_action_links', array( $this, 'plugin_action_links' ), 10, 2 );
@@ -223,7 +228,7 @@ class Cookie_Notice {
 		if ( defined( 'DOING_AJAX' ) && DOING_AJAX )
 			return;
 		
-		$current_update = 5;
+		$current_update = 6;
 		
 		// get current database version
 		$current_db_version = get_option( 'cookie_notice_version', '1.0.0' );
@@ -236,10 +241,18 @@ class Cookie_Notice {
 			
 			// update plugin version
 			update_option( 'cookie_notice_version', $this->defaults['version'], false );
-			
-			// show welcome, if no compliance only
-			if ( empty( $this->status ) )
-				set_transient( 'cn_show_welcome', 1 );
+		}
+		
+		// if visiting settings, mark notice as read
+		if ( ! empty( $_GET['page'] ) && $_GET['page'] === 'cookie-notice' && ! empty( $_GET['welcome'] ) ) {
+			$this->options['general'] = wp_parse_args( array( 'update_notice' => true ), $this->options['general'] );
+			update_option( 'cookie_notice_options', $this->options['general'] );
+		}
+		
+		// show notice, if no compliance only
+		if ( $this->options['general']['update_notice'] === true && empty( $this->status ) ) {
+			// set_transient( 'cn_show_welcome', 1 );
+			$this->add_notice( '<div class="cn-notice-text"><h2>' . __( 'Make sure your website complies with the latest cookie consent laws', 'cookie-notice' ) . '</h2><p>' . __( 'Run compliance check to learn if your website complies with the lastes consent record storage and cookie blocking requirements.', 'cookie-notice' ) . '</p><p class="cn-notice-actions"><a href="' . admin_url( 'admin.php' ) . '?page=cookie-notice&welcome=1' . '" class="button button-primary">' . __( 'Run Compliance Check', 'cookie-notice' ) . '</a> <a href="#" class="button-link cn-notice-dismiss">' . __( 'Dismiss Notice', 'cookie-notice' ) . '</a></p></div>', '', 'div' );
 		}
 	}
 
@@ -268,7 +281,7 @@ class Cookie_Notice {
 	public function display_notice() {
 		foreach( $this->notices as $notice ) {
 			echo '
-			<div id="cn-admin-notice" class="cn-notice ' . $notice['status'] . '">
+			<div id="cn-admin-notice" class="cn-notice notice notice-info ' . $notice['status'] . '">
 				' . ( ! empty( $notice['container'] ) ? '<' . $notice['container'] . ' class="cn-notice-container">' : '' ) . '
 				' . $notice['html'] . '
 				' . ( ! empty( $notice['container'] ) ? '</' . $notice['container'] . ' class="cn-notice-container">' : '' ) . '
@@ -283,8 +296,8 @@ class Cookie_Notice {
 		if ( ! current_user_can( 'install_plugins' ) )
 			return;
 
-		if ( wp_verify_nonce( esc_attr( $_REQUEST['nonce'] ), 'cn_dismiss_notice' ) ) {
-			$notice_action = empty( $_REQUEST['notice_action'] ) || $_REQUEST['notice_action'] === 'dismiss' ? 'dismiss' : esc_attr( $_REQUEST['notice_action'] );
+		if ( wp_verify_nonce( $_REQUEST['nonce'], 'cn_dismiss_notice' ) ) {
+			$notice_action = empty( $_REQUEST['notice_action'] ) || $_REQUEST['notice_action'] === 'dismiss' ? 'dismiss' : sanitize_text_string( $_REQUEST['notice_action'] );
 
 			switch ( $notice_action ) {
 				// delay notice
@@ -372,9 +385,9 @@ class Cookie_Notice {
 		$args['class'] = esc_attr( $args['class'] );
 
 		if ( Cookie_Notice()->get_status() === 'active' )
-			$shortcode = '<a href="#" class="cn-revoke-cookie cn-button cn-revoke-inline' . ( $options['css_style'] !== 'none' ? ' ' . $options['css_style'] : '' ) . ( $args['class'] !== '' ? ' ' . $args['class'] : '' ) . '" title="' . esc_html( $args['title'] ) . '" data-hu-action="notice-revoke">' . esc_html( $args['title'] ) . '</a>';
+			$shortcode = '<a href="#" class="cn-revoke-cookie cn-button-inline cn-revoke-inline' . ( $args['class'] !== '' ? ' ' . $args['class'] : '' ) . '" title="' . esc_html( $args['title'] ) . '" data-hu-action="cookies-notice-revoke">' . esc_html( $args['title'] ) . '</a>';
 		else
-			$shortcode = '<a href="#" class="cn-revoke-cookie cn-button cn-revoke-inline' . ( $options['css_style'] !== 'none' ? ' ' . $options['css_style'] : '' ) . ( $args['class'] !== '' ? ' ' . $args['class'] : '' ) . '" title="' . esc_html( $args['title'] ) . '">' . esc_html( $args['title'] ) . '</a>';
+			$shortcode = '<a href="#" class="cn-revoke-cookie cn-button-inline cn-revoke-inline' . ( $args['class'] !== '' ? ' ' . $args['class'] : '' ) . '" title="' . esc_html( $args['title'] ) . '">' . esc_html( $args['title'] ) . '</a>';
 
 		return $shortcode;
 	}
@@ -413,6 +426,18 @@ class Cookie_Notice {
 	public static function cookies_accepted() {
 		if ( Cookie_Notice()->get_status() === 'active' ) {
 			$cookies = isset( $_COOKIE['hu-consent'] ) ? json_decode( stripslashes( $_COOKIE['hu-consent'] ), true ) : array();
+			
+			if ( ! empty( $cookies ) && is_array( $cookies ) ) {
+				foreach( $cookies as $cookie_name => $cookie_value ) {
+					switch ( $cookie_name ) {
+						case 'consent':
+							$cookies[$cookie_name] = (bool) $cookie_value;
+							break;
+						default:
+							$cookies[$cookie_name] = is_array( $cookie_value ) ? array_map( 'sanitize_text_field', $cookie_value ) : sanitize_text_field( $cookie_value );
+					}
+				}
+			}
 
 			$result = ( is_array( $cookies ) && json_last_error() === JSON_ERROR_NONE && ! empty( $cookies['consent'] ) ) ? true : false;
 		} else
@@ -454,6 +479,50 @@ class Cookie_Notice {
 		else
 			do_action( 'wpsc_delete_cookie', 'cookie_notice_accepted' );
 	}
+	
+	/**
+	 * Enqueue admin scripts and styles.
+	 *
+	 * @param string $page
+	 * @return void
+	 */
+	public function admin_enqueue_scripts( $page ) {
+		// plugins?
+		if ( $page === 'plugins.php' ) {
+			add_thickbox();
+
+			wp_enqueue_script( 'cookie-notice-admin-plugins', plugins_url( '/js/admin-plugins.js', __FILE__ ), array( 'jquery' ), $this->defaults['version'] );
+
+			wp_enqueue_style( 'cookie-notice-admin-plugins', plugins_url( '/css/admin-plugins.css', __FILE__ ), array(), $this->defaults['version'] );
+
+			wp_localize_script(
+				'cookie-notice-admin-plugins',
+				'cnArgsPlugins',
+				array(
+					'deactivate'	=> __( 'Cookie Notice & Compliance - Deactivation survey', 'cookie-notice' ),
+					'nonce'			=> wp_create_nonce( 'cn-deactivate-plugin' )
+				)
+			);
+		}
+		
+		// load notice, if no compliance only
+		if ( $this->options['general']['update_notice'] === true && empty( $this->status ) ) {
+			wp_enqueue_script(
+				'cookie-notice-admin-notice', plugins_url( '/js/admin-notice.js', __FILE__ ), array( 'jquery' ), Cookie_Notice()->defaults['version']
+			);
+
+			wp_localize_script(
+				'cookie-notice-admin-notice', 'cnArgsNotice', array(
+					'ajaxURL'				=> admin_url( 'admin-ajax.php' ),
+					'nonce'					=> wp_create_nonce( 'cn_dismiss_notice' ),
+				)
+			);
+			
+			wp_enqueue_style(
+				'cookie-notice-admin-notice', plugins_url( '/css/admin-notice.css', __FILE__ ), array(), Cookie_Notice()->defaults['version']
+			);
+		}
+	}
 
 	/**
 	 * Add links to settings page.
@@ -465,11 +534,124 @@ class Cookie_Notice {
 	public function plugin_action_links( $links, $file ) {
 		if ( ! current_user_can( apply_filters( 'cn_manage_cookie_notice_cap', 'manage_options' ) ) )
 			return $links;
+		
+		static $plugin;
 
-		if ( $file == plugin_basename( __FILE__ ) )
-			array_unshift( $links, sprintf( '<a href="%s">%s</a>', esc_url( admin_url( 'admin.php?page=cookie-notice' ) ), __( 'Settings', 'cookie-notice' ) ) );
+		$plugin = plugin_basename( __FILE__ );
+
+		if ( $file == $plugin ) {
+			if ( ! empty( $links['deactivate'] ) ) {
+				// link already contains class attribute?
+				if ( preg_match( '/<a.*?class=(\'|")(.*?)(\'|").*?>/is', $links['deactivate'], $result ) === 1 )
+					$links['deactivate'] = preg_replace( '/(<a.*?class=(?:\'|").*?)((?:\'|").*?>)/s', '$1 cn-deactivate-plugin-modal$2', $links['deactivate'] );
+				else
+					$links['deactivate'] = preg_replace( '/(<a.*?)>/s', '$1 class="cn-deactivate-plugin-modal">', $links['deactivate'] );
+
+				// link already contains href attribute?
+				if ( preg_match( '/<a.*?href=(\'|")(.*?)(\'|").*?>/is', $links['deactivate'], $result ) === 1 ) {
+					if ( ! empty( $result[2] ) )
+						$this->deactivaion_url = $result[2];
+				}
+			}
+
+			// put settings link at start
+			array_unshift( $links, sprintf( '<a href="%s">%s</a>', admin_url( 'admin.php' ) . '?page=cookie-notice', __( 'Settings', 'cookie-notice' ) ) );
+
+			// add add-ons link
+			if ( empty( $this->status ) )
+				$links[] = sprintf( '<a href="%s" style="color: #20C19E; font-weight: bold;">%s</a>', admin_url( 'admin.php' ) . '?page=cookie-notice&welcome=1', __( 'Free Upgrade', 'cookie-notice' ) );
+		}
 
 		return $links;
+	}
+	
+	/**
+	 * Deactivation modal HTML template.
+	 *
+	 * @return void
+	 */
+	public function deactivate_plugin_template() {
+		global $pagenow;
+
+		// display only for plugins page
+		if ( $pagenow !== 'plugins.php' )
+			return;
+
+		echo '
+		<div id="cn-deactivation-modal" style="display: none;">
+			<div id="cn-deactivation-container">
+				<div id="cn-deactivation-body">
+					<div class="cn-deactivation-options">
+						<p><em>' . __( "We're sorry to see you go. Could you please tell us what happened?", 'cookie-notice' ) . '</em></p>
+						<ul>';
+
+			foreach ( array(
+				'1'	=> __( "I couldn't figure out how to make it work.", 'cookie-notice' ),
+				'2'	=> __( 'I found another plugin to use for the same task.', 'cookie-notice' ),
+				'3'	=> __( 'The Cookie Compliance banner is too big.', 'cookie-notice' ),
+				'4'	=> __( 'The Cookie Compliance consent choices (Silver, Gold, Platinum) are confusing.', 'cookie-notice' ),
+				'5'	=> __( 'The Cookie Compliance default settings are too strict.', 'cookie-notice' ),
+				'6'	=> __( 'The web application user interface is not clear to me.', 'cookie-notice' ),
+				'7'	=> __( "Support isn't timely.", 'cookie-notice' ),
+				'8'	=> __( 'Other', 'cookie-notice' )
+			) as $option => $text ) {
+				echo '
+							<li><label><input type="radio" name="cn_deactivation_option" value="' . $option . '" ' . checked( '8', $option, false ) . ' />' . esc_html( $text ) . '</label></li>';
+			}
+
+			echo '
+						</ul>
+					</div>
+					<div class="cn-deactivation-textarea">
+						<textarea name="cn_deactivation_other"></textarea>
+					</div>
+				</div>
+				<div id="cn-deactivation-footer">
+					<a href="" class="button cn-deactivate-plugin-cancel">' . __( 'Cancel', 'cookie-notice' ) . '</a>
+					<a href="' . $this->deactivaion_url . '" class="button button-secondary cn-deactivate-plugin-simple">' . __( 'Deactivate', 'cookie-notice' ) . '</a>
+					<a href="' . $this->deactivaion_url . '" class="button button-primary right cn-deactivate-plugin-data">' . __( 'Deactivate & Submit', 'cookie-notice' ) . '</a>
+					<span class="spinner"></span>
+				</div>
+			</div>
+		</div>';
+	}
+
+	/**
+	 * Send data about deactivation of the plugin.
+	 *
+	 * @return void
+	 */
+	public function deactivate_plugin() {
+		// check permissions
+		if ( ! current_user_can( 'install_plugins' ) || wp_verify_nonce( $_POST['nonce'], 'cn-deactivate-plugin' ) === false )
+			return;
+
+		if ( isset( $_POST['option_id'] ) ) {
+			$option_id = (int) $_POST['option_id'];
+			$other = esc_html( $_POST['other'] );
+			
+			// avoid fake submissions
+			if ( $option_id == 8 && $other == '' )
+				wp_send_json_success();
+
+			wp_remote_post(
+			'https://hu-manity.co/wp-json/api/v1/forms/', array(
+				'timeout'		=> 15,
+				'blocking'		=> true,
+				'headers'		=> array(),
+				'body'			=> array(
+					'id'		=> 1,
+					'option'	=> $option_id,
+					'other'		=> $other,
+					'referrer'	=> get_site_url()
+				)
+			)
+			);
+
+			wp_send_json_success();
+		}
+
+		wp_send_json_error();
 	}
 
 	/**

@@ -2,8 +2,8 @@
 Contributors: automattic, tiagonoronha, jameskoster
 Requires at least: 5.3.4
 Tested up to: 5.8.0
-Stable tag: 3.8.1
-Version: 3.8.1
+Stable tag: 3.9.1
+Version: 3.9.1
 WC requires at least: 4.2
 WC tested up to: 5.5
 License: GPLv3 or later
@@ -51,8 +51,9 @@ Privacy Policy for the Google Fonts API: https://developers.google.com/fonts/faq
 
 == Changelog ==
 
-= 3.8.1 - 2021-08-18 =
-- Fix - The image shown in the Cover block will now respect the full-width setting. ([#1762](https://github.com/woocommerce/storefront/pull/1762))
+= 3.9.0 - 2021-09-27 =
+- Enhancement - Update Woo's default color to #7f54b3 ([#1769](https://github.com/woocommerce/storefront/pull/1769))
+- Fix - Avoid text in buttons breaking in the middle of words ([#1797](https://github.com/woocommerce/storefront/pull/1797))
 
 = 3.8.0 - 2021-08-17 =
 - Fix – Several visual issues when a Search block was added to a widget area ([#1755](https://github.com/woocommerce/storefront/pull/1755))

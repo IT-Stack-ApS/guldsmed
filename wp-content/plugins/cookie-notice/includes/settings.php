@@ -24,8 +24,8 @@ class Cookie_Notice_Settings {
 	public $notices = array();
 	public $script_placements = array();
 	public $countries = array();
-	public $cookie_messages = array();
-	public $preferences_messages = array();
+	public $level_names = array();
+	public $text_strings = array();
 	
 	public function __construct() {
 		// actions
@@ -77,6 +77,7 @@ class Cookie_Notice_Settings {
 
 		$this->colors = array(
 			'text'	 			=> __( 'Text color', 'cookie-notice' ),
+			'button'	 		=> __( 'Button color', 'cookie-notice' ),
 			'bar'	 			=> __( 'Bar color', 'cookie-notice' ),
 		);
 
@@ -105,280 +106,43 @@ class Cookie_Notice_Settings {
 			'footer' 			=> __( 'Footer', 'cookie-notice' ),
 		);
 		
-		$this->cookie_messages = array(
-			0 => __( 'Cookies are small files that are stored on your browser. We use cookies and similar technologies to ensure our website works properly.', 'cookie-notice' ),
-			1 => __( 'Cookies are small files that are stored on your browser. We use cookies and similar technologies to ensure our website works properly, and to personalize your browsing experience.', 'cookie-notice' ),
-			2 => __( 'Cookies are small files that are stored on your browser. We use cookies and similar technologies to ensure our website works properly, personalize your browsing experience, and analyze how you use our website. For these reasons, we may share your site usage data with our analytics partners.', 'cookie-notice' ),
-			3 => __( 'Cookies are small files that are stored on your browser. We use cookies and similar technologies to ensure our website works properly, personalize your browsing experience, analyze how you use our website, and deliver relevant ads to you. For these reasons, we may share your site usage data with our social media, advertising and analytics partners.', 'cookie-notice' ) );
-		
-		$this->preferences_messages = array (
-			0 => __( 'You can choose whether or not you want to consent to our use of cookies through the options below.', 'cookie-notice' ),
-			1 => __( 'You can choose whether or not you want to consent to our use of cookies through the options below. You can customise the use of cookies, and change your settings at any time.', 'cookie-notice' )
+		$this->level_names = array(
+			1 => array(
+				1 => __( 'Silver', 'cookie-notice' ),
+				2 => __( 'Gold', 'cookie-notice' ),
+				3 => __( 'Platinum', 'cookie-notice' )
+			),
+			2 => array(
+				1 => __( 'Private', 'cookie-notice' ),
+				2 => __( 'Balanced', 'cookie-notice' ),
+				3 => __( 'Personalized', 'cookie-notice' )
+			),
+			3 => array(
+				1 => __( 'Reject All', 'cookie-notice' ),
+				2 => __( 'Accept Some', 'cookie-notice' ),
+				3 => __( 'Accept All', 'cookie-notice' )
+			)
 		);
 		
-		$text_strings = array(
-			'acceptBtnText' => __( 'Accept', 'cookie-notice' ),
-			'rejectBtnText' => __( 'Reject', 'cookie-notice' ),
-			'revokeBtnText' => __( 'Revoke Cookies', 'cookie-notice' ),
+		$this->text_strings = array(
+			'saveBtnText' => __( 'Save my preferences', 'cookie-notice' ),
+			// 'acceptBtnText' => __( 'Accept', 'cookie-notice' ),
+			// 'rejectBtnText' => __( 'Reject', 'cookie-notice' ),
+			// 'revokeBtnText' => __( 'Revoke Cookies', 'cookie-notice' ),
 			'privacyBtnText' => __( 'Privacy policy', 'cookie-notice' ),
 			'dontSellBtnText' => __( 'Do Not Sell', 'cookie-notice' ),
 			'customizeBtnText' => __( 'Preferences', 'cookie-notice' ),
-			'headingText' => __( "We're Promoting Privacy", 'cookie-notice' ),
-			'bodyText' => $this->cookie_messages[0],
-			'privacyBodyText' => __( 'You can learn more about how we use cookies by visiting our privacy policy page.', 'cookie-notice' ),
-			'dontSellBodyText' => __( 'California residents can also exercise their personal information rights through the Do Not Sell My Personal Information page.', 'cookie-notice' ),
-			'preferencesHeadingText' => __( 'Cookie Preferences', 'cookie-notice' ),
-			'preferencesBodyText' => __( 'Use the toggles to customize your cookie consent. Learn more about the purpose of each cookie and the companies behind them through the information and links below.', 'cookie-notice' )
+			'headingText' => __( "We believe your data is your property and support your right to privacy and transparency.", 'cookie-notice' ),
+			'bodyText' => __( "Select a Data Access Level and Duration to choose how we use and share your data.", 'cookie-notice' ),
+			'levelBodyText_1' => __( 'Highest level of privacy. Data accessed for necessary site operations only. Data shared with 3rd parties to ensure the site is secure and works on your device.', 'cookie-notice' ),
+			'levelBodyText_2' => __( 'Balanced experience. Data accessed for content personalisation and site optimisation. Data shared with 3rd parties may be used to track and store your preferences for this site.', 'cookie-notice' ),
+			'levelBodyText_3' => __( 'Highest level of personalisation. Data accessed to make ads and media more relevant. Data shared with 3rd parties may be use to track you on this site and other sites you visit.', 'cookie-notice' ),
+			'levelNameText_1' => $this->level_names[1][1],
+			'levelNameText_2' => $this->level_names[1][2],
+			'levelNameText_3' => $this->level_names[1][3],
+			'monthText' => __( 'month', 'cookie-notice' ),
+			'monthsText' => __( 'months', 'cookie-notice' )
 		);
-		
-		/*
-		$this->countries = array(
-			'AF' => __( 'Afghanistan', 'cookie-notice' ),
-			'AX' => __( '&#197;land Islands', 'cookie-notice' ),
-			'AL' => __( 'Albania', 'cookie-notice' ),
-			'DZ' => __( 'Algeria', 'cookie-notice' ),
-			'AD' => __( 'Andorra', 'cookie-notice' ),
-			'AO' => __( 'Angola', 'cookie-notice' ),
-			'AI' => __( 'Anguilla', 'cookie-notice' ),
-			'AQ' => __( 'Antarctica', 'cookie-notice' ),
-			'AG' => __( 'Antigua and Barbuda', 'cookie-notice' ),
-			'AR' => __( 'Argentina', 'cookie-notice' ),
-			'AM' => __( 'Armenia', 'cookie-notice' ),
-			'AW' => __( 'Aruba', 'cookie-notice' ),
-			'AU' => __( 'Australia', 'cookie-notice' ),
-			'AT' => __( 'Austria', 'cookie-notice' ),
-			'AZ' => __( 'Azerbaijan', 'cookie-notice' ),
-			'BS' => __( 'Bahamas', 'cookie-notice' ),
-			'BH' => __( 'Bahrain', 'cookie-notice' ),
-			'BD' => __( 'Bangladesh', 'cookie-notice' ),
-			'BB' => __( 'Barbados', 'cookie-notice' ),
-			'BY' => __( 'Belarus', 'cookie-notice' ),
-			'BE' => __( 'Belgium', 'cookie-notice' ),
-			'PW' => __( 'Belau', 'cookie-notice' ),
-			'BZ' => __( 'Belize', 'cookie-notice' ),
-			'BJ' => __( 'Benin', 'cookie-notice' ),
-			'BM' => __( 'Bermuda', 'cookie-notice' ),
-			'BT' => __( 'Bhutan', 'cookie-notice' ),
-			'BO' => __( 'Bolivia', 'cookie-notice' ),
-			'BQ' => __( 'Bonaire, Saint Eustatius and Saba', 'cookie-notice' ),
-			'BA' => __( 'Bosnia and Herzegovina', 'cookie-notice' ),
-			'BW' => __( 'Botswana', 'cookie-notice' ),
-			'BV' => __( 'Bouvet Island', 'cookie-notice' ),
-			'BR' => __( 'Brazil', 'cookie-notice' ),
-			'IO' => __( 'British Indian Ocean Territory', 'cookie-notice' ),
-			'VG' => __( 'British Virgin Islands', 'cookie-notice' ),
-			'BN' => __( 'Brunei', 'cookie-notice' ),
-			'BG' => __( 'Bulgaria', 'cookie-notice' ),
-			'BF' => __( 'Burkina Faso', 'cookie-notice' ),
-			'BI' => __( 'Burundi', 'cookie-notice' ),
-			'KH' => __( 'Cambodia', 'cookie-notice' ),
-			'CM' => __( 'Cameroon', 'cookie-notice' ),
-			'CA' => __( 'Canada', 'cookie-notice' ),
-			'CV' => __( 'Cape Verde', 'cookie-notice' ),
-			'KY' => __( 'Cayman Islands', 'cookie-notice' ),
-			'CF' => __( 'Central African Republic', 'cookie-notice' ),
-			'TD' => __( 'Chad', 'cookie-notice' ),
-			'CL' => __( 'Chile', 'cookie-notice' ),
-			'CN' => __( 'China', 'cookie-notice' ),
-			'CX' => __( 'Christmas Island', 'cookie-notice' ),
-			'CC' => __( 'Cocos (Keeling) Islands', 'cookie-notice' ),
-			'CO' => __( 'Colombia', 'cookie-notice' ),
-			'KM' => __( 'Comoros', 'cookie-notice' ),
-			'CG' => __( 'Congo (Brazzaville)', 'cookie-notice' ),
-			'CD' => __( 'Congo (Kinshasa)', 'cookie-notice' ),
-			'CK' => __( 'Cook Islands', 'cookie-notice' ),
-			'CR' => __( 'Costa Rica', 'cookie-notice' ),
-			'HR' => __( 'Croatia', 'cookie-notice' ),
-			'CU' => __( 'Cuba', 'cookie-notice' ),
-			'CW' => __( 'Cura&Ccedil;ao', 'cookie-notice' ),
-			'CY' => __( 'Cyprus', 'cookie-notice' ),
-			'CZ' => __( 'Czech Republic', 'cookie-notice' ),
-			'DK' => __( 'Denmark', 'cookie-notice' ),
-			'DJ' => __( 'Djibouti', 'cookie-notice' ),
-			'DM' => __( 'Dominica', 'cookie-notice' ),
-			'DO' => __( 'Dominican Republic', 'cookie-notice' ),
-			'EC' => __( 'Ecuador', 'cookie-notice' ),
-			'EG' => __( 'Egypt', 'cookie-notice' ),
-			'SV' => __( 'El Salvador', 'cookie-notice' ),
-			'GQ' => __( 'Equatorial Guinea', 'cookie-notice' ),
-			'ER' => __( 'Eritrea', 'cookie-notice' ),
-			'EE' => __( 'Estonia', 'cookie-notice' ),
-			'ET' => __( 'Ethiopia', 'cookie-notice' ),
-			'FK' => __( 'Falkland Islands', 'cookie-notice' ),
-			'FO' => __( 'Faroe Islands', 'cookie-notice' ),
-			'FJ' => __( 'Fiji', 'cookie-notice' ),
-			'FI' => __( 'Finland', 'cookie-notice' ),
-			'FR' => __( 'France', 'cookie-notice' ),
-			'GF' => __( 'French Guiana', 'cookie-notice' ),
-			'PF' => __( 'French Polynesia', 'cookie-notice' ),
-			'TF' => __( 'French Southern Territories', 'cookie-notice' ),
-			'GA' => __( 'Gabon', 'cookie-notice' ),
-			'GM' => __( 'Gambia', 'cookie-notice' ),
-			'GE' => __( 'Georgia', 'cookie-notice' ),
-			'DE' => __( 'Germany', 'cookie-notice' ),
-			'GH' => __( 'Ghana', 'cookie-notice' ),
-			'GI' => __( 'Gibraltar', 'cookie-notice' ),
-			'GR' => __( 'Greece', 'cookie-notice' ),
-			'GL' => __( 'Greenland', 'cookie-notice' ),
-			'GD' => __( 'Grenada', 'cookie-notice' ),
-			'GP' => __( 'Guadeloupe', 'cookie-notice' ),
-			'GT' => __( 'Guatemala', 'cookie-notice' ),
-			'GG' => __( 'Guernsey', 'cookie-notice' ),
-			'GN' => __( 'Guinea', 'cookie-notice' ),
-			'GW' => __( 'Guinea-Bissau', 'cookie-notice' ),
-			'GY' => __( 'Guyana', 'cookie-notice' ),
-			'HT' => __( 'Haiti', 'cookie-notice' ),
-			'HM' => __( 'Heard Island and McDonald Islands', 'cookie-notice' ),
-			'HN' => __( 'Honduras', 'cookie-notice' ),
-			'HK' => __( 'Hong Kong', 'cookie-notice' ),
-			'HU' => __( 'Hungary', 'cookie-notice' ),
-			'IS' => __( 'Iceland', 'cookie-notice' ),
-			'IN' => __( 'India', 'cookie-notice' ),
-			'ID' => __( 'Indonesia', 'cookie-notice' ),
-			'IR' => __( 'Iran', 'cookie-notice' ),
-			'IQ' => __( 'Iraq', 'cookie-notice' ),
-			'IE' => __( 'Republic of Ireland', 'cookie-notice' ),
-			'IM' => __( 'Isle of Man', 'cookie-notice' ),
-			'IL' => __( 'Israel', 'cookie-notice' ),
-			'IT' => __( 'Italy', 'cookie-notice' ),
-			'CI' => __( 'Ivory Coast', 'cookie-notice' ),
-			'JM' => __( 'Jamaica', 'cookie-notice' ),
-			'JP' => __( 'Japan', 'cookie-notice' ),
-			'JE' => __( 'Jersey', 'cookie-notice' ),
-			'JO' => __( 'Jordan', 'cookie-notice' ),
-			'KZ' => __( 'Kazakhstan', 'cookie-notice' ),
-			'KE' => __( 'Kenya', 'cookie-notice' ),
-			'KI' => __( 'Kiribati', 'cookie-notice' ),
-			'KW' => __( 'Kuwait', 'cookie-notice' ),
-			'KG' => __( 'Kyrgyzstan', 'cookie-notice' ),
-			'LA' => __( 'Laos', 'cookie-notice' ),
-			'LV' => __( 'Latvia', 'cookie-notice' ),
-			'LB' => __( 'Lebanon', 'cookie-notice' ),
-			'LS' => __( 'Lesotho', 'cookie-notice' ),
-			'LR' => __( 'Liberia', 'cookie-notice' ),
-			'LY' => __( 'Libya', 'cookie-notice' ),
-			'LI' => __( 'Liechtenstein', 'cookie-notice' ),
-			'LT' => __( 'Lithuania', 'cookie-notice' ),
-			'LU' => __( 'Luxembourg', 'cookie-notice' ),
-			'MO' => __( 'Macao S.A.R., China', 'cookie-notice' ),
-			'MK' => __( 'Macedonia', 'cookie-notice' ),
-			'MG' => __( 'Madagascar', 'cookie-notice' ),
-			'MW' => __( 'Malawi', 'cookie-notice' ),
-			'MY' => __( 'Malaysia', 'cookie-notice' ),
-			'MV' => __( 'Maldives', 'cookie-notice' ),
-			'ML' => __( 'Mali', 'cookie-notice' ),
-			'MT' => __( 'Malta', 'cookie-notice' ),
-			'MH' => __( 'Marshall Islands', 'cookie-notice' ),
-			'MQ' => __( 'Martinique', 'cookie-notice' ),
-			'MR' => __( 'Mauritania', 'cookie-notice' ),
-			'MU' => __( 'Mauritius', 'cookie-notice' ),
-			'YT' => __( 'Mayotte', 'cookie-notice' ),
-			'MX' => __( 'Mexico', 'cookie-notice' ),
-			'FM' => __( 'Micronesia', 'cookie-notice' ),
-			'MD' => __( 'Moldova', 'cookie-notice' ),
-			'MC' => __( 'Monaco', 'cookie-notice' ),
-			'MN' => __( 'Mongolia', 'cookie-notice' ),
-			'ME' => __( 'Montenegro', 'cookie-notice' ),
-			'MS' => __( 'Montserrat', 'cookie-notice' ),
-			'MA' => __( 'Morocco', 'cookie-notice' ),
-			'MZ' => __( 'Mozambique', 'cookie-notice' ),
-			'MM' => __( 'Myanmar', 'cookie-notice' ),
-			'NA' => __( 'Namibia', 'cookie-notice' ),
-			'NR' => __( 'Nauru', 'cookie-notice' ),
-			'NP' => __( 'Nepal', 'cookie-notice' ),
-			'NL' => __( 'Netherlands', 'cookie-notice' ),
-			'AN' => __( 'Netherlands Antilles', 'cookie-notice' ),
-			'NC' => __( 'New Caledonia', 'cookie-notice' ),
-			'NZ' => __( 'New Zealand', 'cookie-notice' ),
-			'NI' => __( 'Nicaragua', 'cookie-notice' ),
-			'NE' => __( 'Niger', 'cookie-notice' ),
-			'NG' => __( 'Nigeria', 'cookie-notice' ),
-			'NU' => __( 'Niue', 'cookie-notice' ),
-			'NF' => __( 'Norfolk Island', 'cookie-notice' ),
-			'KP' => __( 'North Korea', 'cookie-notice' ),
-			'NO' => __( 'Norway', 'cookie-notice' ),
-			'OM' => __( 'Oman', 'cookie-notice' ),
-			'PK' => __( 'Pakistan', 'cookie-notice' ),
-			'PS' => __( 'Palestinian Territory', 'cookie-notice' ),
-			'PA' => __( 'Panama', 'cookie-notice' ),
-			'PG' => __( 'Papua New Guinea', 'cookie-notice' ),
-			'PY' => __( 'Paraguay', 'cookie-notice' ),
-			'PE' => __( 'Peru', 'cookie-notice' ),
-			'PH' => __( 'Philippines', 'cookie-notice' ),
-			'PN' => __( 'Pitcairn', 'cookie-notice' ),
-			'PL' => __( 'Poland', 'cookie-notice' ),
-			'PT' => __( 'Portugal', 'cookie-notice' ),
-			'QA' => __( 'Qatar', 'cookie-notice' ),
-			'RE' => __( 'Reunion', 'cookie-notice' ),
-			'RO' => __( 'Romania', 'cookie-notice' ),
-			'RU' => __( 'Russia', 'cookie-notice' ),
-			'RW' => __( 'Rwanda', 'cookie-notice' ),
-			'BL' => __( 'Saint Barth&eacute;lemy', 'cookie-notice' ),
-			'SH' => __( 'Saint Helena', 'cookie-notice' ),
-			'KN' => __( 'Saint Kitts and Nevis', 'cookie-notice' ),
-			'LC' => __( 'Saint Lucia', 'cookie-notice' ),
-			'MF' => __( 'Saint Martin (French part)', 'cookie-notice' ),
-			'SX' => __( 'Saint Martin (Dutch part)', 'cookie-notice' ),
-			'PM' => __( 'Saint Pierre and Miquelon', 'cookie-notice' ),
-			'VC' => __( 'Saint Vincent and the Grenadines', 'cookie-notice' ),
-			'SM' => __( 'San Marino', 'cookie-notice' ),
-			'ST' => __( 'S&atilde;o Tom&eacute; and Pr&iacute;ncipe', 'cookie-notice' ),
-			'SA' => __( 'Saudi Arabia', 'cookie-notice' ),
-			'SN' => __( 'Senegal', 'cookie-notice' ),
-			'RS' => __( 'Serbia', 'cookie-notice' ),
-			'SC' => __( 'Seychelles', 'cookie-notice' ),
-			'SL' => __( 'Sierra Leone', 'cookie-notice' ),
-			'SG' => __( 'Singapore', 'cookie-notice' ),
-			'SK' => __( 'Slovakia', 'cookie-notice' ),
-			'SI' => __( 'Slovenia', 'cookie-notice' ),
-			'SB' => __( 'Solomon Islands', 'cookie-notice' ),
-			'SO' => __( 'Somalia', 'cookie-notice' ),
-			'ZA' => __( 'South Africa', 'cookie-notice' ),
-			'GS' => __( 'South Georgia/Sandwich Islands', 'cookie-notice' ),
-			'KR' => __( 'South Korea', 'cookie-notice' ),
-			'SS' => __( 'South Sudan', 'cookie-notice' ),
-			'ES' => __( 'Spain', 'cookie-notice' ),
-			'LK' => __( 'Sri Lanka', 'cookie-notice' ),
-			'SD' => __( 'Sudan', 'cookie-notice' ),
-			'SR' => __( 'Suriname', 'cookie-notice' ),
-			'SJ' => __( 'Svalbard and Jan Mayen', 'cookie-notice' ),
-			'SZ' => __( 'Swaziland', 'cookie-notice' ),
-			'SE' => __( 'Sweden', 'cookie-notice' ),
-			'CH' => __( 'Switzerland', 'cookie-notice' ),
-			'SY' => __( 'Syria', 'cookie-notice' ),
-			'TW' => __( 'Taiwan', 'cookie-notice' ),
-			'TJ' => __( 'Tajikistan', 'cookie-notice' ),
-			'TZ' => __( 'Tanzania', 'cookie-notice' ),
-			'TH' => __( 'Thailand', 'cookie-notice' ),
-			'TL' => __( 'Timor-Leste', 'cookie-notice' ),
-			'TG' => __( 'Togo', 'cookie-notice' ),
-			'TK' => __( 'Tokelau', 'cookie-notice' ),
-			'TO' => __( 'Tonga', 'cookie-notice' ),
-			'TT' => __( 'Trinidad and Tobago', 'cookie-notice' ),
-			'TN' => __( 'Tunisia', 'cookie-notice' ),
-			'TR' => __( 'Turkey', 'cookie-notice' ),
-			'TM' => __( 'Turkmenistan', 'cookie-notice' ),
-			'TC' => __( 'Turks and Caicos Islands', 'cookie-notice' ),
-			'TV' => __( 'Tuvalu', 'cookie-notice' ),
-			'UG' => __( 'Uganda', 'cookie-notice' ),
-			'UA' => __( 'Ukraine', 'cookie-notice' ),
-			'AE' => __( 'United Arab Emirates', 'cookie-notice' ),
-			'GB' => __( 'United Kingdom', 'cookie-notice' ),
-			'US' => __( 'United States', 'cookie-notice' ),
-			'UY' => __( 'Uruguay', 'cookie-notice' ),
-			'UZ' => __( 'Uzbekistan', 'cookie-notice' ),
-			'VU' => __( 'Vanuatu', 'cookie-notice' ),
-			'VA' => __( 'Vatican', 'cookie-notice' ),
-			'VE' => __( 'Venezuela', 'cookie-notice' ),
-			'VN' => __( 'Vietnam', 'cookie-notice' ),
-			'WF' => __( 'Wallis and Futuna', 'cookie-notice' ),
-			'EH' => __( 'Western Sahara', 'cookie-notice' ),
-			'WS' => __( 'Western Samoa', 'cookie-notice' ),
-			'YE' => __( 'Yemen', 'cookie-notice' ),
-			'ZM' => __( 'Zambia', 'cookie-notice' ),
-			'ZW' => __( 'Zimbabwe', 'cookie-notice' )
-		);
-		*/
 		
 		// set default text strings
 		Cookie_Notice()->defaults['general']['message_text'] = __( 'We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.', 'cookie-notice' );
@@ -490,6 +254,7 @@ class Cookie_Notice_Settings {
 			
 			add_settings_section( 'cookie_notice_configuration', __( 'Miscellaneous Settings', 'cookie-notice' ), array( $this, 'cn_section_configuration' ), 'cookie_notice_options' );
 			add_settings_field( 'cn_app_blocking', __( 'Autoblocking', 'cookie-notice' ), array( $this, 'cn_app_blocking' ), 'cookie_notice_options', 'cookie_notice_configuration' );
+			add_settings_field( 'cn_hide_banner', __( 'Hide for logged in', 'cookie-notice' ), array( $this, 'cn_hide_banner' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 			add_settings_field( 'cn_app_purge_cache', __( 'Cache', 'cookie-notice' ), array( $this, 'cn_app_purge_cache' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 			add_settings_field( 'cn_script_placement', __( 'Script placement', 'cookie-notice' ), array( $this, 'cn_script_placement' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 			add_settings_field( 'cn_deactivation_delete', __( 'Deactivation', 'cookie-notice' ), array( $this, 'cn_deactivation_delete' ), 'cookie_notice_options', 'cookie_notice_configuration' );
@@ -520,9 +285,8 @@ class Cookie_Notice_Settings {
 			add_settings_section( 'cookie_notice_design', __( 'Notice Design', 'cookie-notice' ), array( $this, 'cn_section_design' ), 'cookie_notice_options' );
 			add_settings_field( 'cn_position', __( 'Position', 'cookie-notice' ), array( $this, 'cn_position' ), 'cookie_notice_options', 'cookie_notice_design' );
 			add_settings_field( 'cn_hide_effect', __( 'Animation', 'cookie-notice' ), array( $this, 'cn_hide_effect' ), 'cookie_notice_options', 'cookie_notice_design' );
-			add_settings_field( 'cn_css_style', __( 'Button style', 'cookie-notice' ), array( $this, 'cn_css_style' ), 'cookie_notice_options', 'cookie_notice_design' );
-			add_settings_field( 'cn_css_class', __( 'Button class', 'cookie-notice' ), array( $this, 'cn_css_class' ), 'cookie_notice_options', 'cookie_notice_design' );
 			add_settings_field( 'cn_colors', __( 'Colors', 'cookie-notice' ), array( $this, 'cn_colors' ), 'cookie_notice_options', 'cookie_notice_design' );
+			add_settings_field( 'cn_css_class', __( 'Button class', 'cookie-notice' ), array( $this, 'cn_css_class' ), 'cookie_notice_options', 'cookie_notice_design' );
 		}
 	}
 
@@ -622,7 +386,7 @@ class Cookie_Notice_Settings {
 			<p class="description">' . __( "In case you're experiencing issues with your site disable that feature temporarily.", 'cookie-notice' ) . '</p>
 		</fieldset>';
 	}
-	
+
 	/**
 	 * App ID option.
 	 */
@@ -634,6 +398,16 @@ class Cookie_Notice_Settings {
 			</div>
 			<p class="description">' . __( 'Click the Purge Cache button to refresh the app configuration.', 'cookie-notice' ) . '</p>
 		</div>';
+	}
+	
+	/**
+	 * Hide banner.
+	 */
+	public function cn_hide_banner() {
+		echo '
+		<fieldset>
+			<label for="cn_hide_banner"><input id="cn_hide_banner" type="checkbox" name="cookie_notice_options[hide_banner]" value="1" ' . checked( true, Cookie_Notice()->options['general']['hide_banner'], false ) . ' />' . __( 'Enable to hide the consent banner for logged in users.', 'cookie-notice' ) . '</label>
+		</fieldset>';
 	}
 
 	/**
@@ -965,27 +739,6 @@ class Cookie_Notice_Settings {
 	/**
 	 * CSS style option.
 	 */
-	public function cn_css_style() {
-		echo '
-		<fieldset>
-			<div id="cn_css_style">';
-
-		foreach ( $this->styles as $value => $label ) {
-			$value = esc_attr( $value );
-
-			echo '
-				<label><input id="cn_css_style-' . $value . '" type="radio" name="cookie_notice_options[css_style]" value="' . $value . '" ' . checked( $value, Cookie_Notice()->options['general']['css_style'], false ) . ' />' . esc_html( $label ) . '</label>';
-		}
-
-		echo '
-				<p class="description">' . __( 'Select the buttons style.', 'cookie-notice' ) . '</p>
-			</div>
-		</fieldset>';
-	}
-
-	/**
-	 * CSS style option.
-	 */
 	public function cn_css_class() {
 		echo '
 		<fieldset>
@@ -1055,11 +808,15 @@ class Cookie_Notice_Settings {
 			// app blocking
 			$input['app_blocking'] = (bool) isset( $input['app_blocking'] );
 			
+			// hide banner
+			$input['hide_banner'] = (bool) isset( $input['hide_banner'] );
+			
 			// position
 			$input['position'] = sanitize_text_field( isset( $input['position'] ) && in_array( $input['position'], array_keys( $this->positions ) ) ? $input['position'] : $cn->defaults['general']['position'] );
 
 			// colors
 			$input['colors']['text'] = sanitize_text_field( isset( $input['colors']['text'] ) && $input['colors']['text'] !== '' && preg_match( '/^#[a-f0-9]{6}$/', $input['colors']['text'] ) === 1 ? $input['colors']['text'] : $cn->defaults['general']['colors']['text'] );
+			$input['colors']['button'] = sanitize_text_field( isset( $input['colors']['button'] ) && $input['colors']['button'] !== '' && preg_match( '/^#[a-f0-9]{6}$/', $input['colors']['button'] ) === 1 ? $input['colors']['button'] : $cn->defaults['general']['colors']['button'] );
 			$input['colors']['bar'] = sanitize_text_field( isset( $input['colors']['bar'] ) && $input['colors']['bar'] !== '' && preg_match( '/^#[a-f0-9]{6}$/', $input['colors']['bar'] ) === 1 ? $input['colors']['bar'] : $cn->defaults['general']['colors']['bar'] );
 			$input['colors']['bar_opacity'] = absint( isset( $input['colors']['bar_opacity'] ) && $input['colors']['bar_opacity'] >= 50 ? $input['colors']['bar_opacity'] : $cn->defaults['general']['colors']['bar_opacity'] );
 
@@ -1081,9 +838,6 @@ class Cookie_Notice_Settings {
 
 			// head refuse code
 			$input['refuse_code_head'] = wp_kses( isset( $input['refuse_code_head'] ) && $input['refuse_code_head'] !== '' ? $input['refuse_code_head'] : $cn->defaults['general']['refuse_code_head'], $allowed_html );
-
-			// css button style
-			$input['css_style'] = sanitize_text_field( isset( $input['css_style'] ) && in_array( $input['css_style'], array_keys( $this->styles ) ) ? $input['css_style'] : $cn->defaults['general']['css_style'] );
 
 			// css button class
 			$input['css_class'] = sanitize_text_field( isset( $input['css_class'] ) ? $input['css_class'] : $cn->defaults['general']['css_class'] );
@@ -1179,23 +933,22 @@ class Cookie_Notice_Settings {
 	 * Load scripts and styles - admin.
 	 */
 	public function admin_enqueue_scripts( $page ) {
-		if ( $page !== 'toplevel_page_cookie-notice' )
-			return;
+		if ( $page === 'toplevel_page_cookie-notice' ) {
+			wp_enqueue_script(
+				'cookie-notice-admin', plugins_url( '../js/admin' . ( ! ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '.min' : '' ) . '.js', __FILE__ ), array( 'jquery', 'wp-color-picker' ), Cookie_Notice()->defaults['version']
+			);
 
-		wp_enqueue_script(
-			'cookie-notice-admin', plugins_url( '../js/admin' . ( ! ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '.min' : '' ) . '.js', __FILE__ ), array( 'jquery', 'wp-color-picker' ), Cookie_Notice()->defaults['version']
-		);
-		
-		wp_localize_script(
-			'cookie-notice-admin', 'cnArgs', array(
-				'ajaxURL'				=> admin_url( 'admin-ajax.php' ),
-				'nonce'					=> wp_create_nonce( 'cn-purge-cache' ),
-				'resetToDefaults'	=> __( 'Are you sure you want to reset these settings to defaults?', 'cookie-notice' )
-			)
-		);
+			wp_localize_script(
+				'cookie-notice-admin', 'cnArgs', array(
+					'ajaxURL'				=> admin_url( 'admin-ajax.php' ),
+					'nonce'					=> wp_create_nonce( 'cn-purge-cache' ),
+					'resetToDefaults'	=> __( 'Are you sure you want to reset these settings to defaults?', 'cookie-notice' )
+				)
+			);
 
-		wp_enqueue_style( 'wp-color-picker' );
-		wp_enqueue_style( 'cookie-notice-admin', plugins_url( '../css/admin' . ( ! ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '.min' : '' ) . '.css', __FILE__ ) );
+			wp_enqueue_style( 'wp-color-picker' );
+			wp_enqueue_style( 'cookie-notice-admin', plugins_url( '../css/admin' . ( ! ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '.min' : '' ) . '.css', __FILE__ ) );
+		}
 	}
 	
 	/**

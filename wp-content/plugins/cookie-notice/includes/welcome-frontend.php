@@ -62,8 +62,8 @@ class Cookie_Notice_Welcome_Frontend {
 				array(
 					'previewMode'	=> $this->preview_mode,
 					'allowedURLs'	=> $this->get_allowed_urls(),
-					'cookieMessage' => Cookie_Notice()->settings->cookie_messages,
-					'preferencesMessage' => Cookie_Notice()->settings->preferences_messages
+					'levelNames' => Cookie_Notice()->settings->level_names,
+					'textStrings' => Cookie_Notice()->settings->text_strings
 				)
 			);
 		}
@@ -87,7 +87,12 @@ class Cookie_Notice_Welcome_Frontend {
 	public function wp_head_scripts() {
 		$options = array(
 			'currentLanguage'	=> 'en',
-			'previewMode'		=> true
+			'previewMode'		=> true,
+			'debugMode'			=> true,
+			'config'			=> array(
+				'privacyPaper' => true,
+				'privacyContact' => true
+			)
 		);
 
 		echo '
