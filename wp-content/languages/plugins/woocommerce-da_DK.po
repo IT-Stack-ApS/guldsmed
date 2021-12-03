@@ -2,14 +2,17 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-11-30 19:28:47+0000\n"
+"PO-Revision-Date: 2021-12-03 16:00+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"X-Generator: Poedit 2.4.3\n"
 "Language: da_DK\n"
 "Project-Id-Version: Plugins - WooCommerce - Stable (latest release)\n"
+"POT-Creation-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
 
 #: packages/woocommerce-blocks/assets/js/blocks/cart-checkout/checkout/inner-blocks/checkout-totals-block/block.json
 msgctxt "block description"
@@ -119,7 +122,7 @@ msgstr "Tillad kunder at fortsætte til siden Kasse."
 #: packages/woocommerce-blocks/assets/js/blocks/cart-checkout/cart-i2/inner-blocks/proceed-to-checkout-block/block.json
 msgctxt "block title"
 msgid "Proceed to checkout"
-msgstr "Fortsæt til betaling (på siden Kasse)"
+msgstr "Fortsæt til betaling"
 
 #: packages/woocommerce-blocks/assets/js/blocks/cart-checkout/cart-i2/inner-blocks/filled-cart-block/block.json
 msgctxt "block description"
@@ -22564,7 +22567,7 @@ msgstr "Beregn forsendelse"
 
 #: templates/cart/proceed-to-checkout-button.php:26
 msgid "Proceed to checkout"
-msgstr "Fortsæt til betaling (på siden Kasse)"
+msgstr "Fortsæt til betaling"
 
 #: includes/customizer/class-wc-shop-customizer.php:715
 #: includes/wc-template-functions.php:2183
