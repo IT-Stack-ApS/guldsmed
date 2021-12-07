@@ -1144,6 +1144,9 @@ body.mm-ocd-opened {
 #main .tabs li a {
   padding: 1em; }
 
+#main .related.products {
+  margin-top: 2em; }
+
 /* Styling for select button */
 /* adds style to divs */
 /* by default all divs are hidden */
