@@ -598,7 +598,8 @@ a.cookie_btn {
           box-shadow: rgba(99, 99, 99, 0.2) 0px 0px 4px 0px; }
           #main .related .products.columns-4 li a.woocommerce-loop-product__link h2.woocommerce-loop-product__title {
             margin-bottom: 0;
-            font-size: 1rem; }
+            font-size: 1rem;
+            max-width: 140px; }
           #main .related .products.columns-4 li a.woocommerce-loop-product__link .price {
             margin-bottom: 0.5em;
             font-size: 0.75rem; }
