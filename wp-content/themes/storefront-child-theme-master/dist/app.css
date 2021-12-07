@@ -659,7 +659,7 @@ a.cookie_btn {
     font-size: 1.25rem;
     text-align: center; }
   .woocommerce-cart .cross-sells ul.products.columns-2, .woocommerce-checkout .cross-sells ul.products.columns-2 {
-    grid-template-columns: 1fr 1fr; }
+    grid-template-columns: 1fr; }
     .woocommerce-cart .cross-sells ul.products.columns-2 li.product, .woocommerce-checkout .cross-sells ul.products.columns-2 li.product {
       height: auto; }
       .woocommerce-cart .cross-sells ul.products.columns-2 li.product .woocommerce-loop-product__link, .woocommerce-checkout .cross-sells ul.products.columns-2 li.product .woocommerce-loop-product__link {
@@ -1428,8 +1428,7 @@ body .select2-container--default .select2-results__option--highlighted[aria-sele
     float: left;
     width: 60%;
     padding: 6em;
-    background-color: #f9f9f9;
-    min-height: 800px; }
+    background-color: #f9f9f9; }
     .woocommerce-cart .col-cart-one .cart-header .cart-product-count {
       font-weight: 500;
       text-transform: uppercase; }
