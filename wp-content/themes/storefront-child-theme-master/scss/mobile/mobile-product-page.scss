@@ -86,6 +86,7 @@
   }
 }
 
-.product-template-default .woocommerce-message {
+.product-template-default div.woocommerce-message {
   font-size: $font-size-small;
+  display: block;
 }
