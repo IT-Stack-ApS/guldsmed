@@ -14,7 +14,7 @@
       }
     }
     .woocommerce-product-gallery {
-      height: 300px;
+      max-height: 300px;
       figure {
         a {
           height: inherit;
@@ -86,6 +86,7 @@
   }
 }
 
-.product-template-default .woocommerce-message {
+.product-template-default div.woocommerce-message {
   font-size: $font-size-small;
+  display: block;
 }
