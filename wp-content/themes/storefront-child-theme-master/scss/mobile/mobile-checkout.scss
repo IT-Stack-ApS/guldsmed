@@ -101,6 +101,7 @@
           height: auto;
           .woocommerce-loop-product__link {
             .woocommerce-loop-product__title{
+              max-width: 250px;
               font-size: $font-size-base;
             }
             padding: 0.5em;
