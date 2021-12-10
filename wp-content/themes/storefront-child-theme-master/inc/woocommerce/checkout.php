@@ -81,14 +81,50 @@ function custom_shipping_package_name( $name ) {
 function filter_woocommerce_cart_shipping_method_full_label( $label, $method ) {
   // Remove afterwards
   //echo 'DEBUG: method id = '. $method->label;
-  
+  var_dump($method->instance_id);
   // Use the condition here with $method to apply the image to a specific method.    
-  if ( $method->method_id === "flat_rate" ) {
-      $label = "<i class='fas fa-truck'></i>" . $label;
+  if ( $method->instance_id == 1 ) {
+    $label = "<i class='fas fa-truck'></i>" . $label;
   }
-  elseif ( $method->method_id == "local_pickup" ) {
-      $label = "<i class='fas fa-store-alt'></i>" . $label;
+  elseif ( $method->instance_id == 2 ) {
+    $label = "<i class='fas fa-store-alt'></i>" . $label;
   }
+  elseif ( $method->instance_id == 3 ) {
+    $gls_image_url = get_stylesheet_directory_uri() . '/img/gls-logo.svg';
+    $label = "<img class='shipping_logo' src='" . $gls_image_url . " ' " . "alt='GLS logo' />" . $label;
+  }
+  elseif ( $method->instance_id == 4 ) {
+    $gls_image_url = get_stylesheet_directory_uri() . '/img/gls-logo.svg';
+    $label = "<img class='shipping_logo' src='" . $gls_image_url . " ' " . "alt='GLS logo' />" . $label;
+  }
+  elseif ( $method->instance_id == 5 ) {
+    $gls_image_url = get_stylesheet_directory_uri() . '/img/gls-logo.svg';
+    $label = "<img class='shipping_logo' src='" . $gls_image_url . " ' " . "alt='GLS logo' />" . $label;
+  }
+  elseif ( $method->instance_id == 6 ) {
+    $gls_image_url = get_stylesheet_directory_uri() . '/img/postnord-logo.svg';
+    $label = "<img class='shipping_logo' src='" . $gls_image_url . " ' " . "alt='PostNord logo' />" . $label;
+  }
+  elseif ( $method->instance_id == 7 ) {
+    $gls_image_url = get_stylesheet_directory_uri() . '/img/postnord-logo.svg';
+    $label = "<img class='shipping_logo' src='" . $gls_image_url . " ' " . "alt='PostNord logo' />" . $label;
+  }
+  elseif ( $method->instance_id == 10 ) {
+    $gls_image_url = get_stylesheet_directory_uri() . '/img/postnord-logo.svg';
+    $label = "<img class='shipping_logo' src='" . $gls_image_url . " ' " . "alt='PostNord logo' />" . $label;
+  }
+  elseif ( $method->instance_id == 8 ) {
+    $gls_image_url = get_stylesheet_directory_uri() . '/img/dao-logo.svg';
+    $label = "<img class='shipping_logo' src='" . $gls_image_url . " ' " . "alt='DAO logo' />" . $label;
+  }
+  elseif ( $method->instance_id == 9 ) {
+    $gls_image_url = get_stylesheet_directory_uri() . '/img/dao-logo.svg';
+    $label = "<img class='shipping_logo' src='" . $gls_image_url . " ' " . "alt='DAO logo' />" . $label;
+  }
+
+
+
+  /*
   elseif ( $method->label == "GLS - Privatlevering" ) {
     $gls_image_url = get_stylesheet_directory_uri() . '/img/gls-logo.svg';
     $label = "<img class='shipping_logo' src='" . $gls_image_url . " ' " . "alt='GLS logo' />" . $label;
@@ -121,6 +157,7 @@ function filter_woocommerce_cart_shipping_method_full_label( $label, $method ) {
     $gls_image_url = get_stylesheet_directory_uri() . '/img/dao-logo.svg';
     $label = "<img class='shipping_logo' src='" . $gls_image_url . " ' " . "alt='DAO logo' />" . $label;
   }
+  */
   else {
     $label = "<i class='fas fa-truck'></i>" . $label;
   }
