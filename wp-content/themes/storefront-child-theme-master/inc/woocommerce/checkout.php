@@ -81,7 +81,7 @@ function custom_shipping_package_name( $name ) {
 function filter_woocommerce_cart_shipping_method_full_label( $label, $method ) {
   // Remove afterwards
   //echo 'DEBUG: method id = '. $method->label;
-  var_dump($method->instance_id);
+
   // Use the condition here with $method to apply the image to a specific method.    
   if ( $method->instance_id == 1 ) {
     $label = "<i class='fas fa-truck'></i>" . $label;
@@ -121,43 +121,6 @@ function filter_woocommerce_cart_shipping_method_full_label( $label, $method ) {
     $gls_image_url = get_stylesheet_directory_uri() . '/img/dao-logo.svg';
     $label = "<img class='shipping_logo' src='" . $gls_image_url . " ' " . "alt='DAO logo' />" . $label;
   }
-
-
-
-  /*
-  elseif ( $method->label == "GLS - Privatlevering" ) {
-    $gls_image_url = get_stylesheet_directory_uri() . '/img/gls-logo.svg';
-    $label = "<img class='shipping_logo' src='" . $gls_image_url . " ' " . "alt='GLS logo' />" . $label;
-  }
-  elseif ( $method->label == "GLS - Erhverv" ) {
-    $gls_image_url = get_stylesheet_directory_uri() . '/img/gls-logo.svg';
-    $label = "<img class='shipping_logo' src='" . $gls_image_url . " ' " . "alt='GLS logo' />" . $label;
-  }
-  elseif ( $method->label == "GLS - PakkeShop" ) {
-    $gls_image_url = get_stylesheet_directory_uri() . '/img/gls-logo.svg';
-    $label = "<img class='shipping_logo' src='" . $gls_image_url . " ' " . "alt='GLS logo' />" . $label;
-  }
-  elseif ( $method->label == "PostNord - Privatlevering" ) {
-    $gls_image_url = get_stylesheet_directory_uri() . '/img/postnord-logo.svg';
-    $label = "<img class='shipping_logo' src='" . $gls_image_url . " ' " . "alt='PostNord logo' />" . $label;
-  }
-  elseif ( $method->label == "PostNord - PakkeShop" ) {
-    $gls_image_url = get_stylesheet_directory_uri() . '/img/postnord-logo.svg';
-    $label = "<img class='shipping_logo' src='" . $gls_image_url . " ' " . "alt='PostNord logo' />" . $label;
-  }
-  elseif ( $method->label == "PostNord - Erhverv" ) {
-    $gls_image_url = get_stylesheet_directory_uri() . '/img/postnord-logo.svg';
-    $label = "<img class='shipping_logo' src='" . $gls_image_url . " ' " . "alt='PostNord logo' />" . $label;
-  }
-  elseif ( $method->label == "DAO - Pakkeshop" ) {
-    $gls_image_url = get_stylesheet_directory_uri() . '/img/dao-logo.svg';
-    $label = "<img class='shipping_logo' src='" . $gls_image_url . " ' " . "alt='DAO logo' />" . $label;
-  }
-  elseif ( $method->label == "DAO - Privatlevering" ) {
-    $gls_image_url = get_stylesheet_directory_uri() . '/img/dao-logo.svg';
-    $label = "<img class='shipping_logo' src='" . $gls_image_url . " ' " . "alt='DAO logo' />" . $label;
-  }
-  */
   else {
     $label = "<i class='fas fa-truck'></i>" . $label;
   }
