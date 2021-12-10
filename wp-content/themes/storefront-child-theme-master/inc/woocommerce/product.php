@@ -119,7 +119,7 @@ function size_guide() {
     global $post;
 
     $icon = "<i class='fas fa-ruler size-guide-icon'></i>";
-    $link = "https://guldsmed.itstack.dev/";
+    $link = get_permalink(818);
     $link_text = "Find din størrelse";
     $terms = get_the_terms( $post->ID, 'product_cat' );
 
