@@ -118,6 +118,9 @@ Yes! The plugin + web appliaction version includes technical compliance features
 
 == Changelog ==
 
+= 2.2.1 =
+* Fix: Missing variable definition in frontend
+
 = 2.2.0 =
 * New: Option to hide banner for logged in users (Compliance only)
 
@@ -397,5 +400,5 @@ Initial release
 
 == Upgrade Notice ==
 
-= 2.2.0 =
-* New: Option to hide banner for logged in users (Compliance only)
+= 2.2.1 =
+* Fix: Missing variable definition in frontend

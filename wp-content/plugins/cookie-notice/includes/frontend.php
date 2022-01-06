@@ -18,6 +18,7 @@ class Cookie_Notice_Frontend {
 		add_action( 'init', array( $this, 'init' ) );
 
 		$this->widget_url = '//cdn.hu-manity.co/hu-banner.min.js';
+		$this->app_url = 'https://app.hu-manity.co';
 	}
 
 	/**
