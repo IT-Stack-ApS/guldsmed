@@ -144,7 +144,7 @@ hr {
         font-size: 1.5rem; }
 
 @media only screen and (min-width: 768px) {
-  #masthead .mega-sub-menu .mega-menu-item a img {
+  #masthead .mega-sub-menu .mega-menu-item a {
     width: 100%; } }
 
 /* Footer */
