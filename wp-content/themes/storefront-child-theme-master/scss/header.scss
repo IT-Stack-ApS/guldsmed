@@ -76,3 +76,10 @@
       }
 
 }
+
+// Mega menu
+@media only screen and (min-width: 768px) {
+  #masthead .mega-sub-menu .mega-menu-item a img {
+    width: 100%;
+  }
+}
