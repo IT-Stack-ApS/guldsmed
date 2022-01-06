@@ -143,6 +143,10 @@ hr {
       #masthead .header-wrapper .header-cart-wrapper .header-cart i {
         font-size: 1.5rem; }
 
+@media only screen and (min-width: 768px) {
+  #masthead .mega-sub-menu .mega-menu-item a img {
+    width: 100%; } }
+
 /* Footer */
 .site-footer {
   padding: 50px 0 0 0;
@@ -1196,8 +1200,7 @@ body.mm-ocd-opened {
   align-items: center;
   justify-content: space-between;
   background-color: #F3EFE7;
-  margin-bottom: 2%;
-  max-height: 20em; }
+  margin-bottom: 2%; }
   .woocommerce-products-header .term-description {
     width: 40%; }
 
