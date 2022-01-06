@@ -1,21 +1,27 @@
 //Fix product grid display on elementor pages
 .elementor-products-grid {
-  ul.products {
+  ul.products.elementor-grid {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     li.product {
       height: auto;
 
       a.woocommerce-loop-product__link {
         @include flexbox;
+      }
 
-        .woocommerce-loop-product__title {
-          max-width: 200px;
-        }
+      .woocommerce-loop-product__title {
+        max-width: 230px;
       }
 
       img {
         margin: auto;
         margin-bottom: 1em;
+      }
+
+      .onsale {
+        @include flexbox;
+        width: 4.5em;
+        height: 4.5em;
       }
     }
   }
@@ -23,23 +29,31 @@
 
 /* Responsive - Mobile */
 @media only screen and (max-width: 767px) {
-  section .elementor-row .elementor-element.elementor-wc-products ul.products {
-    grid-template-columns: 1fr;
+  .elementor-products-grid {
+    ul.products.elementor-grid {
+      grid-template-columns: 1fr;
 
-    .woocommerce-loop-product__title {
-      max-width: 170px;
+      .woocommerce-loop-product__title {
+        max-width: 250px;
+      }
     }
   }
 }
 
 /* Responsive - Tablet */
 @media only screen and (min-width: 768px) and (max-width: 1024px)  {
-  section .elementor-row .elementor-element.elementor-wc-products ul.products {
-    grid-template-columns: 1fr 1fr 1fr;
-    li:last-of-type {
-      display: none;
+  .elementor-products-grid {
+    ul.products.elementor-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+      li:last-of-type {
+        display: none;
+      }
+      li.product .woocommerce-loop-product__title {
+        max-width: 150px;
+      }
     }
   }
+
   .elementor-element ul.products li.product .badge-wrapper {
     width: 100%;
   }

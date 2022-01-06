@@ -1954,32 +1954,39 @@ a.preview-cart-btn {
   #cart-preview, #cart-preview-updated {
     display: none !important; } }
 
-.elementor-products-grid ul.products {
+.elementor-products-grid ul.products.elementor-grid {
   grid-template-columns: 1fr 1fr 1fr 1fr; }
-  .elementor-products-grid ul.products li.product {
+  .elementor-products-grid ul.products.elementor-grid li.product {
     height: auto; }
-    .elementor-products-grid ul.products li.product a.woocommerce-loop-product__link {
+    .elementor-products-grid ul.products.elementor-grid li.product a.woocommerce-loop-product__link {
       display: flex;
       align-items: center; }
-      .elementor-products-grid ul.products li.product a.woocommerce-loop-product__link .woocommerce-loop-product__title {
-        max-width: 200px; }
-    .elementor-products-grid ul.products li.product img {
+    .elementor-products-grid ul.products.elementor-grid li.product .woocommerce-loop-product__title {
+      max-width: 230px; }
+    .elementor-products-grid ul.products.elementor-grid li.product img {
       margin: auto;
       margin-bottom: 1em; }
+    .elementor-products-grid ul.products.elementor-grid li.product .onsale {
+      display: flex;
+      align-items: center;
+      width: 4.5em;
+      height: 4.5em; }
 
 /* Responsive - Mobile */
 @media only screen and (max-width: 767px) {
-  section .elementor-row .elementor-element.elementor-wc-products ul.products {
+  .elementor-products-grid ul.products.elementor-grid {
     grid-template-columns: 1fr; }
-    section .elementor-row .elementor-element.elementor-wc-products ul.products .woocommerce-loop-product__title {
-      max-width: 170px; } }
+    .elementor-products-grid ul.products.elementor-grid .woocommerce-loop-product__title {
+      max-width: 250px; } }
 
 /* Responsive - Tablet */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-  section .elementor-row .elementor-element.elementor-wc-products ul.products {
+  .elementor-products-grid ul.products.elementor-grid {
     grid-template-columns: 1fr 1fr 1fr; }
-    section .elementor-row .elementor-element.elementor-wc-products ul.products li:last-of-type {
+    .elementor-products-grid ul.products.elementor-grid li:last-of-type {
       display: none; }
+    .elementor-products-grid ul.products.elementor-grid li.product .woocommerce-loop-product__title {
+      max-width: 150px; }
   .elementor-element ul.products li.product .badge-wrapper {
     width: 100%; } }
 
