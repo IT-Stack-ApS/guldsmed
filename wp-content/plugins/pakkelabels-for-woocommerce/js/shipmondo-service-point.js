@@ -87,6 +87,29 @@ jQuery(document).ready(function($) {
             if(typeof selected_shops[index] !== 'undefined' &&
                typeof selected_shops[index][agent] !== 'undefined') {
                 setShopHTML(index, selected_shops[index][agent], $(this));
+            } else {
+                var inputs = $(this).find('.hidden_chosen_shop');
+
+                var shop = {
+                    'id': inputs.find('[name="shipmondo[' + index + ']"]')?.val(),
+                    'name': inputs.find('[name="shop_name[' + index + ']"]')?.val(),
+                    'address': inputs.find('[name="shop_address[' + index + ']"]')?.val(),
+                    'zip': inputs.find('[name="shop_zip[' + index + ']"]')?.val(),
+                    'city': inputs.find('[name="shop_city[' + index + ']"]')?.val(),
+                    'id_string': inputs.find('[name="shop_ID[' + index + ']"]')?.val()
+                };
+
+                if(typeof selected_shops[index] !== 'undefined' &&
+                    typeof selected_shops[index][agent] !== 'undefined' &&
+                    selected_shops[index][agent] === shop) {
+                    return;
+                }
+
+                if(typeof selected_shops[index] === 'undefined') {
+                    selected_shops[index] = [];
+                }
+
+                selected_shops[index][agent] = shop;
             }
         });
     });
@@ -291,7 +314,7 @@ jQuery(document).ready(function($) {
 
             if(typeof selected_shops[index] !== 'undefined' &&
                 typeof selected_shops[index][agent] !== 'undefined') {
-                wrapper.find('.shipmondo-shop-list[data-id="' + selected_shops[index][agent].id + '"]').addClass('selected');
+                modal_content.find('.shipmondo-shop-list[data-id="' + selected_shops[index][agent].id + '"]').addClass('selected');
             }
 
 
@@ -316,11 +339,16 @@ jQuery(document).ready(function($) {
 
     // Render Markers
     function shipmondoLoadMarker(data) {
+        var index = getShippingIndex(current_modal_element);
+        var agent = getShippingAgent(current_modal_element);
+
+        var selected_shop = selected_shops?.[index]?.[agent];
+
         var marker = new google.maps.Marker({
             position: {lat: parseFloat(data.latitude), lng: parseFloat(data.longitude)},
             map: map,
             icon: {
-                url: shipmondo[data.agent + '_icon_url'],
+                url: selected_shop?.id === data.id ? shipmondo['icon_url_selected'] : shipmondo['icon_url'],
                 size: new google.maps.Size(48, 48),
                 scaledSize: new google.maps.Size(48, 48),
                 anchor: new google.maps.Point(24, 24)
@@ -446,7 +474,7 @@ jQuery(document).ready(function($) {
 
             if(typeof selected_shops[index] !== 'undefined' &&
                typeof selected_shops[index][agent] !== 'undefined') {
-                wrapper.find('.shipmondo-shop-list[data-id="' + selected_shops[index][agent].id + '"]').addClass('selected');
+                dropdown_content.find('.shipmondo-shop-list[data-id="' + selected_shops[index][agent].id + '"]').addClass('selected');
             }
 
             dropdown.removeClass('loading');

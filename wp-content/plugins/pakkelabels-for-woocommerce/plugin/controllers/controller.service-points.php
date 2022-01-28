@@ -57,10 +57,8 @@ class ServicePointsController extends Controller {
             Plugin::addStyle('shipmondo-service-point');
             Plugin::localizeScript('shipmondo-service-point', 'shipmondo', array(
                 'ajax_url' => admin_url('admin-ajax.php'),
-                'gls_icon_url' => Plugin::getFileURL('picker_icon_gls.png', array('images')),
-                'bring_icon_url' => Plugin::getFileURL('picker_icon_bring.png', array('images')),
-                'dao_icon_url' => Plugin::getFileURL('picker_icon_dao.png', array('images')),
-                'pdk_icon_url' => Plugin::getFileURL('picker_icon_pdk.png', array('images')),
+                'icon_url' => Plugin::getFileURL('picker_default.png', array('images')),
+                'icon_url_selected' => Plugin::getFileURL('picker_green.png', array('images')),
                 'select_shop_text' => __('Choose pickup point', 'pakkelabels-for-woocommerce')
             ));
         }
