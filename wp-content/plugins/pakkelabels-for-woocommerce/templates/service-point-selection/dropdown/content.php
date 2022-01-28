@@ -11,8 +11,7 @@
 	                    <input type="hidden" class="input_shop_zip" id="<?php echo 'shop_zip_' . $service_point->number; ?>" name="<?php echo 'shop_zip_' . $service_point->number; ?>" value="<?php echo $service_point->zipcode; ?>">
 	                    <input type="hidden" class="input_shop_city" id="<?php echo 'shop_city_' . $service_point->number; ?>" name="<?php echo 'shop_city_' . $service_point->number; ?>" value="<?php echo $service_point->city; ?>">
 
-	                    <img class="agent_icon" src="<?php echo \ShipmondoForWooCommerce\Plugin\Plugin::getImgURL('picker_icon_' . $agent . '.png', array('images'))?>">
-                        <div class="shipmondo-service-point-info">
+	                    <div class="shipmondo-service-point-info">
                             <div class="shipmondo-service-point-name"><?php echo $service_point->company_name; ?></div>
                             <div class="shipmondo-service-point-address"><?php echo $service_point->address; ?></div>
                             <div class="shipmondo-service-point-zipcode-city">

@@ -3,8 +3,8 @@ Contributors: Shipmondo
 Plugin URI: https://shipmondo.com
 Tags: Shipmondo, shipping, GLS, PostNord, Bring, DAO365, Pakkeshop, fragt, woocommerce, pakkelabels, fragtmodul
 Requires at least: 4.5.2
-Tested up to: 5.7
-Stable tag: 4.0.9
+Tested up to: 5.8
+Stable tag: 4.0.10
 License: Shipmondo
 License URI: https://shipmondo.com
 
@@ -75,6 +75,11 @@ Note! Requires at least WooCommerce 3.0.0.
 5. Example Customer view of shipping methods
 
 == Changelog ==
+
+= 4.0.10 =
+* Changed agent specific icons with a static icon in modal
+* Removed icons from dropdown
+* Solved problem with showing prevoius chosen pickup point in the modal or dropdown
 
 = 4.0.9 =
 * Removed shop ID from pickup point selection in checkout
