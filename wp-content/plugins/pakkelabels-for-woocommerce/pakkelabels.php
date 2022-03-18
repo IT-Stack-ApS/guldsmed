@@ -3,15 +3,15 @@
  * Plugin Name: Shipmondo for WooCommerce
  * Plugin URI: https://shipmondo.com
  * Description: Bring, DAO365, GLS and PostNord Shipping for WooCommerce
- * Version: 4.0.10
+ * Version: 4.1.0
  * Text Domain: pakkelabels-for-woocommerce
  * Domain Path: /languages
  * Author: Shipmondo
  * Author URI: https://shipmondo.com
  * Requires at least: 4.5.2
- * Tested up to: 5.8
+ * Tested up to: 5.9
  * WC requires at least: 3.0.0
- * WC tested up to: 6.0
+ * WC tested up to: 6.2
  */
 
 if(!function_exists('is_plugin_active_for_network')) {

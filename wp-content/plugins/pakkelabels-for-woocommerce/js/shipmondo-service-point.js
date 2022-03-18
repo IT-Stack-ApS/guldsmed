@@ -91,19 +91,13 @@ jQuery(document).ready(function($) {
                 var inputs = $(this).find('.hidden_chosen_shop');
 
                 var shop = {
-                    'id': inputs.find('[name="shipmondo[' + index + ']"]')?.val(),
-                    'name': inputs.find('[name="shop_name[' + index + ']"]')?.val(),
-                    'address': inputs.find('[name="shop_address[' + index + ']"]')?.val(),
-                    'zip': inputs.find('[name="shop_zip[' + index + ']"]')?.val(),
-                    'city': inputs.find('[name="shop_city[' + index + ']"]')?.val(),
-                    'id_string': inputs.find('[name="shop_ID[' + index + ']"]')?.val()
+                    'id': inputs.find('[name="shipmondo[' + index + ']"]').val(),
+                    'name': inputs.find('[name="shop_name[' + index + ']"]').val(),
+                    'address': inputs.find('[name="shop_address[' + index + ']"]').val(),
+                    'zip': inputs.find('[name="shop_zip[' + index + ']"]').val(),
+                    'city': inputs.find('[name="shop_city[' + index + ']"]').val(),
+                    'id_string': inputs.find('[name="shop_ID[' + index + ']"]').val()
                 };
-
-                if(typeof selected_shops[index] !== 'undefined' &&
-                    typeof selected_shops[index][agent] !== 'undefined' &&
-                    selected_shops[index][agent] === shop) {
-                    return;
-                }
 
                 if(typeof selected_shops[index] === 'undefined') {
                     selected_shops[index] = [];
@@ -342,13 +336,17 @@ jQuery(document).ready(function($) {
         var index = getShippingIndex(current_modal_element);
         var agent = getShippingAgent(current_modal_element);
 
-        var selected_shop = selected_shops?.[index]?.[agent];
+        var selected_shop_id = null;
+
+        if(selected_shops[index] != null && selected_shops[index][agent] != null && selected_shops[index][agent].id != null) {
+            selected_shop_id = selected_shops[index][agent].id
+        }
 
         var marker = new google.maps.Marker({
             position: {lat: parseFloat(data.latitude), lng: parseFloat(data.longitude)},
             map: map,
             icon: {
-                url: selected_shop?.id === data.id ? shipmondo['icon_url_selected'] : shipmondo['icon_url'],
+                url: selected_shop_id === data.id ? shipmondo['icon_url_selected'] : shipmondo['icon_url'],
                 size: new google.maps.Size(48, 48),
                 scaledSize: new google.maps.Size(48, 48),
                 anchor: new google.maps.Point(24, 24)

@@ -8,7 +8,7 @@ use ShipmondoForWooCommerce\Plugin\ShippingMethods\Shipmondo;
 
 class ServicePointsController extends Controller {
 
-    /*
+    /**
 	 * @author Morning Train - Martin Schadegg Brønniche <ms@morningtrain.dk>
 	 * @since 1.2.0
 	 */
@@ -25,6 +25,41 @@ class ServicePointsController extends Controller {
 
 		Loader::addAction('woocommerce_checkout_process', static::class, 'validateServicePointSelection');
     }
+
+	/**
+	 *
+	 * @return void
+	 */
+	protected function registerFilters() {
+		parent::registerFilters();
+
+		Loader::addFilter('woocommerce_order_get_formatted_shipping_address', static::class, 'displayPickupPointAfterDeliveryAddress', 10, 3);
+	}
+
+	/**
+	 * @param string $address
+	 * @param array $raw_address
+	 * @param \WC_Order $order
+	 *
+	 * @return mixed|string
+	 */
+	public static function displayPickupPointAfterDeliveryAddress($address, $raw_address, $order) {
+		$info = $order->get_meta('shipmondo_pickup_point');
+
+		if(!empty($info)) {
+			if(!empty($address)) {
+				$address .= '<br><br>';
+			}
+
+			$info['company'] = $info['name'];
+
+			$address .= __('Pickup Point:', 'pakkelabels-for-woocommerce') . '<br>';
+
+			$address .= WC()->countries->get_formatted_address( $info );
+		}
+
+		return $address;
+	}
 
 	/**
 	 * Set session with current pickup point selection
@@ -217,20 +252,16 @@ class ServicePointsController extends Controller {
 		}
 
 		$shipping_info = array(
-			'first_name' => (!empty($order->get_shipping_first_name()) ? $order->get_shipping_first_name() : $order->get_billing_first_name()),
-			'last_name' => (!empty($order->get_shipping_last_name()) ? $order->get_shipping_last_name() : $order->get_billing_last_name()),
-			'company' => (!empty($_POST['shop_name'][$package_key]) ? $_POST['shop_name'][$package_key] : ServicePointsController::getCurrentSelection('name', $shipping_method->getShippingAgent(), $package_key)),
+			'name' => (!empty($_POST['shop_name'][$package_key]) ? $_POST['shop_name'][$package_key] : ServicePointsController::getCurrentSelection('name', $shipping_method->getShippingAgent(), $package_key)),
 			'address_1' => (!empty($_POST['shop_address'][$package_key]) ? $_POST['shop_address'][$package_key] : ServicePointsController::getCurrentSelection('address', $shipping_method->getShippingAgent(), $package_key)),
-			'address_2' => (!empty($_POST['shop_ID'][$package_key]) ? $_POST['shop_ID'][$package_key] : ServicePointsController::getCurrentSelection('id_string', $shipping_method->getShippingAgent(), $package_key)),
 			'city' => (!empty($_POST['shop_city'][$package_key]) ? $_POST['shop_city'][$package_key] : ServicePointsController::getCurrentSelection('city', $shipping_method->getShippingAgent(), $package_key)),
 			'postcode' => (!empty($_POST['shop_zip'][$package_key]) ? $_POST['shop_zip'][$package_key] : ServicePointsController::getCurrentSelection('zip', $shipping_method->getShippingAgent(), $package_key)),
+			'country' => $order->get_shipping_country() ? $order->get_shipping_country() : $order->get_billing_country(),
+			'carrier_code' => $shipping_method->getShippingAgent(),
+			'id' => (!empty($_POST['shipmondo'][$package_key]) ? $_POST['shipmondo'][$package_key] : ServicePointsController::getCurrentSelection('id', $shipping_method->getShippingAgent(), $package_key))
 		);
 
-		// Update shipping info
-		$order->set_address($shipping_info, 'shipping');
-
-		$order->update_meta_data(__('Pickup point', 'pakkelabels-for-woocommerce'), (!empty($_POST['shipmondo'][$package_key]) ? $_POST['shipmondo'][$package_key] : ServicePointsController::getCurrentSelection('id', $shipping_method->getShippingAgent(), $package_key)));
-
+		$order->update_meta_data('shipmondo_pickup_point', $shipping_info);
 	}
 
 	public static function validateServicePointSelection() {

@@ -3,21 +3,21 @@
  * Plugin Name: WooCommerce QuickPay
  * Plugin URI: http://wordpress.org/plugins/woocommerce-quickpay/
  * Description: Integrates your QuickPay payment gateway into your WooCommerce installation.
- * Version: 6.4.2
+ * Version: 6.5.1
  * Author: Perfect Solution
  * Text Domain: woo-quickpay
  * Domain Path: /languages/
  * Author URI: http://perfect-solution.dk
  * Wiki: http://quickpay.perfect-solution.dk/
  * WC requires at least: 3.0.0
- * WC tested up to: 5.6
+ * WC tested up to: 6.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'WCQP_VERSION', '6.4.2' );
+define( 'WCQP_VERSION', '6.5.1' );
 define( 'WCQP_URL', plugins_url( __FILE__ ) );
 define( 'WCQP_PATH', plugin_dir_path( __FILE__ ) );
 
@@ -195,6 +195,7 @@ function init_quickpay_gateway() {
 		public static function get_gateway_instances() {
 			$gateways = [
 				'anyday'                  => 'WC_QuickPay_Anyday',
+				'apple-pay'               => 'WC_QuickPay_Apple_Pay',
 				'fbg1886'                 => 'WC_QuickPay_FBG1886',
 				'ideal'                   => 'WC_QuickPay_iDEAL',
 				'klarna'                  => 'WC_QuickPay_Klarna',
@@ -1023,10 +1024,11 @@ function init_quickpay_gateway() {
 					$this->log->add( sprintf( __( 'QuickPay status message: %s.', 'woo-quickpay' ), $transaction->qp_status_msg ) );
 					$this->log->add( sprintf( __( 'Acquirer status code: %s', 'woo-quickpay' ), $transaction->aq_status_code ) );
 					$this->log->add( sprintf( __( 'Acquirer status message: %s', 'woo-quickpay' ), $transaction->aq_status_msg ) );
+					$this->log->add( sprintf( __( 'Data: %s', 'woo-quickpay' ), $request_body ) );
 					$this->log->separator();
 
 					if ( $order && ( $transaction->type === 'recurring' || 'rejected' !== $json->state ) ) {
-						$order->update_status( 'failed', sprintf( 'Payment failed: <br />%s', $request_body ) );
+						$order->update_status( 'failed', sprintf( 'Payment failed <br />QuickPay Message: %s<br />Acquirer Message: %s', $transaction->qp_status_msg, $transaction->aq_status_msg ) );
 					}
 				}
 			} else {
@@ -1400,6 +1402,8 @@ function init_quickpay_gateway() {
 		 */
 		protected function gateway_icon_create( $icon, $max_height ) {
 			$icon = str_replace( 'quickpay_', '', $icon );
+
+			$icon = apply_filters( 'woocommerce_quickpay_checkout_gateway_icon', $icon );
 
 			if ( file_exists( __DIR__ . '/assets/images/cards/' . $icon . '.svg' ) ) {
 				$icon_url = WC_HTTPS::force_https_url( plugin_dir_url( __FILE__ ) . 'assets/images/cards/' . $icon . '.svg' );

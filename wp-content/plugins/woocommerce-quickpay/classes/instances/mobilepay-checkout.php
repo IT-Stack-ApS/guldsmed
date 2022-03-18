@@ -178,7 +178,7 @@ class WC_QuickPay_MobilePay_Checkout extends WC_QuickPay_Instance {
 	 * @param object $transaction
 	 */
 	public function callback_save_address( $order, $transaction ) {
-		if ( isset($transaction->variables->payment_method) && $transaction->variables->payment_method === $this->id && $this->is_enabled() ) {
+		if ( isset( $transaction->variables->payment_method ) && $transaction->variables->payment_method === $this->id && $this->is_enabled() ) {
 			$billing_address  = apply_filters( 'woocommerce_quickpay_automatic_billing_address', ! empty( $transaction->invoice_address ) ? $transaction->invoice_address : null, $order, $transaction );
 			$shipping_address = apply_filters( 'woocommerce_quickpay_automatic_shipping_address', ! empty( $transaction->shipping_address ) ? $transaction->shipping_address : null, $order, $billing_address, $transaction );
 
@@ -228,7 +228,7 @@ class WC_QuickPay_MobilePay_Checkout extends WC_QuickPay_Instance {
 			$object->set_billing_address_1( $this->get_formatted_address( $address ) );
 			$object->set_billing_address_2( $address->att );
 			$object->set_billing_phone( $address->phone_number );
-			$object->set_billing_country( $address->country_code );
+			$object->set_billing_country( WC_QuickPay_Countries::getAlpha2FromAlpha3( $address->country_code ) );
 			$object->set_billing_company( $address->company_name );
 			$object->set_billing_city( $address->city );
 			$object->set_billing_postcode( $address->zip_code );
@@ -290,7 +290,7 @@ class WC_QuickPay_MobilePay_Checkout extends WC_QuickPay_Instance {
 			$object->set_shipping_last_name( $this->get_last_name( $address->name ) );
 			$object->set_shipping_address_1( $this->get_formatted_address( $address ) );
 			$object->set_shipping_address_2( $address->att );
-			$object->set_shipping_country( $address->country_code );
+			$object->set_shipping_country( WC_QuickPay_Countries::getAlpha2FromAlpha3( $address->country_code ) );
 			$object->set_shipping_company( $address->company_name );
 			$object->set_shipping_city( $address->city );
 			$object->set_shipping_postcode( $address->zip_code );

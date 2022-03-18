@@ -243,6 +243,7 @@ class WC_QuickPay_Helper {
 		$logos = [
 			'american-express'        => 'americanexpress.svg',
 			'anyday'                  => 'anyday.svg',
+			'apple-pay'               => 'apple-pay.svg',
 			'dankort'                 => 'dankort.svg',
 			'diners'                  => 'diners.svg',
 			'edankort'                => 'edankort.png',
