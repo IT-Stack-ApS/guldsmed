@@ -2,7 +2,7 @@
 Contributors: PerfectSolution
 Tags: gateway, woo commerce, quickpay, quick pay, gateway, integration, woocommerce, woocommerce quickpay, payment, payment gateway, psp
 Requires at least: 4.0.0
-Tested up to: 5.8
+Tested up to: 5.9
 Stable tag: trunk
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -27,6 +27,19 @@ General:
 3. If WooCommerce Subscriptions is used, the required minimum version is >= 2.0
 
 == Changelog ==
+= 6.5.1 =
+* Fix: MobilePay Subscription gateway is now available when using the "Change Payment" option from the account page.
+
+= 6.5.0 =
+* Feat: Add Apple Pay gateway - works only in Safari.
+* Feat: Show a more user-friendly error message when payments fail in the callback handler.
+* Dev: Add new filter woocommerce_quickpay_checkout_gateway_icon
+* Fix: Bump WC + WP tested with versions to latest versions
+
+= 6.4.3 =
+* Dev: Add WC_QuickPay_Countries::getAlpha2FromAlpha3
+* Fix: Use alpha2 country code instead of alpha3 country code in MP Checkout callbacks
+
 = 6.4.2 =
 * Fix: Modify force checkout logic used for MobilePay Checkout to enhance theme support.
 

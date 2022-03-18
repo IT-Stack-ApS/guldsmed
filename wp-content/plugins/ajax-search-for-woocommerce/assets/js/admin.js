@@ -595,6 +595,7 @@
             $.ajax({
                 url: ajaxurl,
                 data: {
+                    _wpnonce: dgwt_wcas.nonces.advanced_options_switch,
                     action: 'dgwt_wcas_adv_settings',
                     adv_settings_value: choice
                 }
@@ -1471,7 +1472,7 @@
 
 			const count = dgwt_wcas['troubleshooting']['tests']['issues']['critical'] + dgwt_wcas['troubleshooting']['tests']['issues']['recommended'];
 			if (count > 0) {
-				$(_this.counterClass).text(count);
+				$(_this.counterClass).text(count).addClass('active');
 				$(_this.settingsTab).addClass('enabled');
 			}
 
@@ -1576,7 +1577,7 @@
 			count = dgwt_wcas.troubleshooting.tests.issues['critical'] + dgwt_wcas.troubleshooting.tests.issues['recommended'];
 
 			if (count > 0) {
-				$(_this.counterClass).text(count);
+				$(_this.counterClass).text(count).addClass('active');
 				$(_this.settingsTab).addClass('enabled');
 			}
 

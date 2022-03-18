@@ -190,7 +190,7 @@ class ThemesCompatibility {
 				'className' => 'Estore',
 				'name'      => 'eStore',
 			),
-			'estore-pro'        => array(
+			'estore-pro'    => array(
 				'slug'      => 'estore-pro',
 				'className' => 'EstorePro',
 				'name'      => 'eStore Pro',
@@ -204,9 +204,28 @@ class ThemesCompatibility {
 				'className' => 'OpenShopPro',
 				'name'      => 'Open Shop Pro',
 			),
-			'uncode' => array(
-				'slug'      => 'uncode',
-				'name'      => 'Uncode',
+			'uncode'        => array(
+				'slug' => 'uncode',
+				'name' => 'Uncode',
+			),
+			'xstore'        => array(
+				'slug'      => 'xstore',
+				'className' => 'Xstore',
+				'name'      => 'XStore',
+			),
+			'kadence'       => array(
+				'slug' => 'kadence',
+				'name' => 'Kadence',
+			),
+			'thegem-elementor' => array(
+				'slug'      => 'thegem-elementor',
+				'className' => 'TheGemElementor',
+				'name'      => 'TheGem (Elementor)',
+			),
+			'thegem-wpbakery' => array(
+				'slug'      => 'thegem-wpbakery',
+				'className' => 'TheGemWPBakery',
+				'name'      => 'TheGem (WPBakery)',
 			),
 		);
 	}
@@ -247,18 +266,18 @@ class ThemesCompatibility {
 	}
 
 	/**
-	 * Get current theme onfo
+	 * Get current theme info
 	 *
-	 * @return object
+	 * @return null|object
 	 */
 	public function getTheme() {
 		return $this->theme;
 	}
 
 	/**
-	 * Get current theme onfo
+	 * Get current theme image src
 	 *
-	 * @return object
+	 * @return string
 	 */
 	public function getThemeImageSrc() {
 		$src = '';

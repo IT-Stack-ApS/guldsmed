@@ -152,7 +152,8 @@ class WC_QuickPay_MobilePay_Subscriptions extends WC_QuickPay_Instance {
 	public function adjust_available_gateways( $available_gateways ) {
 		if ( isset( $available_gateways[ $this->id ] )
 		     && WC_QuickPay_Subscription::plugin_is_active()
-		     && ( is_cart() || is_checkout() ) && ! WC_Subscriptions_Cart::cart_contains_subscription() ) {
+		     && ( is_cart() || is_checkout() ) && ! WC_Subscriptions_Cart::cart_contains_subscription()
+			 && ! WC_Subscriptions_Change_Payment_Gateway::$is_request_to_change_payment ) {
 			unset( $available_gateways[ $this->id ] );
 		}
 
