@@ -23,11 +23,11 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 <script type="text/javascript">
 dataLayer.push({
-   "event":"view_cart",
-   "ecommerce": {
-     "currency": "<?php echo get_woocommerce_currency_symbol(); ?>",
-	 "value": "<?php echo $amount = WC()->cart->cart_contents_total + WC()->cart->tax_total; ?>",
-     "items": [
+   event: "view_cart",
+   ecommerce: {
+     currency: "<?php echo get_woocommerce_currency_symbol(); ?>",
+	 value: <?php echo $amount = WC()->cart->cart_contents_total + WC()->cart->tax_total; ?>,
+     items: [
 			<?php
 			global $woocommerce;
 			$items = $woocommerce->cart->get_cart();
@@ -35,17 +35,17 @@ dataLayer.push({
 				$_product =  wc_get_product( $values['data']->get_id());
 			?>
 				{
-				"item_id": "<?php echo $product_id = $_product->get_id(); ?>",
-				"item_name": "<?php echo $product_title = $_product->get_title(); ?>",
-				"affiliation": "WooCommerce",
-				"currency": "<?php echo get_woocommerce_currency_symbol(); ?>",
-				"item_category":"<?php $terms = get_the_terms( $product_id, 'product_cat' );
+				item_id: "<?php echo $product_id = $_product->get_id(); ?>",
+				item_name: "<?php echo $product_title = $_product->get_title(); ?>",
+				affiliation: "WooCommerce",
+				currency: "<?php echo get_woocommerce_currency_symbol(); ?>",
+				item_category:"<?php $terms = get_the_terms( $product_id, 'product_cat' );
 				foreach ($terms as $term) {
 				$product_cat = $term->name;
 				}
 				echo $product_cat ; ?>",
-				"price": "<?php echo $price = get_post_meta($values['product_id'] , '_price', true); ?>",
-				"quantity": <?php echo $cart_quantity = $values['quantity'];?>
+				price: <?php echo $price = get_post_meta($values['product_id'] , '_price', true); ?>,
+				quantity: <?php echo $cart_quantity = $values['quantity'];?>
 				},
 			<?php endforeach; ?>
 		]
