@@ -1,0 +1,45 @@
+.main-navigation ul li, .secondary-navigation ul {
+    .list-expand {
+        border-top: 1px solid $gray;
+        text-align: center;
+        margin-top: 10px;
+        font-weight: $font-weight-bold;
+        cursor: pointer;
+        &::before {
+            content: '\f140';
+            font-family: dashicons;
+            font-weight: normal;
+            display: inline-block;
+            vertical-align: top;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transform: rotate(0);
+            color: inherit;
+            position: relative;
+            background: transparent;
+            height: auto;
+            width: auto;
+            right: auto;
+            line-height: inherit;
+        }
+    }
+    .rotate {
+        &::before {
+            content: '\f140';
+            font-family: dashicons;
+            font-weight: normal;
+            display: inline-block;
+            vertical-align: top;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transform: rotate(180deg);
+            color: inherit;
+            position: relative;
+            background: transparent;
+            height: auto;
+            width: auto;
+            right: auto;
+            line-height: inherit;
+        }
+    }
+}

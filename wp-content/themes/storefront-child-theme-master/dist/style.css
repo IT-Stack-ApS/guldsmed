@@ -1371,6 +1371,48 @@ body.mm-ocd-opened {
   display: none;
 }
 
+.main-navigation ul li .list-expand, .secondary-navigation ul .list-expand {
+  border-top: 1px solid #dbdbdb;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.main-navigation ul li .list-expand::before, .secondary-navigation ul .list-expand::before {
+  content: "\f140";
+  font-family: dashicons;
+  font-weight: normal;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: rotate(0);
+  color: inherit;
+  position: relative;
+  background: transparent;
+  height: auto;
+  width: auto;
+  right: auto;
+  line-height: inherit;
+}
+.main-navigation ul li .rotate::before, .secondary-navigation ul .rotate::before {
+  content: "\f140";
+  font-family: dashicons;
+  font-weight: normal;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: rotate(180deg);
+  color: inherit;
+  position: relative;
+  background: transparent;
+  height: auto;
+  width: auto;
+  right: auto;
+  line-height: inherit;
+}
+
 /* Product page */
 #main .product {
   overflow: visible;
