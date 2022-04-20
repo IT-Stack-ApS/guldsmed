@@ -1372,11 +1372,12 @@ body.mm-ocd-opened {
 }
 
 .main-navigation ul li .list-expand, .secondary-navigation ul .list-expand {
-  border-top: 1px solid #dbdbdb;
+  border-top: 1px solid rgba(85, 85, 85, 0.121);
   text-align: center;
   margin-top: 10px;
-  font-weight: 700;
+  font-weight: 500;
   cursor: pointer;
+  color: rgba(85, 85, 85, 0.5);
 }
 .main-navigation ul li .list-expand::before, .secondary-navigation ul .list-expand::before {
   content: "\f140";

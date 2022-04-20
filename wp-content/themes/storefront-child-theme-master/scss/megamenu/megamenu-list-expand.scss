@@ -1,10 +1,11 @@
 .main-navigation ul li, .secondary-navigation ul {
     .list-expand {
-        border-top: 1px solid $gray;
+        border-top: 1px solid rgba(85, 85, 85, 0.121);
         text-align: center;
         margin-top: 10px;
-        font-weight: $font-weight-bold;
+        font-weight: $font-weight-normal-bold;
         cursor: pointer;
+        color: rgba(85, 85, 85, 0.50);
         &::before {
             content: '\f140';
             font-family: dashicons;
