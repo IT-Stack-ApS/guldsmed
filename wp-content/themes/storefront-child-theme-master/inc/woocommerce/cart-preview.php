@@ -23,7 +23,7 @@
               $cart_url = $woocommerce->cart->get_cart_url();
             ?>
 					
-            <a href="<?php $link ?>">
+            <a href="<?php echo $link ?>">
 
               <!-- Image -->
               <div class="preview-img">

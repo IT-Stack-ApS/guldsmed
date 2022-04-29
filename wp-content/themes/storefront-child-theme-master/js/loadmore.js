@@ -20,6 +20,24 @@ jQuery(function($){ // use jQuery code inside this to avoid "$ is not defined" e
 					button.text( 'Se flere produkter' ).prev().before(data); // insert new posts
 					loadmore_params.current_page++;
 
+
+					/* Progress bar */
+					var post_count = Number(loadmore_params.post_count);
+					var current_page = Number(loadmore_params.current_page );
+					var post_found = loadmore_params.post_found;
+					var post_count_total = post_count * current_page;
+
+					$('#progress-bar').val( post_count_total );
+					 					
+					if ( post_count_total > post_found ) {
+						$('.woocommerce-result-count ').replaceWith('<p class="woocommerce-result-count">Viser ' + (post_count_total - 1 )  + ' af ' + post_found + ' resultater</p>' );
+					}
+					else {
+						$('.woocommerce-result-count ').replaceWith('<p class="woocommerce-result-count">Viser ' + post_count_total + ' af ' + post_found + ' resultater</p>' );
+					}
+					/* End progress bar */
+					
+
 					if ( loadmore_params.current_page == loadmore_params.max_page )
 						button.remove(); // if last page, remove the button
 
