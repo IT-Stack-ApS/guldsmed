@@ -6,10 +6,6 @@ jQuery(function($) {
         });
     });
 
-    $(document).ready(function(){
-        $("div > span > span").css("background-color", "blue");
-      });
-
     $('li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item > ul.mega-sub-menu').each(function(){
         var $ul = $(this),
             $lis = $ul.find('li:gt(4)'),
