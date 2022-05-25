@@ -30,7 +30,7 @@ jQuery(function($){ // use jQuery code inside this to avoid "$ is not defined" e
 					$('#progress-bar').val( post_count_total );
 					 					
 					if ( post_count_total > post_found ) {
-						$('.woocommerce-result-count ').replaceWith('<p class="woocommerce-result-count">Viser ' + (post_count_total - 1 )  + ' af ' + post_found + ' resultater</p>' );
+						$('.woocommerce-result-count ').replaceWith('<p class="woocommerce-result-count">Viser ' + post_found  + ' af ' + post_found + ' resultater</p>' );
 					}
 					else {
 						$('.woocommerce-result-count ').replaceWith('<p class="woocommerce-result-count">Viser ' + post_count_total + ' af ' + post_found + ' resultater</p>' );

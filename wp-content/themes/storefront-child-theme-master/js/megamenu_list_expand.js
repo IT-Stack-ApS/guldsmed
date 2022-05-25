@@ -14,11 +14,11 @@ jQuery(function($) {
         
         if($lis.length > 0){
             $ul
-                .append($('<li class="showmore list-expand">' + (isExpanded ? ' Hvis mindre' : ' Hvis mere') + '</li>')
+                .append($('<li class="showmore list-expand">' + (isExpanded ? ' Vis mindre' : ' Vis mere') + '</li>')
                 .click(function(event){
                     var isExpanded = $ul.hasClass('expanded');
                     event.preventDefault();
-                    $(this).html(isExpanded ? ' Hvis mere' : ' Hvis mindre');
+                    $(this).html(isExpanded ? ' Vis mere' : ' Vis mindre');
                     $ul.toggleClass('expanded');
                     $lis.toggle(500);
                 }));
