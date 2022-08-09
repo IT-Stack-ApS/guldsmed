@@ -24,7 +24,13 @@
         align-items: flex-start;
         justify-content: flex-end;
 
-
+        &.footer-widget-1 {
+          display: flex;
+          flex-wrap: wrap;
+          #block-4 {
+            width: 100%;
+          }
+        }
         &:last-of-type {
           padding-right: 0;
         }

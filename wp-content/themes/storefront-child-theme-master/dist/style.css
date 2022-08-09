@@ -212,6 +212,13 @@ hr {
   align-items: flex-start;
   justify-content: flex-end;
 }
+.site-footer .col-full .footer-widgets .block.footer-widget-1 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.site-footer .col-full .footer-widgets .block.footer-widget-1 #block-4 {
+  width: 100%;
+}
 .site-footer .col-full .footer-widgets .block:last-of-type {
   padding-right: 0;
 }
