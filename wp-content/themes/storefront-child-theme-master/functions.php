@@ -39,6 +39,7 @@ require_once( get_stylesheet_directory() . '/inc/woocommerce/loadmore.php');
 require_once( get_stylesheet_directory() . '/inc/woocommerce/product-archive.php');
 require_once( get_stylesheet_directory() . '/inc/woocommerce/product.php');
 require_once( get_stylesheet_directory() . '/inc/woocommerce/ean-field.php');
+require_once( get_stylesheet_directory() . '/inc/woocommerce/servicepos-suppress-webhook.php');
 
 
 // Add custom style and javascript
@@ -49,5 +50,4 @@ function mytheme_enqueue_style() {
     //wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 }
 add_action( 'wp_enqueue_scripts', 'mytheme_enqueue_style', 999 );
-
 
