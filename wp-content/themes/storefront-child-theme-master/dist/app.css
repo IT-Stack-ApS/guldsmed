@@ -2164,6 +2164,9 @@ form.checkout #payment, form.checkout .cart-collaterals, form.woocommerce-cart-f
   }
 }
 /* ******* Checkout ********* */
+.woocommerce-checkout .woocommerce-form-coupon-toggle {
+  display: none;
+}
 .woocommerce-checkout .entry-header, .woocommerce-checkout .storefront-primary-navigation, .woocommerce-checkout .header-search, .woocommerce-checkout .storefront-breadcrumb, .woocommerce-checkout .header-cart-wrapper {
   display: none;
 }
@@ -2371,13 +2374,20 @@ form.checkout #payment, form.checkout .cart-collaterals, form.woocommerce-cart-f
 .woocommerce-checkout .order-review-wrapper #order_review #payment .place-order .button {
   border-radius: 5px;
 }
-.woocommerce-checkout .coupons #coupon_code {
-  width: 48%;
-  opacity: 1;
-  color: #525252;
+.woocommerce-checkout .coupon-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
 }
-.woocommerce-checkout .coupons button {
+.woocommerce-checkout .coupon-form #coupon_code {
+  width: 100%;
+  opacity: 1;
+  margin-bottom: 0.5em;
+}
+.woocommerce-checkout .coupon-form button {
   text-transform: capitalize;
+  width: 100%;
 }
 
 /* Checkout - DAWA suggestions */

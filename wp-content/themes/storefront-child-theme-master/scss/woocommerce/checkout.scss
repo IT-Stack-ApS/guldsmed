@@ -1,6 +1,9 @@
 /* ******* Checkout ********* */
 
 .woocommerce-checkout {
+  .woocommerce-form-coupon-toggle {
+    display:none;
+  }
   .entry-header, .storefront-primary-navigation, .header-search, .storefront-breadcrumb, .header-cart-wrapper {
     display: none;
   }
@@ -255,14 +258,18 @@
       }
     }
   }
-  .coupons{
+  .coupon-form{
+    @include flexbox;
+    justify-content: space-between;
+    flex-direction: column;
     #coupon_code {
-      width: 48%;
+      width: 100%;
       opacity: 1;
-      color: $text;
+      margin-bottom: 0.5em;
     }
     button {
       text-transform: capitalize;
+      width: 100%;
     }
   }
 }

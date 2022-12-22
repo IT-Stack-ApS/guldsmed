@@ -64,9 +64,17 @@ function display_payments_under_shipping() {
 add_action( 'woocommerce_checkout_shipping', 'display_payments_under_shipping', 20 );
 
 
-/* Moving coupon below shipping  */
-remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
-add_action( 'woocommerce_review_order_before_payment', 'woocommerce_checkout_coupon_form',  );
+/* Moving coupon below shipping */
+add_action( 'woocommerce_review_order_before_payment', 'woocommerce_checkout_coupon_form_custom' );
+function woocommerce_checkout_coupon_form_custom() {
+    echo '<div class="coupon-form" style="margin-bottom:20px;">
+        <p>' . __('If you have a coupon code, please apply it below.', 'woocommerce') . '</p>
+        <input type="text" name="coupon_code" class="input-text" placeholder="' . __('Coupon code', 'woocommerce') . '" id="coupon_code" value="">
+        <button type="button" class="button" name="apply_coupon" value="' . __('Apply coupon', 'woocommerce') . '">' . __('Apply coupon', 'woocommerce') . '</button>
+        <div class="clear"></div>
+    </div>';
+}
+
 
 /* Remove shipping title on checkout */
 add_filter( 'woocommerce_shipping_package_name', 'custom_shipping_package_name' );
