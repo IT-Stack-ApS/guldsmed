@@ -11,3 +11,4 @@ import cart_empty from './cart_empty.js';
 import cart_preview from './cart_preview.js';
 import instagram from './instagram.js';
 import megamenu_list_expand from './megamenu_list_expand.js';
+import coupon_checkout_copy_inputed_data from './coupon_checkout_copy_inputed_data.js'
