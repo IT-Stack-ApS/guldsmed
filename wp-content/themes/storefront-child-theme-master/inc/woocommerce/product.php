@@ -136,9 +136,15 @@ function size_guide() {
 
 add_action( 'woocommerce_before_add_to_cart_form', 'size_guide', 30 );
 
-// Hook the new table in before the customer details - you can move this anywhere you'd like. Dropping the html into the checkout template files should work too.
-add_action('woocommerce_checkout_shipping', 'webshop_move_new_shipping_table', 15);
+/* Replace add to cart on single product page */
+function replace_add_to_cart() {
 
-function webshop_move_new_shipping_table() {
-	echo '<table class="shop_table webshop-checkout-review-shipping-table"></table>';
+    global $product;
+
+    if ( has_term( 'vielsesringe', 'product_cat') ){
+        echo do_shortcode( '[elementor-template id="9968"]' );
+
+    }
+
 }
+add_action( 'woocommerce_product_meta_start', 'replace_add_to_cart' );
