@@ -40,6 +40,7 @@ require_once( get_stylesheet_directory() . '/inc/woocommerce/product-archive.php
 require_once( get_stylesheet_directory() . '/inc/woocommerce/product.php');
 require_once( get_stylesheet_directory() . '/inc/woocommerce/ean-field.php');
 require_once( get_stylesheet_directory() . '/inc/woocommerce/servicepos-suppress-webhook.php');
+require_once( get_stylesheet_directory() . '/inc/woocommerce/product-cat-slider.php');
 
 
 // Add custom style and javascript

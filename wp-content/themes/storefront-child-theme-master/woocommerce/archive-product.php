@@ -65,6 +65,12 @@ if ( woocommerce_product_loop() ) {
 	 */
 	do_action( 'woocommerce_before_shop_loop' );
 
+	if ( is_active_sidebar( 'product-cat-slider-area' ) ) : ?>
+		<div id="product-cat-slider" class="product-cat-slider-wrapper">
+		<?php dynamic_sidebar( 'product-cat-slider-area' ); ?>
+		</div>
+	<?php endif;
+
 	if ( is_active_sidebar( 'top-filter-area' ) ) : ?>
 	<button class="show_filter" type="button" name="show_filter">Vis filtrering</button>
 	<div id="archive-top-filters" class="filter-wrapper">

@@ -41,3 +41,6 @@ function cc_mime_types($mimes) {
     return $mimes;
    }
 add_filter('upload_mimes', 'cc_mime_types');
+
+//Disable wigdet block editor
+add_filter( 'use_widgets_block_editor', '__return_false' );
