@@ -27,43 +27,63 @@ class Display_Subcategories_Widget extends WP_Widget {
     // Fetch and generate the subcategories content
 	private function get_subcategories_content() {
 		ob_start();
+		
+		// Set up the default args to hide empty categories.
+		$default_args = array(
+			'taxonomy' => 'product_cat',
+			'hide_empty' => true
+		);		
 
+		// Adjust arguments based on whether you're on the shop page or a category page.
 		if (is_shop()) {
 			$args = array(
 				'taxonomy' => 'product_cat',
-				'parent' => 0
+				'parent' => 0,
+				'hide_empty' => true,
+				'suppress_filters' => true,
+				'orderby' => 'term_order',
+				'order' => 'ASC'
 			);
 		} else {
 			$parentid = get_queried_object_id();
-			$args = array('parent' => $parentid);
+			$args = array(
+				'taxonomy' => 'product_cat',
+				'parent' => $parentid,
+				'hide_empty' => true,
+				'suppress_filters' => true,
+				'orderby' => 'term_order',
+				'order' => 'ASC'				
+			);
 		}
 
 		$terms = get_terms('product_cat', $args);
 
 		if ($terms) {
 			if (is_shop()) {
-				echo '<button class="show_cat" type="button" name="show_cat">VIS KATEGORIER</button><div class="product-cats-wrapper swiper-container"><div class="swiper-button-prev"></div><div class="swiper-button-next"></div><ul class="product-cats swiper-wrapper">';
+				echo '<div class="product-cats-wrapper swiper-container"><div class="swiper-button-prev"></div><div class="swiper-button-next"></div><ul class="product-cats swiper-wrapper">';
 			} else {
 				$term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
 				$parent = get_term($term->parent, get_query_var('taxonomy'));
 				$children = get_term_children($term->term_id, get_query_var('taxonomy'));
 
 				if (($parent && $parent->term_id == "") && (is_array($children) && sizeof($children) > 0)) {
-					echo '<button class="show_cat" type="button" name="show_cat">VIS KATEGORIER</button><div class="product-cats-wrapper"><ul class="product-cats">';
+					echo '<div class="product-cats-wrapper swiper-container"><div class="swiper-button-prev"></div><div class="swiper-button-next"></div><ul class="product-cats swiper-wrapper">';
 				} else {
 					echo '<button class="show_cat child-show_cat" type="button" name="show_cat">VIS KATEGORIER</button><div class="product-cats-wrapper child-product-cats-wrapper"><ul class="product-cats">';
 				}
 			}
 
 			foreach ($terms as $term) {
-				echo '<li class="category swiper-slide">';
-				echo '<a href="' . esc_url(get_term_link($term)) . '" class="' . $term->slug . '">';
-				woocommerce_subcategory_thumbnail($term);
-				echo '<p>';
-				echo $term->name;
-				echo '</p>';
-				echo '</a>';
-				echo '</li>';
+				if ($term->count > 0) {
+					echo '<li class="category swiper-slide">';
+					echo '<a href="' . esc_url(get_term_link($term)) . '" class="' . $term->slug . '">';
+					woocommerce_subcategory_thumbnail($term);
+					echo '<p>';
+					echo $term->name;
+					echo '</p>';
+					echo '</a>';
+					echo '</li>';
+				}
 			}
 
 			echo '</ul></div>';
