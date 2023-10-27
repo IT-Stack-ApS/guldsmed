@@ -2659,6 +2659,18 @@ a.preview-cart-btn:hover {
   display: none;
 }
 
+.swiper-wrapper {
+  overflow: visible !important;
+}
+
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after, .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+  display: none;
+}
+
+.swiper-container i {
+  color: var(--e-global-color-text);
+}
+
 /* Links */
 a, button {
   transition: all 0.2s ease;
