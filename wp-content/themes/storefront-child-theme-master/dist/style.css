@@ -2655,7 +2655,7 @@ a.preview-cart-btn:hover {
   background: #f9f9f9;
 }
 
-.swiper-button-disabled {
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
   display: none;
 }
 
