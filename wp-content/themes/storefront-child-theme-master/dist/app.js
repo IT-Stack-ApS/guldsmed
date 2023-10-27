@@ -106,7 +106,7 @@ eval("!function(t){var e={};function n(o){if(e[o])return e[o].exports;var i=e[o]
   \**********************************/
 /***/ (() => {
 
-eval("jQuery(document).ready(function ($) {\n            \n    var swiper = new Swiper('.swiper-container', {\n        slidesPerView: 1,\n        spaceBetween: 20,\n\n        breakpoints: {\n            640: {\n                slidesPerView: 3,\n            },\n            768: {\n                slidesPerView: 4,\n            },\n            1024: {\n                slidesPerView: 6,\n            },\n        },\n\n        pagination: {\n            el: '.swiper-pagination',\n            clickable: true,\n        },\n        navigation: {\n            nextEl: '.swiper-button-next',\n            prevEl: '.swiper-button-prev',\n        },\n    });\n});\n\n//# sourceURL=webpack://my-theme/./js/product_cat_slider.js?");
+eval("jQuery(document).ready(function ($) {\n            \n    var swiper = new Swiper('.swiper-container', {\n        slidesPerView: 1,\n        spaceBetween: 20,\n\n        breakpoints: {\n            0: {\n                slidesPerView: 3,\n            },\n            768: {\n                slidesPerView: 4,\n            },\n            1024: {\n                slidesPerView: 6,\n            },\n        },\n\n        pagination: {\n            el: '.swiper-pagination',\n            clickable: true,\n        },\n        navigation: {\n            nextEl: '.swiper-button-next',\n            prevEl: '.swiper-button-prev',\n        },\n    });\n});\n\n//# sourceURL=webpack://my-theme/./js/product_cat_slider.js?");
 
 /***/ }),
 
