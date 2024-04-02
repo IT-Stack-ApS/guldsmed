@@ -2616,6 +2616,10 @@ a.preview-cart-btn:hover {
   display: none;
 }
 
+.woocommerce .product-cats-wrapper {
+  overflow: hidden;
+  position: relative;
+}
 .woocommerce .category.swiper-slide {
   text-align: center;
 }
@@ -2635,9 +2639,9 @@ a.preview-cart-btn:hover {
 .woocommerce .widget_display_subcategories_widget {
   margin: 0;
 }
-.woocommerce .swiper-button-next, .woocommerce .swiper-button-prev {
-  width: 40px;
-  height: 40px;
+.woocommerce .product-cats-wrapper .swiper-button-next, .woocommerce .product-cats-wrapper .swiper-button-prev {
+  width: 44px;
+  height: 44px;
   background-image: unset;
   display: flex;
   justify-content: center;
@@ -2650,7 +2654,8 @@ a.preview-cart-btn:hover {
   background: #f9f9f9;
 }
 .woocommerce .swiper-button-next.swiper-button-disabled, .woocommerce .swiper-button-prev.swiper-button-disabled {
-  display: none;
+  cursor: pointer;
+  pointer-events: auto;
 }
 .woocommerce .swiper-wrapper {
   overflow: visible !important;

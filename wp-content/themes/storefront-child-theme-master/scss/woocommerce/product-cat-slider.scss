@@ -1,4 +1,9 @@
 .woocommerce {
+	.product-cats-wrapper {
+		overflow: hidden;
+		position: relative;
+	}
+	
 	.category.swiper-slide {
 		text-align: center;
 	}
@@ -22,9 +27,9 @@
 		margin: 0;
 	}
 	
-	.swiper-button-next, .swiper-button-prev {
-		width: 40px;
-		height: 40px;
+	.product-cats-wrapper .swiper-button-next, .product-cats-wrapper .swiper-button-prev {
+		width: 44px;
+		height: 44px;
 		background-image: unset;
 		display: flex;
 		justify-content: center;
@@ -39,7 +44,8 @@
 	}
 	
 	.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
-		display: none;
+		cursor: pointer;
+    	pointer-events: auto;
 	}
 	
 	.swiper-wrapper {
