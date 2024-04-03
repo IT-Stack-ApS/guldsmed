@@ -59,20 +59,9 @@ class Display_Subcategories_Widget extends WP_Widget {
 		$terms = get_terms('product_cat', $args);
 
 		if ($terms) {
-			if (is_shop()) {
-				echo '<div class="product-cats-wrapper swiper-container"><div class="swiper-button-prev"><i class="fas fa-chevron-left"></i></div><div class="swiper-button-next"><i class="fas fa-chevron-right"></i></div><ul class="product-cats swiper-wrapper">';
-			} else {
-				$term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
-				$parent = get_term($term->parent, get_query_var('taxonomy'));
-				$children = get_term_children($term->term_id, get_query_var('taxonomy'));
-
-				if (($parent && $parent->term_id == "") && (is_array($children) && sizeof($children) > 0)) {
-					echo '<div class="product-cats-wrapper swiper-container"><div class="swiper-button-prev"><i class="fas fa-chevron-left"></i></div><div class="swiper-button-next"><i class="fas fa-chevron-right"></i></div><ul class="product-cats swiper-wrapper">';
-				} else {
-					echo '<button class="show_cat child-show_cat" type="button" name="show_cat">VIS KATEGORIER</button><div class="product-cats-wrapper child-product-cats-wrapper"><ul class="product-cats">';
-				}
-			}
-
+			// Always start with the swiper container, as it's common to all branches.
+			echo '<div class="product-cats-wrapper swiper-container"><div class="swiper-button-prev"><i class="fas fa-chevron-left"></i></div><div class="swiper-button-next"><i class="fas fa-chevron-right"></i></div><ul class="product-cats swiper-wrapper">';
+		
 			foreach ($terms as $term) {
 				if ($term->count > 0) {
 					echo '<li class="category swiper-slide">';
@@ -85,7 +74,7 @@ class Display_Subcategories_Widget extends WP_Widget {
 					echo '</li>';
 				}
 			}
-
+		
 			echo '</ul></div>';
 		}
 

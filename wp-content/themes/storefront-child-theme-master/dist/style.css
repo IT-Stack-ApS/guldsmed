@@ -426,7 +426,7 @@ a.cookie_btn:hover {
     margin-left: 1.5em;
   }
 
-  .topbar, .storefront-breadcrumb {
+  .topbar {
     padding: 0.5em 1em !important;
   }
 
@@ -434,6 +434,10 @@ a.cookie_btn:hover {
   /* Archive Page */
   .archive #content {
     width: unset;
+  }
+
+  .storefront-breadcrumb nav {
+    margin: 20px 0 0 0;
   }
 
   .col-full .woocommerce-products-header {
@@ -1627,6 +1631,14 @@ body.mm-ocd-opened {
 
 .storefront-breadcrumb {
   margin: 0;
+  padding: 0;
+}
+.storefront-breadcrumb .col-full {
+  margin: 0;
+  padding: 0;
+}
+.storefront-breadcrumb .col-full nav {
+  font-size: 15px;
 }
 
 .woocommerce-Price-amount {
