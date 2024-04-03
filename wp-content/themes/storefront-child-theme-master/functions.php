@@ -35,7 +35,6 @@ require_once( get_stylesheet_directory() . '/inc/woocommerce/cart.php');
 require_once( get_stylesheet_directory() . '/inc/woocommerce/checkout.php');
 require_once( get_stylesheet_directory() . '/inc/woocommerce/delivery.php');
 require_once( get_stylesheet_directory() . '/inc/woocommerce/extra-description.php');
-require_once( get_stylesheet_directory() . '/inc/woocommerce/loadmore.php');
 require_once( get_stylesheet_directory() . '/inc/woocommerce/product-archive.php');
 require_once( get_stylesheet_directory() . '/inc/woocommerce/product.php');
 require_once( get_stylesheet_directory() . '/inc/woocommerce/ean-field.php');

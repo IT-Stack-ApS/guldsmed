@@ -3,7 +3,7 @@
 		overflow: hidden;
 		position: relative;
 	}
-	
+
 	.category.swiper-slide {
 		text-align: center;
 	}
@@ -44,8 +44,7 @@
 	}
 	
 	.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
-		cursor: pointer;
-    	pointer-events: auto;
+		display: none;
 	}
 	
 	.swiper-wrapper {

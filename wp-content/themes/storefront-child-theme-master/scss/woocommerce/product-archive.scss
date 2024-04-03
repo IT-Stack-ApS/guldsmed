@@ -222,9 +222,27 @@ span.select2.select2-container.select2-container--default * {
   padding: 0;
 }
 .storefront-sorting {
-  margin: 5% 0 0 0;
-  &:first-of-type {
+  margin: unset;
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  &:first-child, &::before, &::after, .progress-result-count {
     display: none;
+  }
+  .woocommerce-ordering, .woocommerce-result-count, .woocommerce-pagination {
+    float: unset;
+    position: initial;
+    margin: unset;
+  }
+  .woocommerce-ordering {
+    order: 3;
+  }
+  .woocommerce-result-count {
+    order: 1;
+  }
+  .woocommerce-pagination {
+    order: 2;
   }
 }
 body .select2-container--default .select2-results__option--highlighted[aria-selected], body .select2-container--default .select2-results__option--highlighted[data-selected] {
