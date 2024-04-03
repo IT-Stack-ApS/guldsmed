@@ -1,5 +1,9 @@
 /* Archive Page */
 
+.archive #content {
+  width: unset;
+}
+
 .col-full .woocommerce-products-header {
   padding: 2em;
   flex-direction: column;

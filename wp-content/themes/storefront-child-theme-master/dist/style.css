@@ -432,6 +432,10 @@ a.cookie_btn:hover {
 
   /* Header Tablet End */
   /* Archive Page */
+  .archive #content {
+    width: unset;
+  }
+
   .col-full .woocommerce-products-header {
     padding: 2em;
     flex-direction: column;
@@ -1601,6 +1605,10 @@ body.mm-ocd-opened {
 }
 
 /* Product archive */
+.archive .col-full.content-wrapper {
+  width: unset;
+}
+
 .header-widget-region {
   display: none;
 }
