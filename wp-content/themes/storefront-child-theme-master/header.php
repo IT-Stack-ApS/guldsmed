@@ -93,10 +93,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			        ?>
 			    </a>
 			    </div>
-			    <!-- Search -->
-			    <div class="header-search">
-			      <?php echo do_shortcode('[fibosearch]'); ?>
-			    </div>
 
 					<!-- Navigation -->
 					<div class="navigation-header-content">
@@ -116,6 +112,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							</nav><!-- #site-navigation -->
 						</div>
 					</div> <!-- End navigation header -->
+			    <!-- Search -->
+			    <div class="header-search">
+			      <?php echo do_shortcode('[fibosearch]'); ?>
+			    </div>
 
 			   <!-- Cart -->
 					<div class="header-cart-wrapper">
