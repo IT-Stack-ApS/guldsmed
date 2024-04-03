@@ -1,5 +1,9 @@
 /* Product archive */
 
+.archive .col-full.content-wrapper {
+  width: unset;
+}
+
 //archive header
 .header-widget-region {
   display: none;
