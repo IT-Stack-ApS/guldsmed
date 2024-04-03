@@ -102,13 +102,6 @@ if ( woocommerce_product_loop() ) {
 	 * @hooked woocommerce_pagination - 10
 	 */
 	do_action( 'woocommerce_after_shop_loop' );
-
-	global $wp_query; // you can remove this line if everything works for you
-
-	// don't display the button if there are not enough posts
-	if (  $wp_query->max_num_pages > 1 )
-		echo '<button class="loadmore_button">Se flere produkter</button>';
-
 } else {
 	/**
 	 * Hook: woocommerce_no_products_found.

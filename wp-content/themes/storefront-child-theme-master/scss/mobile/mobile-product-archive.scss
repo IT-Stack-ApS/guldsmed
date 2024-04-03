@@ -25,7 +25,10 @@
 }
 
 .storefront-sorting {
-  display: none;
+  flex-direction: column;
+  .woocommerce-ordering, .woocommerce-result-count, .woocommerce-pagination {
+    order: unset !important;
+  }
 }
 
 .woocommerce-products-header {
