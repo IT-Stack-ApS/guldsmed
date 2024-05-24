@@ -118,3 +118,12 @@
 .loadmore_button {
   margin: 0 auto;
 }
+
+// Popup filter
+
+.popup-filter.visible {
+  display: block;
+  right: 0; /* Slide in from the right */
+}
+
+// Popup filter end

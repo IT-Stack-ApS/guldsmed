@@ -120,7 +120,7 @@ hr {
 /* Header */
 #masthead {
   position: sticky;
-  z-index: 999;
+  z-index: 990;
   background-color: #ffffff;
   transition: 0.3s all;
 }
@@ -531,6 +531,12 @@ a.cookie_btn:hover {
     margin: 0 auto;
   }
 
+  .popup-filter.visible {
+    display: block;
+    right: 0;
+    /* Slide in from the right */
+  }
+
   /* Product Page */
   .single-product div.product .summary, .woocommerce-tabs .panel, .cart_totals {
     width: 100% !important;
@@ -794,6 +800,10 @@ a.cookie_btn:hover {
     background-color: #788B9B;
     color: #FFF;
     border: 1px solid #788B9B;
+  }
+
+  .popup-filter {
+    width: 66%;
   }
 
   #main div.product .summary {
@@ -1914,6 +1924,22 @@ body .select2-container--default .select2-results__option--highlighted[aria-sele
   margin-top: 1em;
   float: none;
   position: absolute;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+.popup-filter {
+  position: fixed;
+  right: -100%;
+  width: 33%;
+  z-index: 995;
+  height: 100vh;
+  background-color: #F3EFE7;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(99, 99, 99, 0.2);
+  transition: right 0.5s ease;
 }
 
 /* Cart */
