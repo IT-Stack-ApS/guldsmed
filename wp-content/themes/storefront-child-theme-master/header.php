@@ -36,6 +36,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <?php do_action( 'storefront_before_site' ); ?>
 
 <div id="page" class="hfeed site">
+	<!-- Add Elementor template shortcode for archive pages -->
+	<?php if (is_archive()) : ?>
+			<div class="popup-filter" id="popupFilter">
+				<?php echo do_shortcode('[elementor-template id="12869"]'); ?>
+			</div>
+	<?php endif; ?>
+
 	<!-- Top Bar-->
 		<div class="topbar">
 			<div class="col-full">

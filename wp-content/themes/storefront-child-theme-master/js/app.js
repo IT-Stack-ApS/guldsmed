@@ -13,3 +13,4 @@ import instagram from './instagram.js';
 import megamenu_list_expand from './megamenu_list_expand.js';
 import coupon_checkout_copy_inputed_data from './coupon_checkout_copy_inputed_data.js'
 import product_cat_slider from './product_cat_slider.js'
+import popup_filter from './popup-filter.js'
