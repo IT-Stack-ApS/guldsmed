@@ -121,6 +121,10 @@
 
 // Popup filter
 
+.popup-filter {
+  width: 33%;
+}
+
 .popup-filter.visible {
   display: block;
   right: 0; /* Slide in from the right */
