@@ -519,22 +519,42 @@ a.cookie_btn:hover {
     max-width: 170px;
   }
 
-  #secondary {
-    display: none;
-  }
-
   .loadmore_button {
     margin: 0 auto;
   }
 
-  .popup-filter {
-    width: 33%;
+  body.no-scroll {
+    overflow: hidden;
   }
 
-  .popup-filter.visible {
+  #secondary.widget-area {
+    position: fixed;
+    right: -100%;
+    z-index: 995;
+    height: 100vh;
+    background-color: #F3EFE7;
+    padding: 0px 20px 50px 20px;
+    box-shadow: 0px 0px 10px rgba(99, 99, 99, 0.2);
+    transition: right 0.5s ease;
+    top: 0;
+    margin: 0;
+    width: 33%;
+    overflow: auto;
+  }
+
+  #secondary.widget-area.visible {
     display: block;
     right: 0;
     /* Slide in from the right */
+  }
+
+  #elementor-library-3 {
+    background-color: #F3EFE7;
+    position: sticky;
+    margin: 0;
+    width: 100%;
+    top: 0;
+    padding-top: 50px;
   }
 
   /* Product Page */
@@ -691,7 +711,6 @@ a.cookie_btn:hover {
   }
 
   #secondary {
-    display: none;
     width: 100%;
     padding: 1em 1.4em;
     margin-top: 1.3em;
@@ -802,7 +821,7 @@ a.cookie_btn:hover {
     border: 1px solid #788B9B;
   }
 
-  .popup-filter {
+  #secondary.widget-area {
     width: 66%;
   }
 
@@ -1921,21 +1940,6 @@ body .select2-container--default .select2-results__option--highlighted[aria-sele
   margin-top: 1em;
   float: none;
   position: absolute;
-}
-
-body.no-scroll {
-  overflow: hidden;
-}
-
-.popup-filter {
-  position: fixed;
-  right: -100%;
-  z-index: 995;
-  height: 100vh;
-  background-color: #F3EFE7;
-  padding: 20px;
-  box-shadow: 0px 0px 10px rgba(99, 99, 99, 0.2);
-  transition: right 0.5s ease;
 }
 
 /* Cart */

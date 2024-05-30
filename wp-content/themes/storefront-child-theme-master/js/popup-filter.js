@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const toggleButton = document.getElementById('toggle-popup');
     const closeButton = document.getElementById('close-popup');
-    const popup = document.getElementById('popupFilter');
+    const popup = document.getElementById('secondary');
     const body = document.body;
 
     if (toggleButton) {
