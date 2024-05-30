@@ -13,7 +13,6 @@
 }
 
 #secondary {
-  display: none;
   width: 100%;
   padding: 1em 1.4em;
   margin-top: 1.3em;
@@ -142,7 +141,7 @@ button.show_filter {
 
 // Popup filter
 
-.popup-filter {
+#secondary.widget-area {
   width: 66%;
 }
 
