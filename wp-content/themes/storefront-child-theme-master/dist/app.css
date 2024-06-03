@@ -1943,6 +1943,10 @@ body .select2-container--default .select2-results__option--highlighted[aria-sele
   position: absolute;
 }
 
+.product-cat-slider-wrapper .swiper-wrapper {
+  margin: unset;
+}
+
 /* Cart */
 .woocommerce-cart {
   /* Col for cart */
@@ -2684,6 +2688,9 @@ a.preview-cart-btn:hover {
   display: none;
 }
 
+.woocommerce .product-cat-slider-wrapper .swiper-wrapper {
+  margin: unset;
+}
 .woocommerce .product-cats-wrapper {
   overflow: hidden;
   position: relative;
