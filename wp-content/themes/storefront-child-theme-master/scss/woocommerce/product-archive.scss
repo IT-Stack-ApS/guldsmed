@@ -354,6 +354,8 @@ body .select2-container--default .select2-results__option--highlighted[aria-sele
     position: absolute;
   }
 
-
-
 // progress bar end
+
+.product-cat-slider-wrapper .swiper-wrapper {
+  margin: unset;
+}

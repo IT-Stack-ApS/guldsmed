@@ -12,7 +12,7 @@ jQuery(document).ready(function ($) {
                 slidesPerView: 4,
             },
             1024: {
-                slidesPerView: 6,
+                slidesPerView: 5,
             },
         },
 

@@ -1,4 +1,9 @@
 .woocommerce {
+
+	.product-cat-slider-wrapper .swiper-wrapper {
+		margin: unset;
+	}
+	
 	.product-cats-wrapper {
 		overflow: hidden;
 		position: relative;
