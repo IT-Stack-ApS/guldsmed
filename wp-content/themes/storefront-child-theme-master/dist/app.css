@@ -2728,7 +2728,7 @@ a.preview-cart-btn:hover {
 .woocommerce .swiper-button-next:hover, .woocommerce .swiper-button-prev:hover {
   background: #f9f9f9;
 }
-.woocommerce .swiper-button-next.swiper-button-disabled, .woocommerce .swiper-button-prev.swiper-button-disabled {
+.woocommerce .swiper-button-next.swiper-button-lock {
   display: none;
 }
 .woocommerce .swiper-wrapper {
