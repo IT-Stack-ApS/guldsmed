@@ -2729,7 +2729,7 @@ a.preview-cart-btn:hover {
   background: #f9f9f9;
 }
 .woocommerce .swiper-button-next.swiper-button-lock {
-  display: none;
+  display: none !important;
 }
 .woocommerce .swiper-wrapper {
   overflow: visible !important;
